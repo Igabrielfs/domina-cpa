@@ -9,36 +9,6 @@ const questoes = [
     {
         grupo: "Estrutura do SFN",
         tema: "SFN",
-        nivel: "difícil",
-        contexto: "Em um treinamento para novos gerentes, o instrutor apresenta quatro afirmações sobre o Sistema Financeiro Nacional:\nI. O SFN viabiliza a transferência de recursos dos agentes superavitários para os deficitários.\nII. Os órgãos normativos fiscalizam diretamente as instituições financeiras no dia a dia.\nIII. Bancos, cooperativas de crédito e corretoras são exemplos de instituições operadoras.\nIV. Banco Central, CVM, SUSEP e PREVIC atuam como entidades supervisoras.",
-        enunciado: "Estão corretas as afirmações:",
-        alternativas: [
-            "I e II, apenas",
-            "I, III e IV, apenas",
-            "II, III e IV, apenas",
-            "I, II, III e IV"
-        ],
-        correta: 1
-    },
-
-    {
-        grupo: "Estrutura do SFN",
-        tema: "SFN",
-        nivel: "médio",
-        contexto: "Em uma prova interna de certificação, os funcionários de um banco recebem a tarefa de classificar as entidades do SFN em três níveis: órgãos normativos, entidades supervisoras e operadores. Um dos participantes precisa escolher a única combinação classificada corretamente.",
-        enunciado: "A classificação correta é:",
-        alternativas: [
-            "CMN: supervisor; CVM: normativo; corretora de valores: operador",
-            "Banco Central: normativo; SUSEP: operador; seguradora: supervisor",
-            "CNSP: normativo; SUSEP: supervisor; seguradora: operador",
-            "CNPC: supervisor; PREVIC: normativo; fundo de pensão: operador"
-        ],
-        correta: 2
-    },
-
-    {
-        grupo: "Estrutura do SFN",
-        tema: "SFN",
         nivel: "fácil",
         contexto: "Em uma aula sobre intermediação financeira, o professor apresenta quatro situações e pede que os alunos identifiquem qual delas representa um agente deficitário.",
         enunciado: "A situação que representa um agente deficitário é:",
@@ -54,21 +24,6 @@ const questoes = [
     {
         grupo: "Estrutura do SFN",
         tema: "CMN",
-        nivel: "médio",
-        contexto: "Durante um treinamento interno em uma cooperativa de crédito, a gerente Paula explica aos novos colaboradores que o Sistema Financeiro Nacional é dividido entre entidades que criam as regras e entidades que fiscalizam o seu cumprimento. Um dos participantes pergunta qual entidade é responsável por fixar a meta de inflação que o país deve perseguir.",
-        enunciado: "Considerando a estrutura do SFN, a entidade responsável por essa atribuição é:",
-        alternativas: [
-            "O Banco Central do Brasil",
-            "O Comitê de Política Monetária (Copom)",
-            "O Conselho Monetário Nacional (CMN)",
-            "A Comissão de Valores Mobiliários (CVM)"
-        ],
-        correta: 2
-    },
-
-    {
-        grupo: "Estrutura do SFN",
-        tema: "CMN",
         nivel: "fácil",
         contexto: "Rafael, estudante de economia, está montando um resumo sobre o Conselho Monetário Nacional para uma apresentação na faculdade. Ele precisa informar corretamente quais autoridades participam das reuniões e votam as resoluções do conselho.",
         enunciado: "A composição atual do CMN é formada por:",
@@ -76,54 +31,9 @@ const questoes = [
             "Ministro da Fazenda, Ministro do Planejamento e Orçamento e Presidente do Banco Central",
             "Presidente do Banco Central, Presidente da CVM e Ministro da Fazenda",
             "Ministro da Fazenda, Presidente da CVM e Superintendente da SUSEP",
-            "Presidente da República, Ministro da Fazenda e Presidente do Banco Central"
+            "Presidente da República, Ministro da Fazenda, Presidente do Banco Central e Presidente da CVM"
         ],
         correta: 0
-    },
-
-    {
-        grupo: "Estrutura do SFN",
-        tema: "CMN",
-        nivel: "médio",
-        contexto: "Durante uma reunião de planejamento, o diretor de uma instituição financeira comenta que uma nova resolução do Conselho Monetário Nacional mudou os critérios para abertura de novas instituições no país. Um analista recém-contratado questiona se isso realmente está entre as atribuições do conselho.",
-        enunciado: "Entre as atribuições abaixo, a que cabe ao CMN é:",
-        alternativas: [
-            "Regular a constituição, o funcionamento e a fiscalização das instituições financeiras",
-            "Realizar diariamente operações de compra e venda de títulos públicos no mercado aberto",
-            "Autorizar e acompanhar as ofertas públicas de ações das companhias abertas",
-            "Fiscalizar presencialmente as agências bancárias e aplicar multas às instituições"
-        ],
-        correta: 0
-    },
-
-    {
-        grupo: "Estrutura do SFN",
-        tema: "CMN",
-        nivel: "difícil",
-        contexto: "O Conselho Monetário Nacional aprova uma resolução que altera as regras do crédito consignado. Um jornal publica três afirmações sobre a medida:\nI. A norma foi aprovada com os votos do Ministro da Fazenda, do Ministro do Planejamento e Orçamento e do Presidente do Banco Central.\nII. Caberá ao Banco Central fiscalizar o cumprimento da nova regra pelas instituições financeiras.\nIII. Caberá ao CMN aplicar multas diretamente às instituições que descumprirem a norma.",
-        enunciado: "Estão corretas as afirmações:",
-        alternativas: [
-            "I, II e III",
-            "II e III, apenas",
-            "I e II, apenas",
-            "I, apenas"
-        ],
-        correta: 2
-    },
-
-    {
-        grupo: "Estrutura do SFN",
-        tema: "CNSP e SUSEP",
-        nivel: "médio",
-        contexto: "Carla contratou um plano de previdência PGBL em uma seguradora, pensando em complementar sua aposentadoria. Após uma mudança nas regras de portabilidade do produto, ela quer entender quais entidades criaram a nova norma e quais fiscalizam a seguradora.",
-        enunciado: "Para o produto contratado por Carla, as entidades normativa e supervisora são, respectivamente:",
-        alternativas: [
-            "CNPC e PREVIC",
-            "CMN e Banco Central",
-            "CNSP e PREVIC",
-            "CNSP e SUSEP"
-        ],
-        correta: 3
     },
 
     {
@@ -143,32 +53,122 @@ const questoes = [
 
     {
         grupo: "Estrutura do SFN",
-        tema: "CNSP e SUSEP",
-        nivel: "médio",
-        contexto: "Uma estudante de ciências contábeis está preparando um trabalho sobre o mercado de seguros e precisa descrever corretamente o papel da SUSEP dentro do Sistema Financeiro Nacional.",
-        enunciado: "A descrição correta do papel da SUSEP é:",
-        alternativas: [
-            "Executar a política definida pelo CNSP, fiscalizando seguradoras, resseguradoras, sociedades de capitalização e entidades abertas de previdência",
-            "Criar as normas para os fundos de pensão das empresas e fiscalizar sua gestão",
-            "Regular as ofertas públicas de ações das seguradoras de capital aberto",
-            "Definir as regras do mercado de seguros e submetê-las à aprovação do CMN"
-        ],
-        correta: 0
-    },
-
-    {
-        grupo: "Estrutura do SFN",
         tema: "CNPC e PREVIC",
         nivel: "fácil",
         contexto: "Marcos trabalha em uma grande indústria que oferece aos funcionários um plano de previdência exclusivo, administrado por uma fundação criada pela própria empresa. Ele desconfia de irregularidades na gestão dos recursos e quer levar o caso à entidade responsável pela fiscalização.",
         enunciado: "A entidade que Marcos deve procurar é:",
         alternativas: [
             "A SUSEP",
-            "A PREVIC",
             "A CVM",
-            "O Banco Central do Brasil"
+            "O Banco Central do Brasil",
+            "A PREVIC"
+        ],
+        correta: 3
+    },
+
+    {
+        grupo: "Estrutura do SFN",
+        tema: "Banco Central",
+        nivel: "fácil",
+        contexto: "Joana é associada de uma cooperativa de crédito em sua cidade e percebeu cobranças de tarifas que considera abusivas. Antes de registrar uma reclamação formal, ela pesquisa qual órgão é responsável por autorizar o funcionamento e fiscalizar esse tipo de instituição.",
+        enunciado: "O órgão responsável por essa fiscalização é:",
+        alternativas: [
+            "O Banco Central do Brasil",
+            "A CVM",
+            "O Conselho Monetário Nacional",
+            "A SUSEP"
+        ],
+        correta: 0
+    },
+
+    {
+        grupo: "Estrutura do SFN",
+        tema: "SFN",
+        nivel: "médio",
+        contexto: "Seu Valdir, pequeno produtor rural, tem um CDB na cooperativa onde é associado. Ele pergunta a Ana, profissional certificada CPA, por que a instituição paga juros no CDB dele e, ao mesmo tempo, cobra juros mais altos no crédito rural do vizinho.",
+        enunciado: "Ana deve explicar que essa dinâmica ocorre porque:",
+        alternativas: [
+            "a instituição capta recursos de quem tem sobra e empresta a quem precisa, sendo remunerada pela diferença entre as taxas, o spread",
+            "a instituição capta recursos de quem tem sobra e empresta a quem precisa, mas o spread de cada operação é fixado pelo CMN",
+            "os recursos do CDB ficam integralmente depositados no Banco Central, e o crédito rural é financiado apenas com capital próprio",
+            "a instituição empresta apenas recursos próprios, e os juros pagos no CDB são custeados pelas tarifas cobradas dos associados"
+        ],
+        correta: 0
+    },
+
+    {
+        grupo: "Estrutura do SFN",
+        tema: "SFN",
+        nivel: "médio",
+        contexto: "Um cliente leu uma notícia sobre uma nova regra para o mercado de seguros e pergunta ao gerente, certificado CPA, quem criou a regra, quem vai fiscalizar o seu cumprimento e onde a seguradora dele se encaixa nessa estrutura.",
+        enunciado: "A explicação correta do gerente é:",
+        alternativas: [
+            "a regra foi criada pela SUSEP, que também a fiscaliza, e o CNSP atua apenas como órgão consultivo, sem poder normativo",
+            "a regra foi criada pelo CNSP, órgão normativo; a SUSEP fiscaliza o cumprimento; e a seguradora atua como instituição operadora",
+            "a regra foi criada pelo CMN, que regula todos os mercados; a SUSEP fiscaliza; e a seguradora atua como instituição operadora",
+            "a regra foi criada pelo CNSP; a fiscalização cabe ao Banco Central; e a seguradora atua como instituição operadora"
         ],
         correta: 1
+    },
+
+    {
+        grupo: "Estrutura do SFN",
+        tema: "CMN",
+        nivel: "médio",
+        contexto: "Durante o atendimento, uma cliente comenta com o gerente, certificado CPA, que leu que o Banco Central decidiu qual será a meta de inflação do país e que, por isso, ele é o responsável por defini-la.",
+        enunciado: "Para corrigir o entendimento da cliente, o gerente deve esclarecer que:",
+        alternativas: [
+            "a meta é fixada pelo Copom, que também define a taxa Selic necessária para alcançá-la ao longo do ano",
+            "a meta é fixada pelo Banco Central, e o CMN apenas a divulga oficialmente ao mercado e à sociedade",
+            "a meta é fixada pelo CMN, e cabe ao Banco Central, por meio do Copom, conduzir os juros para alcançá-la",
+            "a meta é fixada pelo CMN, e cabe à CVM acompanhar o seu cumprimento pelas instituições financeiras"
+        ],
+        correta: 2
+    },
+
+    {
+        grupo: "Estrutura do SFN",
+        tema: "CMN",
+        nivel: "médio",
+        contexto: "Um empreendedor quer abrir uma instituição financeira voltada ao crédito digital e procura uma consultora certificada CPA para entender quem define as regras de constituição e funcionamento e quem analisa e aprova o pedido de autorização.",
+        enunciado: "A consultora deve explicar que:",
+        alternativas: [
+            "o Banco Central define as regras de constituição, e o CMN analisa o pedido e autoriza o funcionamento",
+            "a CVM define as regras e autoriza o funcionamento, por se tratar de uma empresa de tecnologia financeira",
+            "o CMN define as regras e também autoriza diretamente o funcionamento, sem participação do Banco Central",
+            "o CMN define as regras de constituição e funcionamento, e o Banco Central analisa o pedido e autoriza"
+        ],
+        correta: 3
+    },
+
+    {
+        grupo: "Estrutura do SFN",
+        tema: "CNSP e SUSEP",
+        nivel: "médio",
+        contexto: "Carla contratou um plano PGBL em uma seguradora. Após uma mudança nas regras de portabilidade do produto, ela pergunta ao gerente, certificado CPA, quais entidades criaram a nova norma e quais fiscalizam a seguradora.",
+        enunciado: "O gerente deve explicar que:",
+        alternativas: [
+            "por ser previdência fechada, as normas vêm do CNPC, e a fiscalização da seguradora cabe à PREVIC",
+            "por ser previdência aberta, as normas vêm do CNSP, e a fiscalização da seguradora cabe à SUSEP",
+            "por ser previdência aberta, as normas vêm do CNSP, e a fiscalização da seguradora cabe à PREVIC",
+            "por ser um investimento, as normas vêm do CMN, e a fiscalização da seguradora cabe à CVM"
+        ],
+        correta: 1
+    },
+
+    {
+        grupo: "Estrutura do SFN",
+        tema: "CNSP e SUSEP",
+        nivel: "médio",
+        contexto: "Antes de contratar um seguro de vida oferecido por telefone, Sílvia pede orientação a um profissional certificado CPA. Ela quer confirmar se a seguradora está autorizada a funcionar e se o corretor que a atendeu é habilitado.",
+        enunciado: "O profissional deve orientar Sílvia a consultar:",
+        alternativas: [
+            "o Banco Central, que autoriza as seguradoras por se tratarem de instituições financeiras",
+            "a SUSEP para a seguradora, mas o registro dos corretores é mantido exclusivamente pela ANBIMA",
+            "a SUSEP, que autoriza e fiscaliza as seguradoras e mantém o registro dos corretores de seguros",
+            "o CNSP, que fiscaliza diretamente as seguradoras e mantém o registro dos corretores de seguros"
+        ],
+        correta: 2
     },
 
     {
@@ -188,30 +188,15 @@ const questoes = [
 
     {
         grupo: "Estrutura do SFN",
-        tema: "CNPC e PREVIC",
-        nivel: "difícil",
-        contexto: "Paulo participa do fundo de pensão da empresa onde trabalha, tem um plano VGBL contratado em uma seguradora e aplica em um fundo multimercado distribuído pelo seu banco. Ele suspeita de irregularidades nos três produtos e quer levar cada caso à entidade supervisora correta.",
-        enunciado: "Considerando a ordem fundo de pensão, VGBL e fundo multimercado, Paulo deve procurar, respectivamente:",
-        alternativas: [
-            "PREVIC, SUSEP e CVM",
-            "SUSEP, PREVIC e Banco Central",
-            "PREVIC, SUSEP e Banco Central",
-            "SUSEP, SUSEP e CVM"
-        ],
-        correta: 0
-    },
-
-    {
-        grupo: "Estrutura do SFN",
         tema: "CVM",
         nivel: "médio",
-        contexto: "Uma empresa de energia de capital aberto decide captar recursos no mercado por meio da emissão de debêntures para financiar a construção de uma nova usina. Antes da oferta pública, a área jurídica levanta quais exigências regulatórias precisam ser cumpridas.",
-        enunciado: "A entidade responsável por regular e fiscalizar essa emissão é:",
+        contexto: "O diretor financeiro de uma companhia aberta vai emitir debêntures para financiar uma nova fábrica e pede ao gerente do banco coordenador, certificado CPA, que explique quem regula e fiscaliza a operação.",
+        enunciado: "Sobre a oferta, o gerente deve explicar que:",
         alternativas: [
-            "O Banco Central do Brasil",
-            "O Conselho Monetário Nacional",
-            "A Comissão de Valores Mobiliários",
-            "A B3"
+            "as debêntures são títulos de crédito bancário, e o Banco Central regula e fiscaliza a oferta",
+            "as debêntures são valores mobiliários, mas a fiscalização da oferta cabe à B3, onde serão negociadas",
+            "as debêntures são valores mobiliários, e a CVM regula e fiscaliza a oferta e as informações divulgadas",
+            "as debêntures são valores mobiliários, e a ANBIMA regula a oferta com poder legal de punir a empresa"
         ],
         correta: 2
     },
@@ -224,7 +209,7 @@ const questoes = [
         enunciado: "Entre as aplicações do cliente, é considerada valor mobiliário:",
         alternativas: [
             "A caderneta de poupança",
-            "O CDB",
+            "O Certificado de Depósito Bancário (CDB)",
             "O título do Tesouro Direto",
             "A cota do fundo de investimento"
         ],
@@ -248,30 +233,30 @@ const questoes = [
 
     {
         grupo: "Estrutura do SFN",
-        tema: "Banco Central",
-        nivel: "médio",
-        contexto: "Em uma reportagem sobre política econômica, um jornalista comenta que o Banco Central passou a ter autonomia formal, o que mudou a forma como seus dirigentes são nomeados e permanecem no cargo. Um leitor fica em dúvida sobre como funciona esse mandato.",
-        enunciado: "Sobre a autonomia do Banco Central, é correto afirmar que:",
+        tema: "SFN",
+        nivel: "difícil",
+        contexto: "Paulo participa do fundo de pensão da empresa onde trabalha, tem um plano VGBL contratado em uma seguradora e aplica em um fundo multimercado distribuído pelo seu banco. Ele suspeita de irregularidades nos três produtos e quer levar cada caso à entidade supervisora correta.",
+        enunciado: "Considerando a ordem fundo de pensão, VGBL e fundo multimercado, Paulo deve procurar, respectivamente:",
         alternativas: [
-            "O presidente e os diretores têm mandatos fixos de quatro anos, não coincidentes com o mandato do Presidente da República",
-            "O presidente e os diretores têm mandatos fixos de cinco anos, coincidentes com a legislatura do Congresso Nacional",
-            "O presidente e os diretores têm mandatos de quatro anos, mas podem ser exonerados livremente pelo Presidente da República",
-            "O mandato do presidente do Banco Central coincide com o do Presidente da República, encerrando-se junto com ele"
+            "PREVIC, SUSEP e CVM",
+            "SUSEP, PREVIC e Banco Central",
+            "PREVIC, SUSEP e Banco Central",
+            "SUSEP, SUSEP e CVM"
         ],
         correta: 0
     },
 
     {
         grupo: "Estrutura do SFN",
-        tema: "Banco Central",
-        nivel: "fácil",
-        contexto: "Joana é associada de uma cooperativa de crédito em sua cidade e percebeu cobranças de tarifas que considera abusivas. Antes de registrar uma reclamação formal, ela pesquisa qual órgão é responsável por autorizar o funcionamento e fiscalizar esse tipo de instituição.",
-        enunciado: "O órgão responsável por essa fiscalização é:",
+        tema: "CMN",
+        nivel: "difícil",
+        contexto: "Um cliente acredita que seu banco descumpriu uma norma sobre tarifas e diz ao gerente, certificado CPA, que vai denunciar a instituição ao CMN, que, segundo ele, é quem fiscaliza e pune os bancos. Ele acrescenta que a norma foi aprovada pelo presidente do Banco Central, sozinho.",
+        enunciado: "Para corrigir o entendimento do cliente, o gerente deve explicar que:",
         alternativas: [
-            "A CVM",
-            "O Banco Central do Brasil",
-            "O Conselho Monetário Nacional",
-            "A SUSEP"
+            "o CMN fiscaliza e pune as instituições, mas as normas são definidas individualmente pelo presidente do Banco Central",
+            "o CMN aprova as normas por votação de seus três membros, e a fiscalização e as punições cabem ao Banco Central",
+            "o CMN aprova as normas por votação de seus três membros, mas as punições às instituições cabem à CVM",
+            "o CMN aprova as normas por decisão exclusiva do Ministro da Fazenda, e o Banco Central fiscaliza e pune"
         ],
         correta: 1
     },
@@ -280,30 +265,45 @@ const questoes = [
         grupo: "Estrutura do SFN",
         tema: "Banco Central",
         nivel: "difícil",
-        contexto: "Em uma prova de seleção interna, os candidatos recebem uma lista de atribuições e precisam identificar qual delas não pertence ao Banco Central do Brasil.",
-        enunciado: "São atribuições do Banco Central, EXCETO:",
+        contexto: "Um investidor comenta com o assessor, certificado CPA, que, com a autonomia, o Banco Central deixou de seguir o CMN e que o presidente do BC agora fica no cargo enquanto o Presidente da República quiser.",
+        enunciado: "Para corrigir o investidor, o assessor deve explicar que a autonomia:",
         alternativas: [
-            "Executar a política monetária",
-            "Emitir papel-moeda",
-            "Administrar as reservas internacionais do país",
-            "Fixar a meta de inflação a ser perseguida"
+            "criou mandatos fixos de quatro anos, não coincidentes com o presidencial, e o presidente do BC segue no CMN",
+            "criou mandatos fixos de quatro anos, coincidentes com o presidencial, e o BC passou a fixar a meta de inflação",
+            "criou mandatos fixos, não coincidentes com o presidencial, e o presidente do BC deixou de integrar o CMN",
+            "manteve os mandatos livres, definidos pelo Presidente da República, mas o BC deixou de seguir as metas do CMN"
         ],
-        correta: 3
+        correta: 0
     },
 
     {
         grupo: "Estrutura do SFN",
         tema: "Banco Central",
         nivel: "difícil",
-        contexto: "Após a aprovação da autonomia formal do Banco Central, um analista publica três afirmações sobre a nova situação:\nI. O presidente do Banco Central continua sendo membro do Conselho Monetário Nacional.\nII. O Banco Central passou a definir a meta de inflação, sem participação do CMN.\nIII. Os mandatos da diretoria do Banco Central não coincidem com o do Presidente da República.",
-        enunciado: "Estão corretas as afirmações:",
+        contexto: "Em um treinamento, o instrutor descreve três situações envolvendo um banco de médio porte com ações negociadas em bolsa: primeiro, o banco sofre uma falta momentânea de caixa; depois, surgem indícios de gestão irregular; por fim, rumores sem divulgação de fato relevante derrubam o preço das ações.",
+        enunciado: "As entidades que devem atuar em cada situação, na ordem apresentada, são:",
         alternativas: [
-            "I e II, apenas",
-            "II e III, apenas",
-            "I e III, apenas",
-            "I, II e III"
+            "CMN, Banco Central e B3",
+            "Banco Central, CVM e CVM",
+            "Fundo Garantidor de Créditos, Banco Central e ANBIMA",
+            "Banco Central, Banco Central e CVM"
         ],
-        correta: 2
+        correta: 3
+    },
+
+    {
+        grupo: "Estrutura do SFN",
+        tema: "CNPC e PREVIC",
+        nivel: "difícil",
+        contexto: "O fundo de pensão dos funcionários de uma estatal apresenta déficit grave causado por má gestão. Uma participante diz ao gerente, certificado CPA, que está tranquila, pois a SUSEP vai intervir no fundo e o FGC garante até R$ 250 mil de cada participante.",
+        enunciado: "Para corrigir o entendimento da participante, o gerente deve explicar que:",
+        alternativas: [
+            "a SUSEP pode decretar a intervenção, e os recursos contam com a garantia do FGC até R$ 250 mil",
+            "a PREVIC pode decretar intervenção ou liquidação extrajudicial, e os recursos não têm garantia do FGC",
+            "a PREVIC pode decretar a intervenção, e os recursos contam com a garantia do FGC até R$ 250 mil",
+            "o Banco Central pode decretar a intervenção, e os recursos não têm garantia do FGC"
+        ],
+        correta: 1
     },
 
     
