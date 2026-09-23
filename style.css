@@ -304,5 +304,14 @@ button:disabled {
     border: 1px solid #0f1c3f;
 }
 
+#contexto-area p {
+    white-space: pre-line;
+}
+
+#contexto-area p {
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
 
 

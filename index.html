@@ -78,6 +78,42 @@
     const QUESTOES_PROVA = 50;
     const TEMPO_PROVA = 150 * 60; // 2h30 em segundos
     const META_POR_QUESTAO = TEMPO_PROVA / QUESTOES_PROVA; // 180s = 3:00
+    
+    /* ===== SORTEIO POR GRUPO ===== */
+    function embaralhar(lista) {
+        const copia = [...lista];
+        for (let i = copia.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [copia[i], copia[j]] = [copia[j], copia[i]];
+        }
+        return copia;
+    }
+
+    function sortearPorGrupo() {
+        const grupos = {};
+
+        questoes.forEach((questao) => {
+            if (!grupos[questao.grupo]) {
+                grupos[questao.grupo] = [];
+            }
+            grupos[questao.grupo].push(questao);
+        });
+
+        const filas = embaralhar(Object.values(grupos)).map(embaralhar);
+        const resultado = [];
+
+        while (filas.some((fila) => fila.length > 0)) {
+            filas.forEach((fila) => {
+                if (fila.length > 0) {
+                    resultado.push(fila.shift());
+                }
+            });
+        }
+
+        questoes.splice(0, questoes.length, ...resultado);
+    }
+
+    sortearPorGrupo();
 
     /* ===== NAVEGAÇÃO ===== */
     function iniciarSimulado() {
@@ -125,8 +161,17 @@
         abrirQuiz();
     }
 
-        function irParaInicio() {
+            function irParaInicio() {
         usarCronometro = null;
+
+        indiceAtual = 0;
+        pontuacao = 0;
+        questoesRespondidas = 0;
+        respondeuAtual = false;
+        tempoTotal = 0;
+
+        sortearPorGrupo();
+
         document.getElementById("resultado").style.display = "none";
         document.getElementById("tela-inicial").style.display = "block";
     }
@@ -142,6 +187,7 @@
         respondeuAtual = false;
         tempoTotal = 0;
 
+        sortearPorGrupo();
         abrirQuiz();
     }
 
