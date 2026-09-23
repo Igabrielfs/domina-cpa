@@ -284,5 +284,25 @@ button:disabled {
     font-weight: 600;
 }
 
+/* ===== ALTERNATIVAS ===== */
+#pergunta-area button {
+    display: block;
+    width: 100%;
+}
+
+#pergunta-area br {
+    display: none;
+}
+
+#pergunta-area .proxima-container button {
+    display: inline-block;
+    width: auto;
+    padding: 10px 24px;
+    font-weight: 600;
+    background-color: #0f1c3f;
+    color: #ffffff;
+    border: 1px solid #0f1c3f;
+}
+
 
 
