@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domina | Simulados CPA ANBIMA 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+    <div class="topo-conteudo">
+        <img src="img/logo.png" alt="Domina" class="logo">
+        <span class="slogan">Mais de 500 questões</span>
+    </div>
+</header>
+
+<main class="conteudo">
+
+    <div id="tela-inicial">
+        <div class="grade-simulados">
+            <div class="card card-simulado">
+                <h3>Nova CPA 2026</h3>
+                <button class="btn-principal" onclick="iniciarSimulado()">Questões</button>
+                <button disabled>Simulado</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="escolha-cronometro" class="card escolha" style="display: none;">
+        <p>⏱ Deseja usar cronômetro?</p>
+        <button class="btn-principal" onclick="escolherCronometro(true)">Sim</button>
+        <button onclick="escolherCronometro(false)">Não</button>
+    </div>
+
+    <div id="cronometro" class="cronometro" style="display: none;">
+        <span id="tempo">⏱ 00:00</span>
+        <button id="btnPausar" onclick="alternarPausa()">⏸ Pausar</button>
+    </div>
+
+    <div id="quiz" class="card quiz-container" style="display: none;">
+        <div id="contexto-area"></div>
+        <div id="pergunta-area"></div>
+    </div>
+
+    <div id="resultado" class="card resultado" style="display: none;">
+        <p id="placar"></p>
+        <p id="media-tempo"></p>
+        <div id="grafico-tempo"></div>
+        <div class="resultado-botoes">
+            <button onclick="irParaInicio()">🏠 Página inicial</button>
+            <button class="btn-principal" onclick="voltarQuestoes()">↩ Voltar às questões</button>
+            <button onclick="recomecarDoZero()">🔄 Recomeçar questões</button>
+        </div>
+    </div>
+
+    <div class="finalizar-container">
+        <button id="btnFinalizar" class="secundario" onclick="finalizarSimulado()" style="display: none;">Finalizar</button>
+    </div>
+
+</main>
+
+<script>
+
+    const questoes = [
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        },
+        {
+            contexto: "Fernando, assessor de investimentos em uma corretora, atende Márcia, cliente do segmento varejo alta renda. Ela possui uma carteira composta por títulos públicos prefixados com vencimento em médio prazo. Durante uma reunião de acompanhamento, Fernando apresenta um cenário de aumento das expectativas de inflação e explica como isso pode afetar os preços dos títulos no mercado secundário, principalmente em caso de necessidade de liquidez antecipada.",
+            enunciado: "Analise o impacto do cenário macroeconômico descrito sobre a carteira da cliente, considerando uma eventual venda antecipada dos títulos prefixados.",
+            alternativas: [
+                "A carteira tende a apresentar redução de valor, pois o aumento da inflação eleva as taxas de juros exigidas pelo mercado, reduzindo o preço dos títulos já emitidos",
+                "A carteira permanece estável, pois o retorno contratado é mantido independentemente das condições de mercado",
+                "A carteira tende a reduzir de valor devido à inflação superar diretamente a rentabilidade contratada",
+                "A carteira tende a se valorizar em função do aumento da demanda por ativos de renda fixa"
+            ],
+            correta: 0
+        }
+    ];
+
+        let indiceAtual = 0;
+    let pontuacao = 0;
+    let questoesRespondidas = 0;
+    let respondeuAtual = false;
+
+    let usarCronometro = null;
+    let tempoTotal = 0;
+    let intervalo = null;
+    let pausado = false;
+    const QUESTOES_PROVA = 50;
+    const TEMPO_PROVA = 150 * 60; // 2h30 em segundos
+    const META_POR_QUESTAO = TEMPO_PROVA / QUESTOES_PROVA; // 180s = 3:00
+
+    /* ===== NAVEGAÇÃO ===== */
+    function iniciarSimulado() {
+        if (usarCronometro === null) {
+            document.getElementById("tela-inicial").style.display = "none";
+            document.getElementById("escolha-cronometro").style.display = "block";
+            return;
+        }
+        abrirQuiz();
+    }
+
+    function escolherCronometro(opcao) {
+        usarCronometro = opcao;
+        document.getElementById("escolha-cronometro").style.display = "none";
+        abrirQuiz();
+    }
+
+    function abrirQuiz() {
+        document.getElementById("tela-inicial").style.display = "none";
+        document.getElementById("resultado").style.display = "none";
+        document.getElementById("quiz").style.display = "flex";
+        document.getElementById("btnFinalizar").style.display = "inline-block";
+
+        if (usarCronometro) {
+            pausado = false;
+            document.getElementById("btnPausar").textContent = "⏸ Pausar";
+            document.getElementById("cronometro").style.display = "block";
+            iniciarCronometro();
+        }
+
+        continuarDeOndeParou();
+    }
+
+    function continuarDeOndeParou() {
+        if (respondeuAtual) {
+            indiceAtual++;
+        }
+        if (indiceAtual >= questoes.length) {
+            indiceAtual = 0;
+        }
+        mostrarQuestao(indiceAtual);
+    }
+
+    function voltarQuestoes() {
+        abrirQuiz();
+    }
+
+        function irParaInicio() {
+        usarCronometro = null;
+        document.getElementById("resultado").style.display = "none";
+        document.getElementById("tela-inicial").style.display = "block";
+    }
+
+    function recomecarDoZero() {
+        if (!confirm("Isso vai zerar seu placar. Deseja recomeçar?")) {
+            return;
+        }
+
+        indiceAtual = 0;
+        pontuacao = 0;
+        questoesRespondidas = 0;
+        respondeuAtual = false;
+        tempoTotal = 0;
+
+        abrirQuiz();
+    }
+
+    /* ===== CRONÔMETRO ===== */
+    function iniciarCronometro() {
+        if (intervalo) {
+            return;
+        }
+        atualizarCronometro();
+        intervalo = setInterval(() => {
+            tempoTotal++;
+            atualizarCronometro();
+        }, 1000);
+    }
+
+    function pararCronometro() {
+        clearInterval(intervalo);
+        intervalo = null;
+    }
+
+    function atualizarCronometro() {
+        document.getElementById("tempo").textContent = `⏱ ${formatarTempo(tempoTotal)}`;
+    }
+
+    function alternarPausa() {
+        const botao = document.getElementById("btnPausar");
+        const quiz = document.getElementById("quiz");
+
+        if (pausado) {
+            pausado = false;
+            iniciarCronometro();
+            quiz.style.display = "flex";
+            botao.textContent = "⏸ Pausar";
+        } else {
+            pausado = true;
+            pararCronometro();
+            quiz.style.display = "none";
+            botao.textContent = "▶ Continuar";
+        }
+    }
+
+    function formatarTempo(segundos) {
+        const min = String(Math.floor(segundos / 60)).padStart(2, "0");
+        const seg = String(segundos % 60).padStart(2, "0");
+        return `${min}:${seg}`;
+    }
+
+    /* ===== QUESTÕES ===== */
+    function mostrarQuestao(indice) {
+        const questao = questoes[indice];
+        const contextoDiv = document.getElementById("contexto-area");
+        const perguntaDiv = document.getElementById("pergunta-area");
+
+        respondeuAtual = false;
+
+        if (questao.contexto) {
+            contextoDiv.innerHTML = `<strong>Contexto</strong><p>${questao.contexto}</p>`;
+            contextoDiv.style.display = "block";
+        } else {
+            contextoDiv.innerHTML = "";
+            contextoDiv.style.display = "none";
+        }
+
+        let html = `<p>${questao.enunciado}</p>`;
+
+        questao.alternativas.forEach((alternativa, i) => {
+            html += `<button id="btn${i}" onclick="verificarResposta(${i})">${alternativa}</button><br>`;
+        });
+
+        perguntaDiv.innerHTML = html;
+    }
+
+    function verificarResposta(indiceEscolhido) {
+        const questao = questoes[indiceAtual];
+        const botaoClicado = document.getElementById(`btn${indiceEscolhido}`);
+        const botaoCorreto = document.getElementById(`btn${questao.correta}`);
+
+        questoesRespondidas++;
+        respondeuAtual = true;
+
+        if (indiceEscolhido === questao.correta) {
+            botaoClicado.style.backgroundColor = "lightgreen";
+            pontuacao++;
+        } else {
+            botaoClicado.style.backgroundColor = "salmon";
+            botaoCorreto.style.backgroundColor = "lightgreen";
+        }
+
+        questao.alternativas.forEach((alternativa, i) => {
+            document.getElementById(`btn${i}`).disabled = true;
+        });
+
+        const perguntaDiv = document.getElementById("pergunta-area");
+        perguntaDiv.innerHTML += `<div class="proxima-container"><button onclick="proximaQuestao()">Próxima</button></div>`;
+    }
+
+    function proximaQuestao() {
+        indiceAtual++;
+
+        if (indiceAtual < questoes.length) {
+            mostrarQuestao(indiceAtual);
+        } else {
+            finalizarSimulado();
+        }
+    }
+
+        function finalizarSimulado() {
+        pararCronometro();
+
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("cronometro").style.display = "none";
+        document.getElementById("btnFinalizar").style.display = "none";
+
+        document.getElementById("placar").textContent =
+            `Você acertou ${pontuacao} de ${questoesRespondidas} questões.`;
+
+        const mediaDiv = document.getElementById("media-tempo");
+        const graficoDiv = document.getElementById("grafico-tempo");
+
+        if (usarCronometro && questoesRespondidas > 0) {
+            const media = Math.round(tempoTotal / questoesRespondidas);
+            mediaDiv.textContent =
+                `Tempo total: ${formatarTempo(tempoTotal)} | Sua média: ${formatarTempo(media)} | Meta: ${formatarTempo(META_POR_QUESTAO)}`;
+            mediaDiv.style.display = "block";
+            desenharGrafico(media);
+            graficoDiv.style.display = "block";
+        } else {
+            mediaDiv.style.display = "none";
+            graficoDiv.style.display = "none";
+        }
+
+        document.getElementById("resultado").style.display = "block";
+    }
+
+        function desenharGrafico(media) {
+        const maximo = META_POR_QUESTAO * 2;
+        const posicao = Math.min(media / maximo, 1) * 100;
+        const previsao = media * QUESTOES_PROVA;
+
+        let status;
+        let classe;
+
+        if (media <= META_POR_QUESTAO) {
+            classe = "status-ok";
+            status = `Dentro do tempo! Nesse ritmo, você terminaria a prova em ${formatarHoras(previsao)}.`;
+        } else if (media <= META_POR_QUESTAO * 1.25) {
+            classe = "status-atencao";
+            status = `Atenção: um pouco acima da meta. Nesse ritmo, a prova levaria ${formatarHoras(previsao)}.`;
+        } else {
+            classe = "status-fora";
+            status = `Acima do tempo. Nesse ritmo, a prova levaria ${formatarHoras(previsao)}, mais que as ${formatarHoras(TEMPO_PROVA)} disponíveis.`;
+        }
+
+        document.getElementById("grafico-tempo").innerHTML = `
+            <div class="barra">
+                <div class="zona zona-verde" style="width: 50%"></div>
+                <div class="zona zona-amarela" style="width: 12.5%"></div>
+                <div class="zona zona-vermelha" style="width: 37.5%"></div>
+                <div class="marcador" style="left: ${posicao}%">
+                    <span>Você</span>
+                </div>
+            </div>
+            <div class="legenda">
+                <span><i class="zona-verde"></i> Até ${formatarTempo(META_POR_QUESTAO)}</span>
+                <span><i class="zona-amarela"></i> Atenção</span>
+                <span><i class="zona-vermelha"></i> Acima do tempo</span>
+            </div>
+            <p class="${classe}">${status}</p>
+        `;
+    }
+
+    function formatarHoras(segundos) {
+        const h = Math.floor(segundos / 3600);
+        const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, "0");
+        return `${h}h${m}`;
+    }
+
+</script>
+</body>
+</html>
