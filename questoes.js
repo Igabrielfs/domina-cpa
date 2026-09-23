@@ -308,74 +308,19 @@ const questoes = [
 
     
 
-    // ===================== GRUPO: INSTITUIÇÕES FINANCEIRAS (15) =====================
-
-    {
-        grupo: "Instituições financeiras",
-        tema: "Bancos",
-        contexto: "Em uma aula sobre intermediação financeira, a professora apresenta as diferentes instituições que compõem o SFN e pede aos alunos que identifiquem o que torna os bancos comerciais únicos em relação às demais.",
-        enunciado: "A característica que diferencia os bancos comerciais das demais instituições financeiras é:",
-        alternativas: [
-            "A emissão de papel-moeda para atender à demanda da população",
-            "A captação de recursos exclusivamente por meio da caderneta de poupança",
-            "A captação de depósitos à vista, o que permite a criação de moeda escritural",
-            "A atuação exclusiva em operações de mercado de capitais, como emissão de ações"
-        ],
-        correta: 2
-    },
-
-    {
-        grupo: "Instituições financeiras",
-        tema: "Bancos",
-        contexto: "Ao pesquisar sobre a instituição onde pretende abrir conta, Renata descobre que ela é classificada pelo Banco Central como banco múltiplo. Curiosa, ela quer entender o que essa classificação significa.",
-        enunciado: "Um banco múltiplo é uma instituição que:",
-        alternativas: [
-            "Opera com uma única carteira, podendo escolher entre comercial, de investimento ou de crédito imobiliário",
-            "Opera com pelo menos duas carteiras, sendo uma delas obrigatoriamente comercial ou de investimento",
-            "É obrigatoriamente controlada pelo governo e atua em programas de desenvolvimento regional",
-            "Atua exclusivamente com crédito imobiliário e financiamento de veículos"
-        ],
-        correta: 1
-    },
-
-    {
-        grupo: "Instituições financeiras",
-        tema: "Bancos",
-        contexto: "A diretoria de uma empresa de médio porte planeja abrir o capital na bolsa nos próximos anos e, até lá, precisa de financiamento de longo prazo para ampliar sua fábrica. O diretor financeiro busca uma instituição especializada nesse tipo de operação.",
-        enunciado: "A instituição mais adequada para atender a essas necessidades é:",
-        alternativas: [
-            "A cooperativa de crédito",
-            "A sociedade de crédito imobiliário",
-            "O banco comercial",
-            "O banco de investimento"
-        ],
-        correta: 3
-    },
+    /// ===================== GRUPO: INSTITUIÇÕES FINANCEIRAS (15) =====================
 
     {
         grupo: "Instituições financeiras",
         tema: "Cooperativas de crédito",
-        contexto: "Juliana está decidindo entre abrir conta em um banco tradicional ou em uma cooperativa de crédito da sua cidade. Antes de escolher, ela quer entender a principal diferença na natureza das duas instituições.",
-        enunciado: "Em relação ao banco tradicional, a cooperativa de crédito se diferencia porque:",
+        nivel: "fácil",
+        contexto: "Um grupo de pequenos agricultores de uma mesma região quer criar uma instituição financeira própria. Eles desejam ser, ao mesmo tempo, donos e clientes do negócio, decidir os rumos em assembleia e dividir entre si os resultados positivos do ano.",
+        enunciado: "O tipo de instituição do SFN que atende a esse modelo é:",
         alternativas: [
-            "Não é autorizada nem fiscalizada pelo Banco Central, seguindo apenas as regras definidas em assembleia",
-            "Pode apenas captar recursos dos associados, sendo proibida de conceder empréstimos",
-            "É constituída como sociedade anônima, com ações negociadas na bolsa de valores",
-            "Tem como associados pessoas que são, ao mesmo tempo, donas e usuárias da instituição, sem finalidade de lucro"
-        ],
-        correta: 3
-    },
-
-    {
-        grupo: "Instituições financeiras",
-        tema: "Cooperativas de crédito",
-        contexto: "Ao acessar o site da cooperativa onde tem conta, Laura percebe que ela faz parte de um sistema que inclui cooperativas centrais e uma confederação. Ela quer entender como essa estrutura se organiza.",
-        enunciado: "A organização correta dos sistemas cooperativos de crédito é:",
-        alternativas: [
-            "As singulares são controladas pelas confederações, que captam recursos diretamente do público",
-            "As centrais atendem diretamente os associados, e as singulares fiscalizam as centrais",
-            "As singulares atendem os associados, as centrais reúnem as singulares, e as confederações reúnem as centrais",
-            "Todas as cooperativas respondem diretamente ao CMN, sem níveis intermediários de organização"
+            "Banco de investimento",
+            "Agência de fomento",
+            "Cooperativa de crédito",
+            "Sociedade de crédito, financiamento e investimento"
         ],
         correta: 2
     },
@@ -383,11 +328,12 @@ const questoes = [
     {
         grupo: "Instituições financeiras",
         tema: "Caixa e instituições de pagamento",
+        nivel: "fácil",
         contexto: "Em um trabalho sobre bancos públicos, um estudante precisa diferenciar a Caixa Econômica Federal de outras instituições financeiras ligadas ao governo federal.",
         enunciado: "A descrição correta da Caixa Econômica Federal é:",
         alternativas: [
             "Sociedade de economia mista, com ações negociadas na bolsa e controle da União",
-            "Empresa pública que opera o FGTS e atua como principal agente dos programas habitacionais do governo",
+            "Empresa pública que opera o FGTS e lidera os programas habitacionais do governo",
             "Autarquia federal responsável por fiscalizar os bancos públicos e seus programas sociais",
             "Banco de desenvolvimento voltado ao financiamento de grandes projetos de infraestrutura"
         ],
@@ -396,50 +342,24 @@ const questoes = [
 
     {
         grupo: "Instituições financeiras",
-        tema: "Caixa e instituições de pagamento",
-        contexto: "Lucas mantém o salário em uma conta de pagamento de um aplicativo digital, autorizado pelo Banco Central como instituição de pagamento. Um amigo pergunta se o dinheiro dele estaria protegido caso a empresa quebrasse.",
-        enunciado: "Sobre os recursos mantidos por Lucas, é correto afirmar que:",
+        tema: "Fintechs",
+        nivel: "fácil",
+        contexto: "Uma startup quer conceder empréstimos pela internet usando apenas o capital dos sócios, sem captar recursos do público. Os fundadores pesquisam qual autorização devem pedir ao Banco Central.",
+        enunciado: "O modelo de instituição adequado para essa operação é:",
         alternativas: [
-            "Têm cobertura do FGC até R$ 250 mil, assim como uma conta corrente bancária",
-            "Podem ser emprestados livremente pela instituição a outros clientes",
-            "São regulados pela CVM, por serem considerados um investimento",
-            "Não têm cobertura do FGC, mas ficam separados do patrimônio da instituição"
+            "Sociedade de Empréstimo entre Pessoas (SEP)",
+            "Instituição de pagamento emissora de moeda eletrônica",
+            "Banco comercial",
+            "Sociedade de Crédito Direto (SCD)"
         ],
         correta: 3
     },
 
     {
         grupo: "Instituições financeiras",
-        tema: "Fintechs",
-        contexto: "Uma startup quer atuar no mercado de crédito concedendo empréstimos pela internet, usando apenas o próprio capital, sem captar recursos do público. Os sócios pesquisam qual tipo de autorização devem solicitar ao Banco Central.",
-        enunciado: "O modelo de instituição adequado para essa operação é:",
-        alternativas: [
-            "Sociedade de Empréstimo entre Pessoas (SEP)",
-            "Sociedade de Crédito Direto (SCD)",
-            "Instituição de pagamento emissora de moeda eletrônica",
-            "Banco comercial"
-        ],
-        correta: 1
-    },
-
-    {
-        grupo: "Instituições financeiras",
-        tema: "Financiamento e leasing",
-        contexto: "O dono de uma transportadora precisa de um novo caminhão e está comparando duas propostas: um financiamento e um contrato de leasing. O gerente explica que a diferença principal está em quem é o dono do veículo durante o contrato.",
-        enunciado: "Sobre o leasing, é correto afirmar que:",
-        alternativas: [
-            "O bem passa a ser do cliente desde a assinatura, ficando alienado à instituição até a quitação",
-            "O cliente é obrigado a comprar o bem ao final do contrato, pelo valor definido na assinatura",
-            "O bem pertence à arrendadora durante o contrato, e ao final o cliente pode comprá-lo, devolvê-lo ou renovar",
-            "É o mesmo produto que o financiamento, mudando apenas o nome comercial e a taxa de juros"
-        ],
-        correta: 2
-    },
-
-    {
-        grupo: "Instituições financeiras",
         tema: "Fomento e microcrédito",
-        contexto: "Dona Sônia vende salgados em uma feira e quer comprar um forno maior para aumentar a produção. Ela não tem conta em banco, comprovante de renda formal nem bens para dar em garantia. Um agente de crédito visita a feira e apresenta uma linha específica para esse perfil.",
+        nivel: "fácil",
+        contexto: "Dona Sônia vende salgados em uma feira e quer comprar um forno maior. Ela não tem comprovante de renda formal nem bens para dar em garantia. Um agente de crédito visita a feira, analisa o negócio pessoalmente e apresenta uma linha específica para esse perfil.",
         enunciado: "A linha de crédito apresentada a Dona Sônia é característica do:",
         alternativas: [
             "Microcrédito produtivo orientado",
@@ -452,42 +372,90 @@ const questoes = [
 
     {
         grupo: "Instituições financeiras",
-        tema: "Fomento e microcrédito",
-        contexto: "Um estudante pesquisa sobre instituições que financiam o desenvolvimento econômico de estados e regiões, e encontra referências às agências de fomento estaduais.",
-        enunciado: "Sobre as agências de fomento, é correto afirmar que:",
+        tema: "Bancos",
+        nivel: "médio",
+        contexto: "A diretoria de uma indústria de médio porte planeja abrir o capital na bolsa em alguns anos e, até lá, precisa de recursos de longo prazo para ampliar a fábrica. O diretor financeiro pede ao gerente, certificado CPA, uma indicação de instituição especializada nessas operações.",
+        enunciado: "O gerente deve indicar:",
         alternativas: [
-            "Captam depósitos à vista do público, como os bancos comerciais",
-            "Financiam projetos de desenvolvimento em seu estado, sem captar recursos do público",
-            "São fiscalizadas pela CVM, por atuarem no mercado de capitais",
-            "Atuam exclusivamente na concessão de crédito imobiliário para pessoas de baixa renda"
+            "o banco comercial, que capta depósitos à vista e, por isso, é especializado em financiamentos longos e ofertas de ações",
+            "o banco de investimento, que capta recursos a prazo, financia projetos de médio e longo prazo e estrutura ofertas de ações",
+            "o banco de investimento, que capta depósitos à vista e usa esses recursos para financiar projetos de longo prazo",
+            "a sociedade de crédito imobiliário, especializada em financiar a construção e a ampliação de imóveis industriais"
         ],
         correta: 1
     },
 
     {
         grupo: "Instituições financeiras",
-        tema: "Crédito imobiliário",
-        contexto: "Ao pesquisar sobre financiamento para comprar o primeiro apartamento, Camila lê que o crédito habitacional no Brasil tem duas grandes fontes de recursos, direcionadas por lei para esse tipo de operação.",
-        enunciado: "As principais fontes de recursos do crédito habitacional no Brasil são:",
+        tema: "Bancos",
+        nivel: "médio",
+        contexto: "Rodrigo percebe que o mesmo banco onde tem conta corrente também oferece financiamento imobiliário, leasing de veículos e fundos de investimento. Ele pergunta ao gerente, certificado CPA, como uma única instituição pode atuar em tantas áreas.",
+        enunciado: "O gerente deve explicar que o banco é:",
         alternativas: [
-            "Depósitos à vista e reservas internacionais",
-            "Recursos do Tesouro Nacional e emissão de ações",
-            "Caderneta de poupança e FGTS",
-            "Títulos de capitalização e previdência privada"
+            "comercial, autorizado a operar qualquer carteira desde que mantenha a captação de depósitos à vista",
+            "múltiplo, operando ao menos duas carteiras, sendo uma obrigatoriamente de crédito imobiliário",
+            "um conjunto de empresas independentes, cada uma autorizada pela CVM a oferecer um produto",
+            "múltiplo, operando ao menos duas carteiras, sendo uma obrigatoriamente comercial ou de investimento"
+        ],
+        correta: 3
+    },
+
+    {
+        grupo: "Instituições financeiras",
+        tema: "Cooperativas de crédito",
+        nivel: "médio",
+        contexto: "Na primeira assembleia da cooperativa, Marcelo, que tem muitas cotas-parte e movimenta pouco sua conta, pergunta à gerente, certificada CPA, como serão divididas as sobras do ano e quanto vale o voto dele.",
+        enunciado: "A gerente deve explicar que:",
+        alternativas: [
+            "as sobras são distribuídas conforme as cotas-parte, e o peso do voto é proporcional ao capital investido",
+            "as sobras são distribuídas conforme as operações de cada associado, e cada associado tem direito a um voto",
+            "as sobras são distribuídas conforme as operações, mas o peso do voto é proporcional às cotas-parte",
+            "as sobras são divididas igualmente entre todos, e o voto é exclusivo dos membros do conselho"
+        ],
+        correta: 1
+    },
+
+    {
+        grupo: "Instituições financeiras",
+        tema: "Caixa e instituições de pagamento",
+        nivel: "médio",
+        contexto: "Lucas recebe o salário em uma conta de pagamento de um aplicativo autorizado pelo Banco Central como instituição de pagamento. Preocupado com notícias sobre a empresa, ele pergunta a uma profissional certificada CPA se o dinheiro estaria protegido em caso de quebra.",
+        enunciado: "A profissional deve explicar que os recursos:",
+        alternativas: [
+            "contam com a garantia do FGC até R$ 250 mil, assim como os depósitos em conta corrente bancária",
+            "não contam com o FGC e podem ser usados pela instituição para pagar suas dívidas em caso de quebra",
+            "não contam com o FGC, mas ficam em patrimônio separado, depositados no Banco Central ou em títulos públicos",
+            "contam com a garantia do FGCoop, por se tratar de uma instituição de pagamento autorizada pelo Banco Central"
         ],
         correta: 2
     },
 
     {
         grupo: "Instituições financeiras",
-        tema: "Crédito imobiliário",
-        contexto: "Rodrigo quer financiar um imóvel de alto padrão, cujo valor ultrapassa o limite máximo permitido pelo Sistema Financeiro da Habitação. O gerente explica que, nesse caso, o financiamento seguirá outro sistema, com regras diferentes.",
-        enunciado: "O financiamento de Rodrigo será feito pelo:",
+        tema: "Financiamento e leasing",
+        nivel: "médio",
+        contexto: "O dono de uma transportadora precisa de um novo caminhão e compara duas propostas: um financiamento e um contrato de leasing. Ele pede ao gerente, certificado CPA, que explique a diferença entre as duas quanto à propriedade do veículo.",
+        enunciado: "O gerente deve explicar que:",
         alternativas: [
-            "SFH, com taxa de juros limitada e possibilidade de usar o FGTS",
-            "SFI, com taxas negociadas livremente e sem possibilidade de usar o FGTS",
-            "Programa habitacional do governo, com subsídio na entrada",
-            "Consórcio imobiliário, obrigatório para imóveis acima do limite"
+            "no financiamento, o bem é do cliente e fica alienado; no leasing, pertence à arrendadora, com opção de compra ao final",
+            "no financiamento, o bem pertence à instituição até a quitação; no leasing, é do cliente desde a assinatura do contrato",
+            "no financiamento, o bem é do cliente e fica alienado; no leasing, também é do cliente, mudando só a taxa",
+            "no financiamento, o bem é do cliente sem garantia; no leasing, é da arrendadora, com compra obrigatória ao final"
+        ],
+        correta: 0
+    },
+
+    {
+        grupo: "Instituições financeiras",
+        tema: "Fomento e microcrédito",
+        nivel: "médio",
+        contexto: "O prefeito de uma cidade do interior procura um consultor certificado CPA para saber se a agência de fomento do estado poderia abrir contas correntes para receber a folha de pagamento dos servidores municipais.",
+        enunciado: "O consultor deve explicar que:",
+        alternativas: [
+            "sim, pois as agências de fomento captam depósitos à vista, assim como os bancos comerciais",
+            "não, pois as agências de fomento não captam recursos do público e financiam projetos no estado",
+            "não, pois as agências de fomento são supervisionadas pela CVM e operam só no mercado de capitais",
+            "sim, desde que os recursos das contas sejam usados exclusivamente em crédito imobiliário"
         ],
         correta: 1
     },
@@ -495,13 +463,29 @@ const questoes = [
     {
         grupo: "Instituições financeiras",
         tema: "Consórcio",
-        contexto: "Aline quer trocar de carro, mas não tem pressa em receber o veículo. O vendedor de uma administradora oferece um consórcio como alternativa ao financiamento, e ela quer entender as principais diferenças entre os dois.",
-        enunciado: "Em comparação com o financiamento, é correto afirmar que, no consórcio:",
+        nivel: "médio",
+        contexto: "Aline quer trocar de carro, mas não tem pressa em receber o veículo. Ela pede a um profissional certificado CPA que explique como funciona o consórcio oferecido pela administradora.",
+        enunciado: "O profissional deve explicar que, no consórcio:",
         alternativas: [
-            "O cliente recebe o bem imediatamente e paga juros menores",
-            "A supervisão é feita pela SUSEP, pois o produto funciona como um seguro",
-            "A contemplação ocorre exclusivamente pela ordem de entrada no grupo",
-            "Não há cobrança de juros, mas há taxa de administração, e o bem só é adquirido após a contemplação"
+            "não há juros, mas há taxa de administração; a contemplação é por sorteio ou lance; e o Banco Central supervisiona",
+            "não há juros nem taxas, pois o participante paga apenas o valor do bem dividido pelo número de meses do grupo",
+            "há juros menores que no financiamento, e a contemplação segue a ordem de adesão de cada participante ao grupo",
+            "não há juros, mas há taxa de administração; a contemplação é só por lance; e a SUSEP supervisiona"
+        ],
+        correta: 0
+    },
+
+    {
+        grupo: "Instituições financeiras",
+        tema: "Bancos",
+        nivel: "difícil",
+        contexto: "Felipe, diretor financeiro de uma empresa de logística, teve um ano de resultados recordes, com melhora na liquidez e redução do endividamento. Ao cotar uma nova linha de capital de giro, porém, recebe uma taxa bem mais alta do que a de uma linha idêntica contratada no ano anterior. A gerente, certificada CPA, confirma que o spread de risco da empresa até diminuiu, mas que a taxa básica de juros subiu bastante no período.",
+        enunciado: "A explicação técnica correta para o encarecimento da linha é:",
+        alternativas: [
+            "a taxa final depende só do risco de crédito do cliente; se ela subiu, o banco passou a considerar a empresa mais arriscada",
+            "a taxa final de cada linha é fixada pelo CMN, e a alta decorre da nova tabela de juros divulgada pelo conselho",
+            "a taxa final repassa integralmente a inflação passada, e a alta decorre da correção obrigatória dos últimos doze meses",
+            "a taxa final soma o custo de captação e o spread; a alta dos juros básicos elevou o custo de captação mais do que o spread caiu"
         ],
         correta: 3
     },
@@ -509,155 +493,91 @@ const questoes = [
     {
         grupo: "Instituições financeiras",
         tema: "Consórcio",
-        contexto: "Após entrar em um grupo de consórcio imobiliário, Fábio quer entender como pode ser contemplado antes do fim do prazo e qual órgão fiscaliza a administradora responsável pelo grupo.",
-        enunciado: "Sobre o funcionamento do consórcio, é correto afirmar que:",
+        nivel: "difícil",
+        contexto: "Tiago quer um carro de R$ 60.000,00 e compara duas opções. No consórcio, o plano tem 60 meses e taxa de administração total de 15% sobre o valor do bem. No financiamento, o carro é entregue na hora, com 60 parcelas fixas de R$ 1.450,00. Desconsidere fundo de reserva, seguros e reajustes.",
+        enunciado: "Comparando apenas os valores informados, o profissional CPA deve explicar que:",
         alternativas: [
-            "A contemplação ocorre por sorteio ou por lance, e as administradoras são supervisionadas pelo Banco Central",
-            "A contemplação ocorre apenas por lance, e as administradoras são supervisionadas pela CVM",
-            "A contemplação ocorre apenas por sorteio, e as administradoras são supervisionadas pela SUSEP",
-            "A contemplação ocorre pela ordem de pagamento das parcelas, sem supervisão de órgão público"
+            "o consórcio custará R$ 60.000,00, pois não tem juros, cerca de R$ 27.000,00 a menos, com o carro na adesão",
+            "o consórcio custará R$ 69.000,00, cerca de R$ 18.000,00 a menos, e o carro será entregue já na adesão",
+            "o consórcio custará R$ 69.000,00, cerca de R$ 18.000,00 a menos, mas o carro só virá com a contemplação",
+            "o financiamento custará R$ 87.000,00 e será mais vantajoso, pois seus juros são menores que a taxa de administração"
+        ],
+        correta: 2
+    },
+
+    {
+        grupo: "Instituições financeiras",
+        tema: "Crédito imobiliário",
+        nivel: "difícil",
+        contexto: "Renato quer financiar um imóvel de alto padrão cujo valor ultrapassa o teto do Sistema Financeiro da Habitação. Ele pretende usar o saldo do FGTS na entrada e acredita que, por isso, terá acesso às taxas limitadas do SFH. O gerente, certificado CPA, precisa corrigir esse entendimento.",
+        enunciado: "O gerente deve explicar que o financiamento:",
+        alternativas: [
+            "seguirá o SFI, com taxa livremente negociada e sem uso do FGTS, permitido apenas para imóveis enquadrados no SFH",
+            "seguirá o SFH, pois o uso do FGTS enquadra automaticamente o imóvel no sistema, independentemente do valor",
+            "seguirá o SFI, com taxa limitada por lei e possibilidade de usar o FGTS para amortizar o saldo devedor",
+            "seguirá o SFH com taxa livremente negociada, mas o FGTS não poderá ser usado por causa do valor elevado do imóvel"
         ],
         correta: 0
+    },
+
+    {
+        grupo: "Instituições financeiras",
+        tema: "Bancos",
+        nivel: "difícil",
+        contexto: "Em um treinamento, o instrutor explica a criação de moeda escritural: um cliente deposita R$ 1.000,00 à vista, o banco recolhe 20% como depósito compulsório e empresta o restante, que é depositado em outro banco, e assim sucessivamente.",
+        enunciado: "Considerando que os bancos emprestam todo o valor livre, o total máximo de depósitos gerado no sistema a partir do depósito inicial é de:",
+        alternativas: [
+            "R$ 800,00, pois o banco só pode emprestar o valor que sobra após o recolhimento do compulsório",
+            "R$ 4.000,00, pois o efeito multiplicador se aplica apenas aos valores emprestados, sem o depósito inicial",
+            "R$ 5.000,00, pois cada empréstimo volta como novo depósito, até o limite dado por 1 dividido por 0,20",
+            "R$ 1.200,00, pois o valor recolhido como compulsório é somado ao depósito inicial do cliente"
+        ],
+        correta: 2
     },
 
     // ===================== GRUPO: MERCADO DE CAPITAIS (11) =====================
 
     {
         grupo: "Mercado de capitais",
-        tema: "B3",
-        contexto: "Gustavo abriu conta em uma corretora e comprou suas primeiras ações pelo home broker. Curioso, ele quer entender qual é o papel da B3 nessa operação, já que quem executou a ordem foi a corretora.",
-        enunciado: "Na operação de Gustavo, a B3 é responsável por:",
+        tema: "ANBIMA",
+        nivel: "fácil",
+        contexto: "No primeiro dia de estágio em uma distribuidora, Lívia ouve várias vezes que a instituição precisa seguir os códigos da ANBIMA. Ela pergunta ao supervisor que tipo de entidade é essa.",
+        enunciado: "A ANBIMA é uma:",
         alternativas: [
-            "Atender diretamente o investidor e executar suas ordens de compra, sem necessidade de corretora",
-            "Regular e fiscalizar o mercado de ações, aplicando punições às companhias abertas",
-            "Administrar o ambiente de negociação, compensar e liquidar as operações e custodiar os ativos",
-            "Garantir o valor investido nas ações contra perdas causadas por queda nos preços"
-        ],
-        correta: 2
-    },
-
-    {
-        grupo: "Mercado de capitais",
-        tema: "B3",
-        contexto: "Em uma palestra para novos investidores, o palestrante explica que a B3 é uma empresa privada, com ações negociadas na própria bolsa. Um participante pergunta se, por ser privada, ela fica livre de qualquer fiscalização.",
-        enunciado: "Sobre a supervisão da B3, é correto afirmar que ela é supervisionada:",
-        alternativas: [
-            "Apenas pela ANBIMA, por ser uma entidade privada do mercado",
-            "Pela CVM e pelo Banco Central, conforme o tipo de atividade exercida",
-            "Pela SUSEP, por oferecer mecanismos de garantia aos investidores",
-            "Por nenhum órgão, por ser uma empresa de capital aberto"
+            "Autarquia federal vinculada ao Ministério da Fazenda",
+            "Associação privada que atua na autorregulação do mercado",
+            "Entidade normativa que integra o Conselho Monetário Nacional",
+            "Diretoria do Banco Central dedicada aos fundos"
         ],
         correta: 1
     },
 
     {
         grupo: "Mercado de capitais",
-        tema: "Corretoras e distribuidoras",
-        contexto: "Ao escolher onde abrir conta para investir, Mariana encontra uma corretora de títulos e valores mobiliários e uma distribuidora de títulos e valores mobiliários. Ela quer saber se existe alguma diferença relevante entre as duas.",
-        enunciado: "Sobre corretoras e distribuidoras, é correto afirmar que:",
-        alternativas: [
-            "Apenas as corretoras podem operar na bolsa, e as distribuidoras atuam somente no mercado de balcão",
-            "As distribuidoras são supervisionadas pela SUSEP, e as corretoras, pela CVM",
-            "As corretoras podem captar depósitos à vista, e as distribuidoras não",
-            "Atualmente, ambas podem operar diretamente na bolsa, e as diferenças práticas entre elas são pequenas"
-        ],
-        correta: 3
-    },
-
-    {
-        grupo: "Mercado de capitais",
-        tema: "ANBIMA",
-        contexto: "Em uma reunião de equipe, o gerente comenta que a instituição precisa se adequar a uma nova regra de um código da ANBIMA. Um funcionário recém-contratado pergunta que tipo de entidade é a ANBIMA e de onde vem sua autoridade.",
-        enunciado: "A descrição correta da ANBIMA é:",
-        alternativas: [
-            "Órgão público vinculado ao Ministério da Fazenda, com poder de lei para punir qualquer instituição financeira",
-            "Autarquia ligada ao Banco Central, responsável por fiscalizar bancos e corretoras",
-            "Associação privada que atua na autorregulação, criando códigos que as instituições associadas ou aderentes devem seguir",
-            "Entidade que substituiu a CVM na regulação e fiscalização dos fundos de investimento"
-        ],
-        correta: 2
-    },
-
-    {
-        grupo: "Mercado de capitais",
-        tema: "ANBIMA",
-        contexto: "Carlos foi promovido a gerente de investimentos em um banco associado à ANBIMA. Antes de começar a recomendar produtos aos clientes, ele é informado de que precisa obter uma certificação.",
-        enunciado: "A exigência da certificação para Carlos existe porque:",
-        alternativas: [
-            "Uma lei federal exige certificação para qualquer funcionário de instituição financeira",
-            "A certificação é emitida pelo Banco Central e autoriza o profissional a gerir fundos",
-            "A certificação substitui a necessidade de análise do perfil de investimento dos clientes",
-            "As regras da ANBIMA exigem que profissionais que distribuem produtos de investimento comprovem sua qualificação"
-        ],
-        correta: 3
-    },
-
-    {
-        grupo: "Mercado de capitais",
         tema: "Apimec, Planejar e Ancord",
+        nivel: "fácil",
         contexto: "Em uma feira de carreiras do mercado financeiro, três entidades apresentam suas certificações profissionais: Apimec, Planejar e Ancord. Um estudante tenta associar cada entidade ao profissional que ela certifica.",
         enunciado: "A associação correta é:",
         alternativas: [
             "Apimec: planejadores financeiros; Planejar: assessores de investimento; Ancord: analistas de valores mobiliários",
             "Apimec: assessores de investimento; Planejar: analistas de valores mobiliários; Ancord: planejadores financeiros",
             "Apimec: analistas de valores mobiliários; Planejar: planejadores financeiros; Ancord: assessores de investimento",
-            "As três entidades emitem a mesma certificação, com nomes diferentes conforme a região do país"
+            "Apimec: analistas de valores mobiliários; Planejar: assessores de investimento; Ancord: planejadores financeiros"
         ],
         correta: 2
-    },
-
-    {
-        grupo: "Mercado de capitais",
-        tema: "B3",
-        contexto: "Uma empresa de tecnologia realiza sua oferta pública inicial de ações (IPO). Meses depois, os investidores que compraram na oferta passam a negociar essas ações entre si na bolsa.",
-        enunciado: "Sobre essas duas etapas, é correto afirmar que:",
-        alternativas: [
-            "O IPO ocorre no mercado primário, com os recursos indo para a empresa, e as negociações posteriores ocorrem no mercado secundário",
-            "O IPO ocorre no mercado secundário, e as negociações posteriores ocorrem no mercado primário",
-            "Nas negociações posteriores, os recursos também vão para a empresa emissora",
-            "As duas etapas ocorrem no mercado primário, pois envolvem as mesmas ações"
-        ],
-        correta: 0
-    },
-
-    {
-        grupo: "Mercado de capitais",
-        tema: "B3",
-        contexto: "Ao montar sua carteira de ações, Rodrigo percebe que algumas empresas têm ações com códigos terminados em 3 e outras em 4, que correspondem a ações ordinárias e preferenciais.",
-        enunciado: "A diferença entre ações ordinárias (ON) e preferenciais (PN) é que:",
-        alternativas: [
-            "As ON têm prioridade no recebimento de dividendos, e as PN dão direito a voto",
-            "As ON dão direito a voto, e as PN têm prioridade no recebimento de dividendos, geralmente sem direito a voto",
-            "As ON são negociadas apenas no mercado de balcão, e as PN apenas na bolsa",
-            "As ON e as PN têm exatamente os mesmos direitos, mudando apenas o código de negociação"
-        ],
-        correta: 1
     },
 
     {
         grupo: "Mercado de capitais",
         tema: "Corretoras e distribuidoras",
+        nivel: "fácil",
         contexto: "Em uma oferta pública de ações, o banco coordenador se compromete a comprar todas as ações que não forem vendidas aos investidores, garantindo à empresa a captação total prevista.",
         enunciado: "Esse tipo de compromisso é conhecido como:",
         alternativas: [
             "Melhores esforços",
             "Standby",
-            "Garantia firme",
-            "Book building"
-        ],
-        correta: 2
-    },
-
-    {
-        grupo: "Mercado de capitais",
-        tema: "B3",
-        contexto: "Uma empresa anuncia que cada ação será dividida em duas. Antes do anúncio, Camila tinha 100 ações cotadas a R$ 40,00.",
-        enunciado: "Após o desdobramento, a posição de Camila passa a ser de:",
-        alternativas: [
-            "100 ações a R$ 80,00, totalizando R$ 8.000,00",
-            "200 ações a R$ 40,00, totalizando R$ 8.000,00",
-            "50 ações a R$ 80,00, totalizando R$ 4.000,00",
-            "200 ações a R$ 20,00, mantendo o total de R$ 4.000,00"
+            "Book building",
+            "Garantia firme"
         ],
         correta: 3
     },
@@ -665,15 +585,121 @@ const questoes = [
     {
         grupo: "Mercado de capitais",
         tema: "B3",
-        contexto: "O controlador de uma companhia aberta vende sua participação para um novo grupo. Os acionistas minoritários com ações ordinárias querem saber se têm algum direito nessa operação.",
-        enunciado: "Pela Lei das S.A., o tag along garante aos minoritários com ações ordinárias o direito de vender suas ações por, no mínimo:",
+        nivel: "médio",
+        contexto: "Gustavo abriu conta em uma corretora e comprou suas primeiras ações pelo home broker. Como quem executou a ordem foi a corretora, ele pergunta ao assessor, certificado CPA, qual é o papel da B3 na operação.",
+        enunciado: "O assessor deve explicar que a B3:",
         alternativas: [
-            "80% do preço pago ao controlador",
-            "50% do preço pago ao controlador",
-            "100% do preço pago ao controlador, em qualquer segmento de listagem",
-            "O preço de mercado do dia anterior ao anúncio"
+            "administra o ambiente de negociação, liquida as operações e guarda os ativos como depositária central",
+            "executa diretamente as ordens dos investidores, dispensando a corretora, e regula as empresas listadas",
+            "administra o ambiente de negociação, mas a liquidação e a guarda dos ativos cabem ao Banco Central",
+            "garante o valor investido contra quedas de preço, por meio de um fundo semelhante ao FGC"
         ],
         correta: 0
+    },
+
+    {
+        grupo: "Mercado de capitais",
+        tema: "Corretoras e distribuidoras",
+        nivel: "médio",
+        contexto: "Mariana quer começar a investir em ações e encontra uma corretora e uma distribuidora de títulos e valores mobiliários. Ela pergunta a uma profissional certificada CPA se precisa escolher obrigatoriamente uma corretora para operar na bolsa.",
+        enunciado: "A profissional deve explicar que:",
+        alternativas: [
+            "apenas a corretora pode operar na bolsa, e a distribuidora atua somente no mercado de balcão",
+            "ambas podem operar na bolsa, mas apenas a corretora é supervisionada pelo Banco Central e pela CVM",
+            "ambas podem operar na bolsa, e a escolha deve considerar custos, serviços e produtos oferecidos",
+            "a distribuidora é mais segura, pois seus clientes contam com a garantia do FGC sobre as ações"
+        ],
+        correta: 2
+    },
+
+    {
+        grupo: "Mercado de capitais",
+        tema: "B3",
+        nivel: "médio",
+        contexto: "Rodrigo quer investir em uma empresa e participar das decisões tomadas nas assembleias, mas também gosta de receber dividendos. Ao ver que a empresa tem ações terminadas em 3 e em 4, ele pede orientação ao gerente, certificado CPA.",
+        enunciado: "O gerente deve explicar que:",
+        alternativas: [
+            "as ações PN dão direito a voto e têm preferência nos dividendos, sendo as mais vantajosas para ele",
+            "as ações ON têm preferência nos dividendos, enquanto as PN dão direito a voto nas assembleias",
+            "as ações ON e PN dão os mesmos direitos, mudando apenas a liquidez de cada uma na bolsa",
+            "as ações ON dão direito a voto, enquanto as PN têm preferência nos dividendos e, em geral, não votam"
+        ],
+        correta: 3
+    },
+
+    {
+        grupo: "Mercado de capitais",
+        tema: "ANBIMA",
+        nivel: "médio",
+        contexto: "Carlos foi promovido a gerente de investimentos em um banco associado à ANBIMA. Antes de começar a recomendar produtos aos clientes, ele é informado de que precisa obter uma certificação e pergunta ao superior por que isso é exigido.",
+        enunciado: "O superior deve explicar que:",
+        alternativas: [
+            "uma lei federal exige certificação de qualquer funcionário de instituição financeira, até do atendimento",
+            "as regras da ANBIMA, seguidas pelo banco, exigem que quem distribui investimentos comprove qualificação",
+            "a certificação é emitida pelo Banco Central e autoriza o profissional a gerir carteiras de clientes",
+            "a certificação dispensa a análise do perfil do cliente, pois comprova que o profissional sabe recomendar"
+        ],
+        correta: 1
+    },
+
+    {
+        grupo: "Mercado de capitais",
+        tema: "B3",
+        nivel: "médio",
+        contexto: "Joaquim comprou ações de uma varejista pelo home broker e comenta, animado, com o assessor, certificado CPA, que agora está ajudando a empresa a abrir novas lojas com o dinheiro que investiu.",
+        enunciado: "Para corrigir o entendimento de Joaquim, o assessor deve explicar que:",
+        alternativas: [
+            "a compra ocorreu no mercado secundário, e o dinheiro foi para outro investidor, não para a empresa",
+            "a compra ocorreu no mercado primário, e o dinheiro foi para a empresa financiar suas novas lojas",
+            "a compra ocorreu no mercado secundário, e o dinheiro foi dividido entre a empresa e a B3",
+            "a compra ocorreu no mercado de balcão, e o dinheiro foi para a corretora que intermediou a ordem"
+        ],
+        correta: 0
+    },
+
+    {
+        grupo: "Mercado de capitais",
+        tema: "B3",
+        nivel: "difícil",
+        contexto: "Uma empresa de tecnologia realiza uma oferta pública inicial de R$ 500 milhões: R$ 300 milhões em novas ações emitidas pela companhia e R$ 200 milhões em ações vendidas pelo fundador. Um cliente comenta com o assessor, certificado CPA, que a empresa terá R$ 500 milhões para investir na expansão.",
+        enunciado: "Para corrigir o cliente, o assessor deve explicar que a empresa receberá:",
+        alternativas: [
+            "R$ 500 milhões, pois todo o valor de uma oferta pública inicial vai para a companhia emissora",
+            "R$ 200 milhões, pois é a parcela secundária que financia os projetos de expansão da companhia",
+            "R$ 300 milhões, pois só a parcela primária emite novas ações e capta recursos para a companhia",
+            "R$ 300 milhões, pois a parte vendida pelo fundador fica retida pela B3 até o fim do bloqueio"
+        ],
+        correta: 2
+    },
+
+    {
+        grupo: "Mercado de capitais",
+        tema: "B3",
+        nivel: "difícil",
+        contexto: "O controlador de uma companhia aberta listada no segmento tradicional da B3 vende sua participação por R$ 50,00 por ação. Ana, acionista minoritária, tem ações ordinárias e preferenciais da empresa, e o estatuto não prevê nenhum direito adicional. Ela pede orientação ao assessor, certificado CPA.",
+        enunciado: "Considerando a Lei das S.A., o assessor deve explicar que:",
+        alternativas: [
+            "as ações ON e PN têm direito a receber ao menos R$ 40,00 cada, pelo tag along previsto na Lei das S.A.",
+            "as ações ON têm direito a receber ao menos R$ 40,00 cada, e as PN não têm esse direito garantido por lei",
+            "as ações ON têm direito a receber R$ 50,00 cada, e as PN, ao menos R$ 40,00 cada, pelo tag along legal",
+            "nenhuma das ações tem direito ao tag along, pois ele só existe para empresas listadas no Novo Mercado"
+        ],
+        correta: 1
+    },
+
+    {
+        grupo: "Mercado de capitais",
+        tema: "B3",
+        nivel: "difícil",
+        contexto: "Camila tinha 100 ações cotadas a R$ 40,00 quando a empresa anunciou um desdobramento em que cada ação passaria a valer duas. Ela diz ao assessor, certificado CPA, que ficou mais rica, pois ganhou ações de graça.",
+        enunciado: "Desconsiderando outras oscilações do mercado, o assessor deve explicar que Camila:",
+        alternativas: [
+            "terá 200 ações a R$ 40,00, dobrando o patrimônio para R$ 8.000,00, pois recebeu novas ações de graça",
+            "terá 50 ações a cerca de R$ 80,00, mantendo os R$ 4.000,00, pois o desdobramento agrupa as ações",
+            "terá 200 ações a cerca de R$ 20,00, e o patrimônio cai, pois a empresa perde valor com a operação",
+            "terá 200 ações a cerca de R$ 20,00, mantendo os R$ 4.000,00, pois o desdobramento só divide as ações"
+        ],
+        correta: 3
     },
 
     // ===================== GRUPO: SEGUROS E PREVIDÊNCIA (11) =====================
