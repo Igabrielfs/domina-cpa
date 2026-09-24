@@ -1,12 +1,13 @@
-// ===== MÓDULO 1 — 118 questões =====
-// grupo: usado no sorteio | tema: assunto específico
+// ===== DOMINA — QUESTÕES CPA (4 módulos) =====
+// modulo | grupo: usado no sorteio | tema | nivel: fácil, médio ou difícil
 // correta: 0 = A, 1 = B, 2 = C, 3 = D
 
 const questoes = [
 
-    // ===================== GRUPO: ESTRUTURA DO SFN (20) =====================
+    // ===================== MÓDULO 1 — GRUPO: ESTRUTURA DO SFN (20) =====================
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "SFN",
         nivel: "fácil",
@@ -22,6 +23,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CMN",
         nivel: "fácil",
@@ -37,6 +39,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CNSP e SUSEP",
         nivel: "fácil",
@@ -52,6 +55,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CNPC e PREVIC",
         nivel: "fácil",
@@ -67,6 +71,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "Banco Central",
         nivel: "fácil",
@@ -82,6 +87,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "SFN",
         nivel: "médio",
@@ -97,6 +103,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "SFN",
         nivel: "médio",
@@ -112,6 +119,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CMN",
         nivel: "médio",
@@ -127,6 +135,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CMN",
         nivel: "médio",
@@ -142,6 +151,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CNSP e SUSEP",
         nivel: "médio",
@@ -157,6 +167,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CNSP e SUSEP",
         nivel: "médio",
@@ -172,6 +183,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CNPC e PREVIC",
         nivel: "médio",
@@ -187,6 +199,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CVM",
         nivel: "médio",
@@ -202,6 +215,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CVM",
         nivel: "médio",
@@ -217,6 +231,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CVM",
         nivel: "médio",
@@ -232,6 +247,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "SFN",
         nivel: "difícil",
@@ -247,6 +263,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CMN",
         nivel: "difícil",
@@ -262,6 +279,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "Banco Central",
         nivel: "difícil",
@@ -277,6 +295,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "Banco Central",
         nivel: "difícil",
@@ -292,6 +311,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Estrutura do SFN",
         tema: "CNPC e PREVIC",
         nivel: "difícil",
@@ -306,11 +326,10 @@ const questoes = [
         correta: 1
     },
 
-    
-
-    /// ===================== GRUPO: INSTITUIÇÕES FINANCEIRAS (15) =====================
+    // ===================== MÓDULO 1 — GRUPO: INSTITUIÇÕES FINANCEIRAS (15) =====================
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Cooperativas de crédito",
         nivel: "fácil",
@@ -326,6 +345,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Caixa e instituições de pagamento",
         nivel: "fácil",
@@ -341,6 +361,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Fintechs",
         nivel: "fácil",
@@ -356,6 +377,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Fomento e microcrédito",
         nivel: "fácil",
@@ -371,6 +393,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Bancos",
         nivel: "médio",
@@ -386,6 +409,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Bancos",
         nivel: "médio",
@@ -401,6 +425,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Cooperativas de crédito",
         nivel: "médio",
@@ -416,6 +441,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Caixa e instituições de pagamento",
         nivel: "médio",
@@ -431,6 +457,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Financiamento e leasing",
         nivel: "médio",
@@ -446,6 +473,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Fomento e microcrédito",
         nivel: "médio",
@@ -461,6 +489,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Consórcio",
         nivel: "médio",
@@ -476,6 +505,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Bancos",
         nivel: "difícil",
@@ -491,6 +521,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Consórcio",
         nivel: "difícil",
@@ -506,6 +537,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Crédito imobiliário",
         nivel: "difícil",
@@ -521,6 +553,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Instituições financeiras",
         tema: "Bancos",
         nivel: "difícil",
@@ -535,9 +568,10 @@ const questoes = [
         correta: 2
     },
 
-    // ===================== GRUPO: MERCADO DE CAPITAIS (11) =====================
+    // ===================== MÓDULO 1 — GRUPO: MERCADO DE CAPITAIS (11) =====================
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "ANBIMA",
         nivel: "fácil",
@@ -553,6 +587,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "Apimec, Planejar e Ancord",
         nivel: "fácil",
@@ -568,6 +603,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "Corretoras e distribuidoras",
         nivel: "fácil",
@@ -583,6 +619,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "B3",
         nivel: "médio",
@@ -598,6 +635,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "Corretoras e distribuidoras",
         nivel: "médio",
@@ -613,6 +651,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "B3",
         nivel: "médio",
@@ -628,6 +667,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "ANBIMA",
         nivel: "médio",
@@ -643,6 +683,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "B3",
         nivel: "médio",
@@ -658,6 +699,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "B3",
         nivel: "difícil",
@@ -673,6 +715,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "B3",
         nivel: "difícil",
@@ -688,6 +731,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Mercado de capitais",
         tema: "B3",
         nivel: "difícil",
@@ -702,9 +746,10 @@ const questoes = [
         correta: 3
     },
 
-    // ===================== GRUPO: SEGUROS E PREVIDÊNCIA (11) =====================
+    // ===================== MÓDULO 1 — GRUPO: SEGUROS E PREVIDÊNCIA (11) =====================
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Seguradoras e resseguradoras",
         nivel: "fácil",
@@ -720,6 +765,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Seguradoras e resseguradoras",
         nivel: "fácil",
@@ -735,6 +781,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Corretoras de seguro",
         nivel: "fácil",
@@ -750,6 +797,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Previdência complementar",
         nivel: "médio",
@@ -765,6 +813,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Previdência complementar",
         nivel: "médio",
@@ -780,6 +829,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Capitalização",
         nivel: "médio",
@@ -795,6 +845,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Previdência complementar",
         nivel: "médio",
@@ -810,6 +861,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Previdência complementar",
         nivel: "médio",
@@ -825,6 +877,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Previdência complementar",
         nivel: "difícil",
@@ -840,6 +893,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Previdência complementar",
         nivel: "difícil",
@@ -855,6 +909,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Seguros e previdência",
         tema: "Previdência complementar",
         nivel: "difícil",
@@ -869,9 +924,10 @@ const questoes = [
         correta: 0
     },
 
-    // ===================== GRUPO: GARANTIAS E INFRAESTRUTURA (14) =====================
+    // ===================== MÓDULO 1 — GRUPO: GARANTIAS E INFRAESTRUTURA (14) =====================
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "Infraestrutura do mercado",
         nivel: "fácil",
@@ -887,6 +943,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "Infraestrutura do mercado",
         nivel: "fácil",
@@ -902,6 +959,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "Infraestrutura do mercado",
         nivel: "fácil",
@@ -917,6 +975,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "Estabilidade financeira",
         nivel: "fácil",
@@ -932,6 +991,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "FGC e FGCoop",
         nivel: "médio",
@@ -947,6 +1007,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "FGC e FGCoop",
         nivel: "médio",
@@ -962,6 +1023,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "Infraestrutura do mercado",
         nivel: "médio",
@@ -977,6 +1039,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "SPB e clearing houses",
         nivel: "médio",
@@ -992,6 +1055,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "SPB e clearing houses",
         nivel: "médio",
@@ -1007,6 +1071,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "Infraestrutura do mercado",
         nivel: "médio",
@@ -1022,6 +1087,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "Estabilidade financeira",
         nivel: "médio",
@@ -1037,6 +1103,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "FGC e FGCoop",
         nivel: "difícil",
@@ -1052,6 +1119,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "FGC e FGCoop",
         nivel: "difícil",
@@ -1067,6 +1135,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Garantias e infraestrutura",
         tema: "Estabilidade financeira",
         nivel: "difícil",
@@ -1080,10 +1149,11 @@ const questoes = [
         ],
         correta: 3
     },
-    
-    // ===================== GRUPO: ECONOMIA (18) =====================
+
+    // ===================== MÓDULO 1 — GRUPO: ECONOMIA (18) =====================
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Fluxo circular de renda",
         nivel: "fácil",
@@ -1099,6 +1169,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Mercado financeiro e subdivisões",
         nivel: "fácil",
@@ -1114,6 +1185,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "PIB e inflação",
         nivel: "fácil",
@@ -1129,6 +1201,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Política monetária e Selic",
         nivel: "fácil",
@@ -1144,6 +1217,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Mercado financeiro e subdivisões",
         nivel: "médio",
@@ -1159,6 +1233,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Política fiscal",
         nivel: "médio",
@@ -1174,6 +1249,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Lei de Responsabilidade Fiscal",
         nivel: "médio",
@@ -1189,6 +1265,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Política monetária e Selic",
         nivel: "médio",
@@ -1204,6 +1281,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Política monetária e Selic",
         nivel: "médio",
@@ -1219,6 +1297,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Instrumentos de política monetária",
         nivel: "médio",
@@ -1234,6 +1313,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Instrumentos de política monetária",
         nivel: "médio",
@@ -1249,6 +1329,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Instrumentos de política monetária",
         nivel: "médio",
@@ -1264,6 +1345,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Política cambial",
         nivel: "médio",
@@ -1279,6 +1361,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Política fiscal",
         nivel: "difícil",
@@ -1294,6 +1377,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Política cambial",
         nivel: "difícil",
@@ -1309,6 +1393,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "PIB e inflação",
         nivel: "difícil",
@@ -1324,6 +1409,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "Política cambial",
         nivel: "difícil",
@@ -1339,23 +1425,25 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Economia",
         tema: "PIB e inflação",
         nivel: "difícil",
         contexto: "Ao longo de um ano, Márcia manteve seus recursos em uma aplicação que rendeu 6%, enquanto o IPCA do período foi de 7%. Ela comenta com o gerente, certificado CPA, que perdeu exatamente 1% de poder de compra.",
         enunciado: "Para corrigir o cálculo de Márcia, o gerente deve explicar que o rendimento real foi de aproximadamente:",
         alternativas: [
-            "−1,00%, pois basta subtrair a inflação do rendimento nominal para encontrar o ganho real",
-            "−0,93%, pois divide-se 1,06 por 1,07 e subtrai-se 1, o que indica perda de poder de compra",
+            "-1,00%, pois basta subtrair a inflação do rendimento nominal para encontrar o ganho real",
+            "-0,93%, pois divide-se 1,06 por 1,07 e subtrai-se 1, o que indica perda de poder de compra",
             "+13,00%, pois a inflação do período se soma ao rendimento nominal obtido na aplicação",
             "+6,00%, pois a inflação não afeta o rendimento das aplicações de renda fixa"
         ],
         correta: 1
     },
 
-    // ===================== GRUPO: MATEMÁTICA FINANCEIRA (13) =====================
+    // ===================== MÓDULO 1 — GRUPO: MATEMÁTICA FINANCEIRA (13) =====================
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Análise de investimentos",
         nivel: "fácil",
@@ -1371,6 +1459,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Taxas de juros",
         nivel: "fácil",
@@ -1386,6 +1475,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Análise de investimentos",
         nivel: "fácil",
@@ -1401,6 +1491,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Taxas de juros",
         nivel: "médio",
@@ -1416,6 +1507,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Análise de investimentos",
         nivel: "médio",
@@ -1431,6 +1523,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Sistemas de amortização",
         nivel: "médio",
@@ -1446,6 +1539,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Sistemas de amortização",
         nivel: "médio",
@@ -1461,6 +1555,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Análise de investimentos",
         nivel: "médio",
@@ -1476,6 +1571,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Análise de investimentos",
         nivel: "médio",
@@ -1491,6 +1587,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Análise de investimentos",
         nivel: "médio",
@@ -1506,6 +1603,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Taxas de juros",
         nivel: "difícil",
@@ -1521,6 +1619,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Taxas de juros",
         nivel: "difícil",
@@ -1536,6 +1635,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Matemática financeira",
         tema: "Análise de investimentos",
         nivel: "difícil",
@@ -1550,9 +1650,10 @@ const questoes = [
         correta: 0
     },
 
-    // ===================== GRUPO: INVESTIDORES E RISCOS (7) =====================
+    // ===================== MÓDULO 1 — GRUPO: INVESTIDORES E RISCOS (7) =====================
 
     {
+        modulo: 1,
         grupo: "Investidores e riscos",
         tema: "Riscos",
         nivel: "fácil",
@@ -1568,6 +1669,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Investidores e riscos",
         tema: "Riscos",
         nivel: "fácil",
@@ -1583,6 +1685,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Investidores e riscos",
         tema: "Classificação de investidores",
         nivel: "médio",
@@ -1598,6 +1701,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Investidores e riscos",
         tema: "Riscos",
         nivel: "médio",
@@ -1613,6 +1717,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Investidores e riscos",
         tema: "Riscos",
         nivel: "médio",
@@ -1628,6 +1733,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Investidores e riscos",
         tema: "Classificação de investidores",
         nivel: "difícil",
@@ -1643,6 +1749,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Investidores e riscos",
         tema: "Riscos",
         nivel: "difícil",
@@ -1657,9 +1764,10 @@ const questoes = [
         correta: 1
     },
 
-    // ===================== GRUPO: REGULAÇÃO E CONDUTA (9) =====================
+    // ===================== MÓDULO 1 — GRUPO: REGULAÇÃO E CONDUTA (9) =====================
 
     {
+        modulo: 1,
         grupo: "Regulação e conduta",
         tema: "Lei de Liberdade Econômica",
         nivel: "fácil",
@@ -1675,6 +1783,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Regulação e conduta",
         tema: "Portabilidade e open finance",
         nivel: "fácil",
@@ -1690,6 +1799,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Regulação e conduta",
         tema: "Portabilidade e open finance",
         nivel: "médio",
@@ -1705,6 +1815,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Regulação e conduta",
         tema: "Portabilidade e open finance",
         nivel: "médio",
@@ -1720,6 +1831,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Regulação e conduta",
         tema: "Código ANBIMA de Distribuição",
         nivel: "médio",
@@ -1735,6 +1847,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Regulação e conduta",
         tema: "Código ANBIMA de Distribuição",
         nivel: "médio",
@@ -1750,6 +1863,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Regulação e conduta",
         tema: "Código ANBIMA de Distribuição",
         nivel: "médio",
@@ -1765,6 +1879,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Regulação e conduta",
         tema: "Código ANBIMA de Distribuição",
         nivel: "difícil",
@@ -1780,6 +1895,7 @@ const questoes = [
     },
 
     {
+        modulo: 1,
         grupo: "Regulação e conduta",
         tema: "Código ANBIMA de Distribuição",
         nivel: "difícil",
@@ -1817,7 +1933,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Títulos públicos",
         nivel: "fácil",
-        contexto: "Um investidor quer um título público pós-fixado para a reserva de emergência, com a menor oscilação de preço possível em caso de venda antecipada.",
+        contexto: "Um investidor quer um título público com baixa oscilação de preço, que acompanhe a taxa básica de juros da economia e sirva para guardar dinheiro que pode precisar a qualquer momento.",
         enunciado: "O título indicado é o:",
         alternativas: [
             "Tesouro Prefixado (LTN)",
@@ -1849,7 +1965,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Tesouro Renda+ e Educa+",
         nivel: "fácil",
-        contexto: "Seu Ivo, de 45 anos, quer investir no Tesouro Direto para, a partir dos 65, receber 240 pagamentos mensais corrigidos pela inflação.",
+        contexto: "Seu Ivo, de 45 anos, quer usar o Tesouro Direto para garantir uma renda mensal complementar à aposentadoria, corrigida pela inflação, a partir dos 65 anos.",
         enunciado: "O título criado para esse objetivo é o:",
         alternativas: [
             "Tesouro Educa+",
@@ -1865,7 +1981,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Títulos públicos",
         nivel: "médio",
-        contexto: "Durante uma aula para clientes, um participante pergunta ao gerente por que o governo emite títulos públicos e se o Banco Central também pode emiti-los.",
+        contexto: "Durante uma aula para clientes, um participante pergunta ao gerente, certificado CPA, por que o governo emite títulos públicos e se o Banco Central também pode emiti-los.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "o Tesouro emite títulos para financiar o governo e rolar a dívida; o BC também emite títulos próprios para controlar os juros",
@@ -1881,7 +1997,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Tesouro Direto",
         nivel: "médio",
-        contexto: "Marta ouviu que os títulos públicos são negociados no sistema Selic e pergunta ao gerente se ela, como pessoa física, pode comprar diretamente nesse sistema.",
+        contexto: "Marta ouviu que os títulos públicos são negociados no sistema Selic e pergunta ao gerente, certificado CPA, se ela, como pessoa física, pode comprar diretamente nesse sistema.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "o Selic é voltado às instituições, e a pessoa física compra pelo Tesouro Direto, por meio de uma instituição habilitada",
@@ -1897,7 +2013,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Tesouro Direto",
         nivel: "médio",
-        contexto: "Diego vai investir no Tesouro Direto por uma corretora que não cobra taxa própria. Ele pede ao assessor que explique quais custos obrigatórios existem.",
+        contexto: "Diego vai investir no Tesouro Direto por uma corretora que não cobra taxa própria. Ele pede ao assessor, certificado CPA, que explique quais custos obrigatórios existem.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "há taxa de custódia da B3 de 0,20% ao ano, com isenção para até R$ 10 mil em qualquer título",
@@ -1913,7 +2029,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Títulos públicos",
         nivel: "médio",
-        contexto: "Paula quer montar sua reserva de emergência no Tesouro Direto e pergunta à gerente qual título é mais adequado e por quê.",
+        contexto: "Paula quer montar sua reserva de emergência no Tesouro Direto e pergunta à gerente, certificada CPA, qual título é mais adequado e por quê.",
         enunciado: "A gerente deve indicar:",
         alternativas: [
             "o Tesouro Prefixado, pois a taxa contratada garante o mesmo valor em qualquer data de resgate antecipado",
@@ -1929,7 +2045,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Títulos públicos",
         nivel: "médio",
-        contexto: "Um investidor acredita que a taxa de juros vai cair nos próximos anos e quer aproveitar esse cenário para travar uma boa rentabilidade. Ele pede orientação ao assessor.",
+        contexto: "Um investidor acredita que a taxa de juros vai cair nos próximos anos e quer aproveitar esse cenário para travar uma boa rentabilidade. Ele pede orientação ao assessor, certificado CPA.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "o Tesouro Prefixado trava a taxa atual e tende a se valorizar se os juros caírem, ganhando com a marcação a mercado",
@@ -1945,7 +2061,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Títulos públicos",
         nivel: "médio",
-        contexto: "Gilberto quer um título público com rentabilidade prefixada, mas que pague renda a cada seis meses para complementar o orçamento. Ele pede orientação ao gerente.",
+        contexto: "Gilberto quer um título público com rentabilidade prefixada, mas que pague renda a cada seis meses para complementar o orçamento. Ele pede orientação ao gerente, certificado CPA.",
         enunciado: "O gerente deve indicar:",
         alternativas: [
             "o Tesouro Prefixado (LTN), que paga cupons semestrais e devolve o principal no vencimento",
@@ -1961,7 +2077,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Tesouro Renda+ e Educa+",
         nivel: "médio",
-        contexto: "Carla quer juntar dinheiro para a faculdade da filha, que hoje tem 5 anos, e pergunta à gerente como funciona o Tesouro Educa+.",
+        contexto: "Carla quer juntar dinheiro para a faculdade da filha, que hoje tem 5 anos, e pergunta à gerente, certificada CPA, como funciona o Tesouro Educa+.",
         enunciado: "A gerente deve explicar que o Tesouro Educa+:",
         alternativas: [
             "acumula recursos corrigidos pela Selic e depois paga 60 parcelas mensais, equivalentes a cinco anos de estudo",
@@ -1977,7 +2093,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Riscos dos títulos públicos",
         nivel: "médio",
-        contexto: "Seu Mário diz ao gerente que títulos públicos não têm nenhum risco, porque são garantidos pelo governo e ainda contam com o FGC.",
+        contexto: "Seu Mário diz ao gerente, certificado CPA, que títulos públicos não têm nenhum risco, porque são garantidos pelo governo e ainda contam com o FGC.",
         enunciado: "Para corrigir o cliente, o gerente deve explicar que os títulos públicos:",
         alternativas: [
             "têm o menor risco de crédito do país, contam com o FGC até R$ 250 mil por CPF e não têm outro risco",
@@ -1993,7 +2109,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Riscos dos títulos públicos",
         nivel: "médio",
-        contexto: "Rogério tem um Tesouro Prefixado e precisa do dinheiro antes do vencimento. Ele pergunta ao assessor se consegue resgatar e por qual valor.",
+        contexto: "Rogério tem um Tesouro Prefixado e precisa do dinheiro antes do vencimento. Ele pergunta ao assessor, certificado CPA, se consegue resgatar e por qual valor.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "o Tesouro recompra o título diariamente, sempre pelo valor aplicado mais a taxa contratada até a data do resgate",
@@ -2009,7 +2125,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Títulos públicos",
         nivel: "difícil",
-        contexto: "Beatriz comprou um Tesouro Prefixado a 12% ao ano. Um ano depois, os juros de mercado caíram bastante, e ela vendeu o título antes do vencimento. Ela comenta com o gerente que achava que um prefixado só poderia render exatamente a taxa contratada.",
+        contexto: "Beatriz comprou um Tesouro Prefixado a 12% ao ano. Um ano depois, os juros de mercado caíram bastante, e ela vendeu o título antes do vencimento. Ela comenta com o gerente, certificado CPA, que achava que um prefixado só poderia render exatamente a taxa contratada.",
         enunciado: "O gerente deve explicar que, na venda antecipada:",
         alternativas: [
             "ela rendeu exatamente 12% ao ano, pois a taxa contratada vale para qualquer data em que o título for vendido",
@@ -2041,7 +2157,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Títulos públicos",
         nivel: "difícil",
-        contexto: "Um investidor compara dois títulos com o mesmo prazo: um Tesouro Prefixado que paga 11% ao ano e um Tesouro IPCA+ que paga IPCA mais 6% ao ano. Ele pede ao assessor a inflação que tornaria os dois equivalentes.",
+        contexto: "Um investidor compara dois títulos com o mesmo prazo: um Tesouro Prefixado que paga 11% ao ano e um Tesouro IPCA+ que paga IPCA mais 6% ao ano. Ele pede ao assessor, certificado CPA, a inflação que tornaria os dois equivalentes.",
         enunciado: "A inflação de equilíbrio entre os dois títulos é de aproximadamente:",
         alternativas: [
             "17,66%, pois a taxa do Prefixado é multiplicada pela taxa real do IPCA+",
@@ -2049,7 +2165,7 @@ const questoes = [
             "5,00%, pois basta subtrair a taxa real do IPCA+ da taxa do Prefixado",
             "6,00%, pois a inflação de equilíbrio é igual à taxa real do IPCA+"
         ],
-        correta: 1
+        correta: 2
     },
 
     {
@@ -2057,7 +2173,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Títulos públicos",
         nivel: "difícil",
-        contexto: "Renato comprou um Tesouro Prefixado com Juros Semestrais e recebeu o primeiro cupom, de R$ 500,00, cinco meses depois da compra. Ele diz ao gerente que o Imposto de Renda só seria cobrado no vencimento do título.",
+        contexto: "Renato comprou um Tesouro Prefixado com Juros Semestrais e recebeu o primeiro cupom, de R$ 500,00, cinco meses depois da compra. Ele diz ao gerente, certificado CPA, que o Imposto de Renda só seria cobrado no vencimento do título.",
         enunciado: "Para corrigir o cliente, o gerente deve explicar que, sobre esse cupom:",
         alternativas: [
             "não incide IR, pois o imposto sobre títulos com cupom é cobrado apenas no vencimento do principal",
@@ -2073,7 +2189,7 @@ const questoes = [
         grupo: "Títulos públicos",
         tema: "Tesouro Renda+ e Educa+",
         nivel: "difícil",
-        contexto: "Uma cliente tem três objetivos: montar uma reserva para imprevistos, pagar a faculdade do filho daqui a 12 anos e ter uma renda mensal na aposentadoria, daqui a 25 anos. Ela pede ao gerente um título do Tesouro para cada objetivo.",
+        contexto: "Uma cliente tem três objetivos: montar uma reserva para imprevistos, pagar a faculdade do filho daqui a 12 anos e ter uma renda mensal na aposentadoria, daqui a 25 anos. Ela pede ao gerente, certificado CPA, um título do Tesouro para cada objetivo.",
         enunciado: "Na ordem reserva, faculdade e aposentadoria, os títulos mais adequados são:",
         alternativas: [
             "Tesouro Prefixado, Tesouro Renda+ e Tesouro Educa+",
@@ -2091,7 +2207,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "CDB, RDB e RDC",
         nivel: "fácil",
-        contexto: "Seu Arlindo quer aplicar em um título de captação de uma instituição financeira que só pode ser adquirido por quem é associado a ela.",
+        contexto: "Seu Arlindo é associado de uma cooperativa de crédito e quer aplicar em um título de renda fixa emitido pela própria cooperativa.",
         enunciado: "O título indicado para ele é o:",
         alternativas: [
             "CDB",
@@ -2107,7 +2223,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "LCI, LCA e LCD",
         nivel: "fácil",
-        contexto: "Uma cliente quer um título bancário de renda fixa isento de Imposto de Renda para pessoa física e com lastro em créditos para construção e compra de residências.",
+        contexto: "Uma cliente quer um título bancário de renda fixa isento de Imposto de Renda para pessoa física e com lastro em financiamentos imobiliários.",
         enunciado: "O título que atende a essas características é a:",
         alternativas: [
             "LCA",
@@ -2155,7 +2271,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "CDB, RDB e RDC",
         nivel: "médio",
-        contexto: "Laura tem um CDB e um RDB, ambos com vencimento em dois anos. Ela pergunta ao gerente se pode transferir um deles para o nome do irmão antes do vencimento.",
+        contexto: "Laura tem um CDB e um RDB, ambos com vencimento em dois anos. Ela pergunta ao gerente, certificado CPA, se pode transferir um deles para o nome do irmão antes do vencimento.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "o RDB pode ser transferido a outro investidor, enquanto o CDB é intransferível",
@@ -2171,7 +2287,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "CDB, RDB e RDC",
         nivel: "médio",
-        contexto: "Marcelo aplicou R$ 80.000,00 em CDB de um banco de médio porte e pergunta ao gerente o que garante o pagamento do seu dinheiro.",
+        contexto: "Marcelo aplicou R$ 80.000,00 em CDB de um banco de médio porte e pergunta ao gerente, certificado CPA, o que garante o pagamento do seu dinheiro.",
         enunciado: "O gerente deve explicar que o pagamento é garantido:",
         alternativas: [
             "somente pelo FGC, que paga o valor integral em qualquer situação de atraso",
@@ -2187,7 +2303,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "LCI, LCA e LCD",
         nivel: "médio",
-        contexto: "Um produtor rural pergunta ao gerente por que a LCA oferecida pelo banco rende menos que um CDB do mesmo prazo e se ela tem alguma garantia.",
+        contexto: "Um produtor rural pergunta ao gerente, certificado CPA, por que a LCA oferecida pelo banco rende menos que um CDB do mesmo prazo e se ela tem alguma garantia.",
         enunciado: "O gerente deve explicar que a LCA:",
         alternativas: [
             "é isenta de IR para pessoa física, tem lastro no agronegócio, mas não conta com o FGC",
@@ -2203,7 +2319,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "LCI, LCA e LCD",
         nivel: "médio",
-        contexto: "Um investidor encontra a LCD, um título mais recente, e pergunta ao assessor quem a emite e qual é a sua finalidade.",
+        contexto: "Um investidor encontra a LCD, um título mais recente, e pergunta ao assessor, certificado CPA, quem a emite e qual é a sua finalidade.",
         enunciado: "O assessor deve explicar que a LCD:",
         alternativas: [
             "é emitida por bancos de desenvolvimento para financiar projetos de infraestrutura",
@@ -2219,7 +2335,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "CRI e CRA",
         nivel: "médio",
-        contexto: "Ana quer aplicar em um CRA isento de IR e pergunta à assessora se o título tem a mesma proteção de uma LCA em caso de problema.",
+        contexto: "Ana quer aplicar em um CRA isento de IR e pergunta à assessora, certificada CPA, se o título tem a mesma proteção de uma LCA em caso de problema.",
         enunciado: "A assessora deve explicar que o CRA:",
         alternativas: [
             "tem FGC até R$ 250 mil, assim como a LCA, e o risco depende da securitizadora",
@@ -2235,7 +2351,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "Debêntures",
         nivel: "médio",
-        contexto: "Rodrigo quer comprar debêntures e pergunta ao assessor por que algumas são isentas de Imposto de Renda e outras não.",
+        contexto: "Rodrigo quer comprar debêntures e pergunta ao assessor, certificado CPA, por que algumas são isentas de Imposto de Renda e outras não.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "todas as debêntures são isentas para pessoa física, desde que mantidas até o vencimento",
@@ -2251,7 +2367,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "CRI e CRA",
         nivel: "médio",
-        contexto: "Um cliente compara um CRI e uma debênture da mesma construtora e pergunta à gerente qual é a diferença de estrutura entre os dois.",
+        contexto: "Um cliente compara um CRI e uma debênture da mesma construtora e pergunta à gerente, certificada CPA, qual é a diferença de estrutura entre os dois.",
         enunciado: "A gerente deve explicar que:",
         alternativas: [
             "o CRI nasce da securitização de recebíveis, enquanto a debênture é dívida emitida pela própria empresa",
@@ -2267,7 +2383,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "Rating",
         nivel: "médio",
-        contexto: "Duas debêntures de mesmo prazo pagam taxas diferentes: a de nota AA paga CDI + 1% ao ano, e a de nota BB paga CDI + 4% ao ano. O cliente pergunta ao assessor por que há essa diferença.",
+        contexto: "Duas debêntures de mesmo prazo pagam taxas diferentes: a de nota AA paga CDI + 1% ao ano, e a de nota BB paga CDI + 4% ao ano. O cliente pergunta ao assessor, certificado CPA, por que há essa diferença.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "o emissor de rating mais baixo tem menos risco de crédito e, por isso, pode oferecer taxa maior",
@@ -2283,7 +2399,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "Rating",
         nivel: "médio",
-        contexto: "Uma agência de classificação rebaixa a nota de crédito do Brasil. Um cliente pergunta ao gerente que efeito isso tende a ter sobre os títulos do país.",
+        contexto: "Uma agência de classificação rebaixa a nota de crédito do Brasil. Um cliente pergunta ao gerente, certificado CPA, que efeito isso tende a ter sobre os títulos do país.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "o risco soberano percebido diminui, e os investidores tendem a aceitar taxas menores para financiar o país",
@@ -2300,7 +2416,7 @@ const questoes = [
         tema: "LCI, LCA e LCD",
         nivel: "difícil",
         contexto: "Um cliente vai aplicar por três anos e compara uma LCI que paga 90% do CDI com um CDB que paga 110% do CDI. Ele acha que a LCI é melhor por ser isenta de IR.",
-        enunciado: "O assessor deve explicar que:",
+        enunciado: "O assessor, certificado CPA, deve explicar que:",
         alternativas: [
             "a LCI rende mais, pois 110% do CDI menos 22,5% de IR equivale a 85,25% do CDI líquido",
             "o CDB rende mais, pois 110% do CDI menos 15% de IR equivale a 93,5% do CDI líquido",
@@ -2315,7 +2431,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "LCI, LCA e LCD",
         nivel: "difícil",
-        contexto: "Uma cliente vai resgatar uma aplicação em cerca de 200 dias e tem um CDB que paga 100% do CDI. Ela pergunta ao gerente qual taxa mínima uma LCA de mesmo prazo precisaria pagar para render igual.",
+        contexto: "Uma cliente vai resgatar uma aplicação em cerca de 200 dias e tem um CDB que paga 100% do CDI. Ela pergunta ao gerente, certificado CPA, qual taxa mínima uma LCA de mesmo prazo precisaria pagar para render igual.",
         enunciado: "A taxa de equilíbrio da LCA é de:",
         alternativas: [
             "77,5% do CDI, pois o CDB tem IR de 22,5% nesse prazo e fica com 77,5% do CDI líquido",
@@ -2347,7 +2463,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "Rating",
         nivel: "difícil",
-        contexto: "Juliana tem uma debênture prefixada. Após a empresa ter o rating rebaixado, ela vê o preço do título cair e diz ao assessor que isso não faz sentido, pois a taxa contratada não mudou.",
+        contexto: "Juliana tem uma debênture prefixada. Após a empresa ter o rating rebaixado, ela vê o preço do título cair e diz ao assessor, certificado CPA, que isso não faz sentido, pois a taxa contratada não mudou.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "o rebaixamento reduziu a taxa exigida pelo mercado, o que reduz o preço do título na venda antecipada",
@@ -2363,7 +2479,7 @@ const questoes = [
         grupo: "Renda fixa bancária e privada",
         tema: "CDB, RDB e RDC",
         nivel: "difícil",
-        contexto: "Uma cliente quer aplicar R$ 30.000,00 isentos de IR, mas pode precisar do dinheiro a qualquer momento nos próximos meses. O gerente compara um CDB com liquidez diária e uma LCI com carência.",
+        contexto: "Uma cliente quer aplicar R$ 30.000,00 isentos de IR, mas pode precisar do dinheiro a qualquer momento nos próximos meses. O gerente, certificado CPA, compara um CDB com liquidez diária e uma LCI com carência.",
         enunciado: "A orientação mais adequada é:",
         alternativas: [
             "preferir a LCI, pois a isenção de IR garante o resgate a qualquer momento sem nenhuma perda",
@@ -2413,7 +2529,7 @@ const questoes = [
         grupo: "Poupança, TR e TLP",
         tema: "Poupança",
         nivel: "médio",
-        contexto: "Com a Selic em 10% ao ano, um cliente diz ao gerente que a poupança sempre rende 70% da Selic mais a TR.",
+        contexto: "Com a Selic em 10% ao ano, um cliente diz ao gerente, certificado CPA, que a poupança sempre rende 70% da Selic mais a TR.",
         enunciado: "Para corrigir o cliente, o gerente deve explicar que, com a Selic nesse nível, a poupança rende:",
         alternativas: [
             "70% da Selic mais a TR, pois essa regra vale para qualquer nível da taxa básica de juros",
@@ -2429,7 +2545,7 @@ const questoes = [
         grupo: "Poupança, TR e TLP",
         tema: "Poupança",
         nivel: "médio",
-        contexto: "Rafael depositou na poupança no dia 5 de março e precisa sacar o dinheiro no dia 3 de abril. Ele pergunta ao gerente se vai receber o rendimento do período.",
+        contexto: "Rafael depositou na poupança no dia 5 de março e precisa sacar o dinheiro no dia 3 de abril. Ele pergunta ao gerente, certificado CPA, se vai receber o rendimento do período.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "sim, pois o rendimento da poupança é calculado diariamente e creditado a cada dia útil",
@@ -2445,7 +2561,7 @@ const questoes = [
         grupo: "Poupança, TR e TLP",
         tema: "Poupança",
         nivel: "médio",
-        contexto: "Em uma aula sobre o sistema financeiro, um aluno pergunta ao professor qual é a principal função econômica dos recursos depositados na poupança.",
+        contexto: "Em uma aula sobre o sistema financeiro, um aluno pergunta ao professor, certificado CPA, qual é a principal função econômica dos recursos depositados na poupança.",
         enunciado: "O professor deve explicar que:",
         alternativas: [
             "a maior parte dos recursos é direcionada, por regra, ao financiamento da dívida pública",
@@ -2461,7 +2577,7 @@ const questoes = [
         grupo: "Poupança, TR e TLP",
         tema: "TR e TLP",
         nivel: "médio",
-        contexto: "Um cliente vê a TR em seu contrato de financiamento imobiliário e pergunta ao gerente o que é essa taxa e onde mais ela aparece.",
+        contexto: "Um cliente vê a TR em seu contrato de financiamento imobiliário e pergunta ao gerente, certificado CPA, o que é essa taxa e onde mais ela aparece.",
         enunciado: "O gerente deve explicar que a TR:",
         alternativas: [
             "é calculada pelo IBGE, corrige a poupança, o FGTS e financiamentos imobiliários e acompanha a inflação oficial",
@@ -2478,7 +2594,7 @@ const questoes = [
         tema: "Poupança",
         nivel: "difícil",
         contexto: "Com a Selic em 7% ao ano e a TR zerada, Seu Paulo compara a poupança com um CDB que paga 100% do CDI por mais de dois anos. Considere o CDI igual à Selic. Ele acha que a poupança rende mais por ser isenta.",
-        enunciado: "O gerente deve explicar que:",
+        enunciado: "O gerente, certificado CPA, deve explicar que:",
         alternativas: [
             "o CDB rende mais: cerca de 5,95% líquido, contra 4,9% ao ano da poupança",
             "a poupança rende mais: 4,9% ao ano, contra cerca de 4,55% líquido do CDB",
@@ -2493,7 +2609,7 @@ const questoes = [
         grupo: "Poupança, TR e TLP",
         tema: "TR e TLP",
         nivel: "difícil",
-        contexto: "Um empresário pergunta ao consultor por que o custo do seu financiamento do BNDES atrelado à TLP subiu após um período de inflação alta.",
+        contexto: "Um empresário pergunta ao consultor, certificado CPA, por que o custo do seu financiamento do BNDES atrelado à TLP subiu após um período de inflação alta.",
         enunciado: "O consultor deve explicar que:",
         alternativas: [
             "a TLP é uma taxa fixa definida pelo CMN, e a alta decorre apenas de uma revisão anual do conselho",
@@ -2559,7 +2675,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "Imposto de Renda",
         nivel: "médio",
-        contexto: "Sandra resgatou um CDB e perguntou ao gerente se precisa recolher o IR por conta própria e sobre qual valor ele incide.",
+        contexto: "Sandra resgatou um CDB e perguntou ao gerente, certificado CPA, se precisa recolher o IR por conta própria e sobre qual valor ele incide.",
         enunciado: "O gerente deve explicar que o IR:",
         alternativas: [
             "incide sobre o valor total resgatado e é retido na fonte pela instituição",
@@ -2575,7 +2691,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "Isenções",
         nivel: "médio",
-        contexto: "Um investidor pessoa física quer montar uma carteira só com produtos isentos de IR e pede ao assessor uma lista de opções.",
+        contexto: "Um investidor pessoa física quer montar uma carteira só com produtos isentos de IR e pede ao assessor, certificado CPA, uma lista de opções.",
         enunciado: "O assessor deve indicar:",
         alternativas: [
             "poupança, CDB, LCI e LCA",
@@ -2591,7 +2707,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "Come-cotas",
         nivel: "médio",
-        contexto: "Um cliente de um fundo de renda fixa de longo prazo pergunta ao gerente se o come-cotas é o imposto final sobre seus rendimentos.",
+        contexto: "Um cliente de um fundo de renda fixa de longo prazo pergunta ao gerente, certificado CPA, se o come-cotas é o imposto final sobre seus rendimentos.",
         enunciado: "O gerente deve explicar que o come-cotas:",
         alternativas: [
             "antecipa o IR a 15% a cada semestre, e no resgate há o ajuste conforme a tabela regressiva",
@@ -2607,7 +2723,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "Come-cotas",
         nivel: "médio",
-        contexto: "Pedro investe em um fundo de ações e em um fundo de renda fixa. Ele pergunta à assessora por que só um deles tem come-cotas.",
+        contexto: "Pedro investe em um fundo de ações e em um fundo de renda fixa. Ele pergunta à assessora, certificada CPA, por que só um deles tem come-cotas.",
         enunciado: "A assessora deve explicar que:",
         alternativas: [
             "fundos de ações não têm come-cotas e são isentos de IR no resgate para pessoa física",
@@ -2623,7 +2739,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "Imposto de Renda",
         nivel: "médio",
-        contexto: "Um cliente aplicou em um fundo classificado como de curto prazo e pergunta ao gerente se, com o tempo, a alíquota cairá para 15%.",
+        contexto: "Um cliente aplicou em um fundo classificado como de curto prazo e pergunta ao gerente, certificado CPA, se, com o tempo, a alíquota cairá para 15%.",
         enunciado: "O gerente deve explicar que, no fundo de curto prazo:",
         alternativas: [
             "a alíquota segue a tabela regressiva completa e chega a 15% após 720 dias",
@@ -2639,7 +2755,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "IOF",
         nivel: "médio",
-        contexto: "Camila resgatou um CDB com 10 dias de aplicação e ficou surpresa com o IOF. Ela pergunta à gerente sobre qual valor o imposto foi calculado.",
+        contexto: "Camila resgatou um CDB com 10 dias de aplicação e ficou surpresa com o IOF. Ela pergunta à gerente, certificada CPA, sobre qual valor o imposto foi calculado.",
         enunciado: "A gerente deve explicar que o IOF:",
         alternativas: [
             "incide sobre o rendimento, com alíquota regressiva que cai a zero no 30º dia",
@@ -2655,7 +2771,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "Imposto de Renda",
         nivel: "médio",
-        contexto: "Um cliente pergunta ao assessor o que define se um fundo de renda fixa é tributado como de longo ou de curto prazo.",
+        contexto: "Um cliente pergunta ao assessor, certificado CPA, o que define se um fundo de renda fixa é tributado como de longo ou de curto prazo.",
         enunciado: "O assessor deve explicar que a classificação depende:",
         alternativas: [
             "do prazo em que o cliente mantém o dinheiro aplicado, sendo longo prazo acima de 720 dias",
@@ -2671,7 +2787,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "IOF",
         nivel: "difícil",
-        contexto: "Marta resgatou um CDB com 20 dias de aplicação. O rendimento bruto foi de R$ 300,00, e a alíquota de IOF para esse prazo é de 33%. Ela pede ao gerente o valor líquido do rendimento.",
+        contexto: "Marta resgatou um CDB com 20 dias de aplicação. O rendimento bruto foi de R$ 300,00, e a alíquota de IOF para esse prazo é de 33%. Ela pede ao gerente, certificado CPA, o valor líquido do rendimento.",
         enunciado: "O rendimento líquido de Marta é de aproximadamente:",
         alternativas: [
             "R$ 133,50: IOF de R$ 99,00 e IR de 22,5% sobre os R$ 300,00 brutos",
@@ -2687,7 +2803,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "Imposto de Renda",
         nivel: "difícil",
-        contexto: "Lucas resgatou um CDB com 400 dias de aplicação e rendimento bruto de R$ 2.000,00. Ele diz ao gerente que pagou 15% de IR, pois ficou mais de um ano aplicado.",
+        contexto: "Lucas resgatou um CDB com 400 dias de aplicação e rendimento bruto de R$ 2.000,00. Ele diz ao gerente, certificado CPA, que pagou 15% de IR, pois ficou mais de um ano aplicado.",
         enunciado: "Para corrigir o cliente, o gerente deve explicar que o IR foi de:",
         alternativas: [
             "R$ 300,00, pois acima de 360 dias a alíquota já é de 15%",
@@ -2719,7 +2835,7 @@ const questoes = [
         grupo: "Tributação de investimentos",
         tema: "Imposto de Renda",
         nivel: "difícil",
-        contexto: "Débora manteve os recursos em um fundo de renda fixa de curto prazo por três anos e diz ao gerente que já tem direito à alíquota mínima de 15%.",
+        contexto: "Débora manteve os recursos em um fundo de renda fixa de curto prazo por três anos e diz ao gerente, certificado CPA, que já tem direito à alíquota mínima de 15%.",
         enunciado: "Para corrigir a cliente, o gerente deve explicar que:",
         alternativas: [
             "o fundo de curto prazo tem alíquota mínima de 20%, mesmo após três anos de aplicação",
@@ -2801,7 +2917,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Sociedades e financiamento",
         nivel: "médio",
-        contexto: "Uma empresa familiar de capital fechado avalia listar suas ações na B3. O diretor pergunta à consultora o que muda ao se tornar uma companhia aberta.",
+        contexto: "Uma empresa familiar de capital fechado avalia listar suas ações na B3. O diretor pergunta à consultora, certificada CPA, o que muda ao se tornar uma companhia aberta.",
         enunciado: "A consultora deve explicar que a companhia aberta:",
         alternativas: [
             "precisa de registro na CVM, pode negociar ações no mercado e deve divulgar informações periódicas",
@@ -2817,7 +2933,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Governança corporativa",
         nivel: "médio",
-        contexto: "Um investidor pergunta ao assessor qual é o papel do conselho de administração em uma companhia aberta.",
+        contexto: "Um investidor pergunta ao assessor, certificado CPA, qual é o papel do conselho de administração em uma companhia aberta.",
         enunciado: "O assessor deve explicar que o conselho de administração:",
         alternativas: [
             "executa o dia a dia da empresa, substituindo a diretoria na gestão operacional",
@@ -2833,7 +2949,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Governança corporativa",
         nivel: "médio",
-        contexto: "Ao analisar uma empresa, Carla vê que apenas 5% das ações estão em circulação no mercado. Ela pergunta à assessora que impacto isso tem para quem investe.",
+        contexto: "Ao analisar uma empresa, Carla vê que apenas 5% das ações estão em circulação no mercado. Ela pergunta à assessora, certificada CPA, que impacto isso tem para quem investe.",
         enunciado: "A assessora deve explicar que:",
         alternativas: [
             "um free float baixo tende a aumentar a liquidez, pois há menos ações disputadas pelos investidores",
@@ -2849,7 +2965,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Governança corporativa",
         nivel: "médio",
-        contexto: "Um investidor quer priorizar empresas com o mais alto padrão de governança da B3 e pede orientação ao assessor.",
+        contexto: "Um investidor quer priorizar empresas com o mais alto padrão de governança da B3 e pede orientação ao assessor, certificado CPA.",
         enunciado: "O assessor deve indicar empresas do Novo Mercado, pois esse segmento:",
         alternativas: [
             "exige que o capital seja formado só por ações ordinárias, além de regras mais rígidas de governança",
@@ -2865,7 +2981,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Eventos corporativos",
         nivel: "médio",
-        contexto: "Uma empresa anuncia dividendos com data com no dia 10. Um cliente pergunta ao assessor até quando precisa ter as ações para receber o provento.",
+        contexto: "Uma empresa anuncia dividendos com data com no dia 10. Um cliente pergunta ao assessor, certificado CPA, até quando precisa ter as ações para receber o provento.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "ele precisa ter as ações na data de pagamento, mesmo que as tenha comprado depois da data com",
@@ -2881,7 +2997,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Eventos corporativos",
         nivel: "médio",
-        contexto: "Um acionista recebe a convocação para a Assembleia Geral Ordinária da empresa e pergunta ao gerente o que costuma ser decidido nela.",
+        contexto: "Um acionista recebe a convocação para a Assembleia Geral Ordinária da empresa e pergunta ao gerente, certificado CPA, o que costuma ser decidido nela.",
         enunciado: "O gerente deve explicar que a AGO:",
         alternativas: [
             "decide apenas alterações no estatuto e fusões, sem tratar das contas do exercício",
@@ -2897,7 +3013,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Tributação de ações",
         nivel: "médio",
-        contexto: "Paulo vendeu R$ 15.000,00 em ações no mês, em operações comuns, com lucro de R$ 3.000,00. Ele pergunta à assessora se precisa pagar IR.",
+        contexto: "Paulo vendeu R$ 15.000,00 em ações no mês, em operações comuns, com lucro de R$ 3.000,00. Ele pergunta à assessora, certificada CPA, se precisa pagar IR.",
         enunciado: "A assessora deve explicar que:",
         alternativas: [
             "sim, 15% sobre o lucro, pois a isenção só vale quando o lucro fica abaixo de R$ 20 mil",
@@ -2913,7 +3029,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Tributação de ações",
         nivel: "médio",
-        contexto: "Carlos fez operações de day trade e de swing trade no mesmo mês. Ele teve prejuízo no day trade e lucro no swing trade, e pergunta ao assessor se pode compensar um com o outro.",
+        contexto: "Carlos fez operações de day trade e de swing trade no mesmo mês. Ele teve prejuízo no day trade e lucro no swing trade, e pergunta ao assessor, certificado CPA, se pode compensar um com o outro.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "sim, pois qualquer prejuízo em ações pode compensar qualquer lucro em ações no mesmo mês",
@@ -2929,7 +3045,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "COE",
         nivel: "médio",
-        contexto: "Um cliente comprou um COE com capital protegido e pergunta à gerente se o produto tem algum risco e como é tributado.",
+        contexto: "Um cliente comprou um COE com capital protegido e pergunta à gerente, certificada CPA, se o produto tem algum risco e como é tributado.",
         enunciado: "A gerente deve explicar que o COE:",
         alternativas: [
             "tem risco de crédito do emissor, não conta com o FGC e segue a tabela regressiva",
@@ -2945,7 +3061,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Tributação de ações",
         nivel: "difícil",
-        contexto: "Fernanda vendeu R$ 25.000,00 em ações no mês, em operações comuns, com lucro de R$ 3.000,00. Ela diz ao assessor que está isenta, pois o lucro foi bem menor que R$ 20 mil.",
+        contexto: "Fernanda vendeu R$ 25.000,00 em ações no mês, em operações comuns, com lucro de R$ 3.000,00. Ela diz ao assessor, certificado CPA, que está isenta, pois o lucro foi bem menor que R$ 20 mil.",
         enunciado: "Para corrigir a cliente, o assessor deve explicar que o IR devido é de:",
         alternativas: [
             "R$ 0,00, pois a isenção considera o lucro do mês, que ficou abaixo de R$ 20 mil",
@@ -2961,7 +3077,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Tributação de ações",
         nivel: "difícil",
-        contexto: "Em operações comuns, Ricardo teve prejuízo de R$ 2.000,00 em março. Em abril, vendeu R$ 40.000,00 em ações e teve lucro de R$ 5.000,00. Ele pergunta ao assessor quanto de IR deve pagar em abril.",
+        contexto: "Em operações comuns, Ricardo teve prejuízo de R$ 2.000,00 em março. Em abril, vendeu R$ 40.000,00 em ações e teve lucro de R$ 5.000,00. Ele pergunta ao assessor, certificado CPA, quanto de IR deve pagar em abril.",
         enunciado: "O IR devido em abril é de:",
         alternativas: [
             "R$ 750,00, pois o prejuízo de março não pode ser compensado em outro mês",
@@ -2977,7 +3093,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Tributação de ações",
         nivel: "difícil",
-        contexto: "Júlia teve lucro de R$ 1.000,00 em operações de day trade no mês, e a corretora reteve 1% desse lucro na fonte. Ela pergunta à assessora quanto ainda precisa recolher.",
+        contexto: "Júlia teve lucro de R$ 1.000,00 em operações de day trade no mês, e a corretora reteve 1% desse lucro na fonte. Ela pergunta à assessora, certificada CPA, quanto ainda precisa recolher.",
         enunciado: "A assessora deve explicar que Júlia deve recolher por DARF:",
         alternativas: [
             "R$ 190,00, pois o IR é de 20%, ou R$ 200,00, e os R$ 10,00 retidos são descontados",
@@ -2993,7 +3109,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "COE",
         nivel: "difícil",
-        contexto: "Mário comprou um COE com capital protegido e vencimento em três anos. Após um ano, quer resgatar e diz ao gerente que não corre risco de perda, pois o capital é protegido.",
+        contexto: "Mário comprou um COE com capital protegido e vencimento em três anos. Após um ano, quer resgatar e diz ao gerente, certificado CPA, que não corre risco de perda, pois o capital é protegido.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "a proteção vale em qualquer data, e a saída antecipada devolve o valor aplicado integral",
@@ -3009,7 +3125,7 @@ const questoes = [
         grupo: "Renda variável e COE",
         tema: "Eventos corporativos",
         nivel: "difícil",
-        contexto: "Uma ação cotada a R$ 30,00 terá dividendos de R$ 1,00 por ação, com data com no dia 10. André comprou as ações no dia 11 e diz ao assessor que aproveitou uma queda de preço para receber os dividendos.",
+        contexto: "Uma ação cotada a R$ 30,00 terá dividendos de R$ 1,00 por ação, com data com no dia 10. André comprou as ações no dia 11 e diz ao assessor, certificado CPA, que aproveitou uma queda de preço para receber os dividendos.",
         enunciado: "O assessor deve explicar que André:",
         alternativas: [
             "recebe os dividendos, pois comprou antes da data de pagamento anunciada pela empresa",
@@ -3107,7 +3223,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Classes e subclasses",
         nivel: "médio",
-        contexto: "Um investidor pergunta ao assessor como um mesmo fundo pode oferecer opções com prazos de resgate e taxas diferentes sem mudar a estratégia de investimento.",
+        contexto: "Um investidor pergunta ao assessor, certificado CPA, como um mesmo fundo pode oferecer opções com prazos de resgate e taxas diferentes sem mudar a estratégia de investimento.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "as subclasses de uma mesma classe podem ter prazos e taxas diferentes, e cada uma tem carteira própria",
@@ -3123,7 +3239,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Conceitos de fundos",
         nivel: "médio",
-        contexto: "Um cliente teme perder o dinheiro aplicado em um fundo caso a administradora enfrente problemas financeiros. Ele pede à gerente uma explicação.",
+        contexto: "Um cliente teme perder o dinheiro aplicado em um fundo caso a administradora enfrente problemas financeiros. Ele pede à gerente, certificada CPA, uma explicação.",
         enunciado: "A gerente deve explicar que:",
         alternativas: [
             "o patrimônio do fundo é segregado e não se confunde com o da administradora",
@@ -3139,7 +3255,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Responsabilidade limitada",
         nivel: "médio",
-        contexto: "Uma cliente leu que alguns fundos preveem responsabilidade limitada dos cotistas e pergunta ao gerente o que isso significa.",
+        contexto: "Uma cliente leu que alguns fundos preveem responsabilidade limitada dos cotistas e pergunta ao gerente, certificado CPA, o que isso significa.",
         enunciado: "O gerente deve explicar que, quando o regulamento prevê a limitação:",
         alternativas: [
             "o cotista tem o valor das cotas garantido, sem risco de perder o capital investido",
@@ -3155,7 +3271,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Aplicação e resgate",
         nivel: "médio",
-        contexto: "Um fundo tem cotização em D+30 e pagamento em D+31. Uma cliente pede o resgate e pergunta ao gerente qual cota será usada e quando recebe o dinheiro.",
+        contexto: "Um fundo tem cotização em D+30 e pagamento em D+31. Uma cliente pede o resgate e pergunta ao gerente, certificado CPA, qual cota será usada e quando recebe o dinheiro.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "o valor será calculado pela cota do dia do pedido, e o pagamento ocorre 31 dias depois",
@@ -3171,7 +3287,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Documentos dos fundos",
         nivel: "médio",
-        contexto: "Na primeira aplicação em um fundo, o gerente pede que o cliente assine um termo de adesão e ciência de risco. O cliente pergunta para que serve o documento.",
+        contexto: "Na primeira aplicação em um fundo, o gerente, certificado CPA, pede que o cliente assine um termo de adesão e ciência de risco. O cliente pergunta para que serve o documento.",
         enunciado: "O gerente deve explicar que o termo:",
         alternativas: [
             "garante ao cliente a rentabilidade apresentada na lâmina do fundo",
@@ -3187,7 +3303,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Prestadores de serviços",
         nivel: "médio",
-        contexto: "Um investidor pergunta ao assessor qual é a diferença entre o administrador e o gestor do fundo.",
+        contexto: "Um investidor pergunta ao assessor, certificado CPA, qual é a diferença entre o administrador e o gestor do fundo.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "o administrador decide a compra e a venda dos ativos, e o gestor cuida do funcionamento e dos controles do fundo",
@@ -3203,7 +3319,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Assembleia de cotistas",
         nivel: "médio",
-        contexto: "O gestor de um fundo quer aumentar a taxa de administração. Um cotista pergunta ao gerente se isso pode ser feito sem consultar os investidores.",
+        contexto: "O gestor de um fundo quer aumentar a taxa de administração. Um cotista pergunta ao gerente, certificado CPA, se isso pode ser feito sem consultar os investidores.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "o aumento da taxa depende de aprovação da assembleia de cotistas",
@@ -3235,7 +3351,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Classes restritas, exclusivas e previdenciárias",
         nivel: "médio",
-        contexto: "Um cliente de alto patrimônio, investidor profissional, quer um fundo feito só para ele. Ele pergunta ao gerente qual é a classe adequada.",
+        contexto: "Um cliente de alto patrimônio, investidor profissional, quer um fundo feito só para ele. Ele pergunta ao gerente, certificado CPA, qual é a classe adequada.",
         enunciado: "O gerente deve explicar que a classe adequada é a:",
         alternativas: [
             "restrita, destinada a um único investidor de varejo",
@@ -3251,7 +3367,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Encargos dos fundos",
         nivel: "médio",
-        contexto: "Um cotista percebe que o fundo paga auditoria, custódia e taxas de fiscalização, e pergunta ao assessor quem arca com essas despesas.",
+        contexto: "Um cotista percebe que o fundo paga auditoria, custódia e taxas de fiscalização, e pergunta ao assessor, certificado CPA, quem arca com essas despesas.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "são encargos do fundo, debitados do seu patrimônio e refletidos no valor da cota",
@@ -3267,12 +3383,12 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Distribuição de cotas",
         nivel: "médio",
-        contexto: "Uma cliente aplica em um fundo por meio de uma plataforma de investimentos, na modalidade por conta e ordem. Ela pergunta ao assessor o que isso muda.",
+        contexto: "Uma cliente aplica em um fundo por meio de uma plataforma de investimentos, na modalidade por conta e ordem. Ela pergunta ao assessor, certificado CPA, o que isso muda.",
         enunciado: "O assessor deve explicar que, nessa modalidade:",
         alternativas: [
             "o administrador mantém o cadastro dela, e a plataforma passa a ser a verdadeira dona das cotas aplicadas",
             "o distribuidor mantém o cadastro dela, e as cotas ficam registradas em nome do gestor do fundo",
-            "o distribuidor mantém o cadastro dela, e o administrador registra a aplicação em nome da plataforma, em subconta que identifica a cliente",
+            "o distribuidor mantém o cadastro dela, e o administrador registra a aplicação em nome da plataforma",
             "o administrador mantém o cadastro dela, e a plataforma não tem nenhuma obrigação com a cliente"
         ],
         correta: 2
@@ -3283,7 +3399,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Remuneração dos prestadores",
         nivel: "difícil",
-        contexto: "Um fundo cobra taxa de performance de 20% sobre o que exceder o CDI. No ano, o fundo rendeu 14%, e o CDI, 10%. Um cotista com R$ 100.000,00 aplicados pergunta ao assessor quanto pagou de performance.",
+        contexto: "Um fundo cobra taxa de performance de 20% sobre o que exceder o CDI. No ano, o fundo rendeu 14%, e o CDI, 10%. Um cotista com R$ 100.000,00 aplicados pergunta ao assessor, certificado CPA, quanto pagou de performance.",
         enunciado: "A taxa de performance paga foi de aproximadamente:",
         alternativas: [
             "R$ 2.800,00, pois 20% incidem sobre todo o rendimento de 14%",
@@ -3315,7 +3431,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Responsabilidade limitada",
         nivel: "difícil",
-        contexto: "Uma classe de fundo com responsabilidade limitada fica com patrimônio líquido negativo após grandes perdas. Um cotista teme ser cobrado para cobrir o rombo e pergunta ao gerente.",
+        contexto: "Uma classe de fundo com responsabilidade limitada fica com patrimônio líquido negativo após grandes perdas. Um cotista teme ser cobrado para cobrir o rombo e pergunta ao gerente, certificado CPA.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "o cotista deve aportar novos recursos até zerar o rombo, na proporção de suas cotas",
@@ -3331,7 +3447,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Remuneração dos prestadores",
         nivel: "difícil",
-        contexto: "Um cliente com R$ 200.000,00 em um fundo com taxa de administração de 1,5% ao ano diz ao gerente que nunca pagou essa taxa, pois não vê nenhuma cobrança no extrato.",
+        contexto: "Um cliente com R$ 200.000,00 em um fundo com taxa de administração de 1,5% ao ano diz ao gerente, certificado CPA, que nunca pagou essa taxa, pois não vê nenhuma cobrança no extrato.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "a taxa é provisionada todo dia, cerca de R$ 3.000,00 ao ano, e já está refletida no valor da cota",
@@ -3348,7 +3464,7 @@ const questoes = [
         tema: "Classes e subclasses",
         nivel: "difícil",
         contexto: "Uma classe de fundo tem duas subclasses: uma com resgate em D+1 e taxa de 1,2% ao ano e outra com resgate em D+30 e taxa de 0,8% ao ano. Um cliente que pode precisar do dinheiro a qualquer momento quer a menor taxa.",
-        enunciado: "A orientação correta do gerente é:",
+        enunciado: "A orientação correta do gerente, certificado CPA, é:",
         alternativas: [
             "indicar a subclasse D+30, pois a carteira é diferente e tende a render mais que a D+1",
             "indicar a subclasse D+1, pois a carteira é a mesma, e ele precisa de liquidez",
@@ -3363,7 +3479,7 @@ const questoes = [
         grupo: "Fundos: estrutura e funcionamento",
         tema: "Cotas",
         nivel: "difícil",
-        contexto: "Rita tem cotas de um fundo de cotas fechadas e precisa do dinheiro antes do fim do prazo. Ela pergunta ao assessor se pode pedir o resgate ao administrador.",
+        contexto: "Rita tem cotas de um fundo de cotas fechadas e precisa do dinheiro antes do fim do prazo. Ela pergunta ao assessor, certificado CPA, se pode pedir o resgate ao administrador.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "ela pode pedir o resgate ao administrador, que paga o valor da cota do dia em até 30 dias",
@@ -3381,7 +3497,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Tipos de fundos",
         nivel: "fácil",
-        contexto: "Um exportador quer um fundo que se valorize quando o dólar sobe e que, por regra, mantenha ao menos 80% da carteira nesse fator de risco.",
+        contexto: "Um investidor quer um fundo que aplique pelo menos 80% do patrimônio em ativos ligados à variação de moedas estrangeiras.",
         enunciado: "Esse fundo é classificado como:",
         alternativas: [
             "Multimercado",
@@ -3429,7 +3545,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Tipos de fundos",
         nivel: "fácil",
-        contexto: "Em vez de comprar títulos e ações diretamente, um fundo monta sua carteira aplicando em outros fundos de investimento.",
+        contexto: "Um fundo investe a maior parte do seu patrimônio em cotas de outros fundos de investimento.",
         enunciado: "Esse tipo de fundo é chamado de:",
         alternativas: [
             "Fundo de investimento em participações (FIP)",
@@ -3461,7 +3577,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Tipos de fundos",
         nivel: "médio",
-        contexto: "Um cliente de perfil moderado quer um fundo com gestão flexível, capaz de combinar juros, ações, câmbio e outros mercados. Ele pede orientação ao assessor.",
+        contexto: "Um cliente de perfil moderado quer um fundo com gestão flexível, capaz de combinar juros, ações, câmbio e outros mercados. Ele pede orientação ao assessor, certificado CPA.",
         enunciado: "O assessor deve indicar um fundo:",
         alternativas: [
             "multimercado, que pode investir em vários fatores de risco sem concentração obrigatória em um deles",
@@ -3477,7 +3593,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Tipos de fundos",
         nivel: "médio",
-        contexto: "Uma cliente vê que um fundo é classificado como de ações e pergunta à gerente qual é a exposição mínima exigida a esse tipo de ativo.",
+        contexto: "Uma cliente vê que um fundo é classificado como de ações e pergunta à gerente, certificada CPA, qual é a exposição mínima exigida a esse tipo de ativo.",
         enunciado: "A gerente deve explicar que o fundo de ações deve ter:",
         alternativas: [
             "no mínimo 80% do patrimônio em ações e ativos relacionados",
@@ -3493,7 +3609,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Tipos de fundos",
         nivel: "médio",
-        contexto: "Um fundo de renda fixa tem mais da metade da carteira em debêntures e outros títulos de empresas privadas. O cliente pergunta ao assessor o que isso indica.",
+        contexto: "Um fundo de renda fixa tem mais da metade da carteira em debêntures e outros títulos de empresas privadas. O cliente pergunta ao assessor, certificado CPA, o que isso indica.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "o fundo concentra crédito privado, mas o risco é o mesmo de um fundo só de títulos públicos",
@@ -3509,7 +3625,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "FIDC",
         nivel: "médio",
-        contexto: "Um investidor avalia as cotas sênior de um FIDC e pergunta ao assessor qual é a diferença para as cotas subordinadas.",
+        contexto: "Um investidor avalia as cotas sênior de um FIDC e pergunta ao assessor, certificado CPA, qual é a diferença para as cotas subordinadas.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "as cotas sênior absorvem as perdas primeiro, protegendo as cotas subordinadas",
@@ -3525,7 +3641,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "FII",
         nivel: "médio",
-        contexto: "Uma investidora pessoa física tem poucas cotas de um FII negociado na bolsa, com mais de 100 cotistas. Ela pergunta à assessora como são tributados os rendimentos mensais.",
+        contexto: "Uma investidora pessoa física tem poucas cotas de um FII negociado na bolsa, com mais de 100 cotistas. Ela pergunta à assessora, certificada CPA, como são tributados os rendimentos mensais.",
         enunciado: "A assessora deve explicar que:",
         alternativas: [
             "os rendimentos pagam 15% de IR na fonte, e o ganho na venda das cotas é isento",
@@ -3541,7 +3657,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "FII",
         nivel: "médio",
-        contexto: "Um cliente acha que FII é um investimento sem riscos, pois é lastreado em imóveis. Ele pede a opinião da gerente.",
+        contexto: "Um cliente acha que FII é um investimento sem riscos, pois é lastreado em imóveis. Ele pede a opinião da gerente, certificada CPA.",
         enunciado: "A gerente deve explicar que os FIIs têm riscos como:",
         alternativas: [
             "vacância dos imóveis, inadimplência dos inquilinos e oscilação do preço das cotas na bolsa",
@@ -3557,7 +3673,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "ETF",
         nivel: "médio",
-        contexto: "Um investidor iniciante quer se expor ao Ibovespa com poucas operações e pede ao assessor as vantagens de usar um ETF.",
+        contexto: "Um investidor iniciante quer se expor ao Ibovespa com poucas operações e pede ao assessor, certificado CPA, as vantagens de usar um ETF.",
         enunciado: "O assessor deve explicar que o ETF oferece:",
         alternativas: [
             "diversificação em uma única cota, gestão ativa e rentabilidade garantida",
@@ -3573,7 +3689,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Carteira administrada",
         nivel: "médio",
-        contexto: "Um cliente de alto patrimônio compara um fundo com uma carteira administrada e pergunta à gerente a principal diferença entre eles.",
+        contexto: "Um cliente de alto patrimônio compara um fundo com uma carteira administrada e pergunta à gerente, certificada CPA, a principal diferença entre eles.",
         enunciado: "A gerente deve explicar que, na carteira administrada:",
         alternativas: [
             "os ativos ficam em nome do gestor, e o cliente recebe cotas proporcionais",
@@ -3589,7 +3705,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Fundos sustentáveis",
         nivel: "médio",
-        contexto: "Um cliente quer investir em fundos com foco em sustentabilidade e vê dois tipos na plataforma: um com o sufixo IS e outro que apenas integra questões ESG. Ele pede orientação ao assessor.",
+        contexto: "Um cliente quer investir em fundos com foco em sustentabilidade e vê dois tipos na plataforma: um com o sufixo IS e outro que apenas integra questões ESG. Ele pede orientação ao assessor, certificado CPA.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "o fundo IS tem objetivo sustentável, e o outro só considera fatores ESG na análise",
@@ -3605,7 +3721,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Carteira do fundo",
         nivel: "médio",
-        contexto: "Uma cliente pergunta ao gerente por que um fundo de renda fixa pode ter muitos títulos públicos e poucos títulos de uma única empresa.",
+        contexto: "Uma cliente pergunta ao gerente, certificado CPA, por que um fundo de renda fixa pode ter muitos títulos públicos e poucos títulos de uma única empresa.",
         enunciado: "O gerente deve explicar que os limites por emissor:",
         alternativas: [
             "se aplicam da mesma forma a todos os emissores, inclusive aos títulos públicos",
@@ -3621,7 +3737,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Classificação ANBIMA",
         nivel: "médio",
-        contexto: "Um cliente vê que um fundo é classificado pela ANBIMA como Renda Fixa Duração Alta e pergunta à assessora o que essa informação indica.",
+        contexto: "Um cliente vê que um fundo é classificado pela ANBIMA como Renda Fixa Duração Alta e pergunta à assessora, certificada CPA, o que essa informação indica.",
         enunciado: "A assessora deve explicar que a classificação indica:",
         alternativas: [
             "a classe do fundo, o nível de risco e a estratégia, e a duração alta reduz a sensibilidade aos juros",
@@ -3637,7 +3753,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "FII",
         nivel: "difícil",
-        contexto: "Luísa recebeu R$ 800,00 de rendimentos de um FII no semestre e vendeu parte das cotas com lucro de R$ 2.000,00. Ela diz ao assessor que tudo é isento, por se tratar de FII.",
+        contexto: "Luísa recebeu R$ 800,00 de rendimentos de um FII no semestre e vendeu parte das cotas com lucro de R$ 2.000,00. Ela diz ao assessor, certificado CPA, que tudo é isento, por se tratar de FII.",
         enunciado: "O assessor deve explicar que o IR devido é de:",
         alternativas: [
             "R$ 0,00, pois os rendimentos e o ganho na venda de FII são isentos",
@@ -3669,7 +3785,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "ETF",
         nivel: "difícil",
-        contexto: "Tiago vendeu R$ 15.000,00 em cotas de um ETF de ações no mês, com lucro de R$ 1.000,00. Ele diz ao assessor que está isento, pois as vendas ficaram abaixo de R$ 20 mil.",
+        contexto: "Tiago vendeu R$ 15.000,00 em cotas de um ETF de ações no mês, com lucro de R$ 1.000,00. Ele diz ao assessor, certificado CPA, que está isento, pois as vendas ficaram abaixo de R$ 20 mil.",
         enunciado: "O assessor deve explicar que o IR devido é de:",
         alternativas: [
             "R$ 150,00, pois a isenção de R$ 20 mil não vale para ETF, e o lucro paga 15%",
@@ -3686,7 +3802,7 @@ const questoes = [
         tema: "FII",
         nivel: "difícil",
         contexto: "Um investidor passou a ter 12% das cotas de um FII e continua recebendo os rendimentos mensais. Ele acredita que os rendimentos seguem isentos, como para os demais cotistas.",
-        enunciado: "O assessor deve explicar que:",
+        enunciado: "O assessor, certificado CPA, deve explicar que:",
         alternativas: [
             "a isenção é mantida, pois ela vale para qualquer pessoa física cotista de FII",
             "ao ter 10% ou mais das cotas, ele perde a isenção, e os rendimentos passam a pagar 20%",
@@ -3701,7 +3817,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Carteira administrada",
         nivel: "difícil",
-        contexto: "Um cliente compara um fundo de renda fixa de longo prazo e uma carteira administrada com títulos de renda fixa semelhantes. Ele pergunta à gerente se há diferença na tributação.",
+        contexto: "Um cliente compara um fundo de renda fixa de longo prazo e uma carteira administrada com títulos de renda fixa semelhantes. Ele pergunta à gerente, certificada CPA, se há diferença na tributação.",
         enunciado: "A gerente deve explicar que:",
         alternativas: [
             "na carteira administrada também há come-cotas, cobrado em maio e novembro sobre todos os títulos",
@@ -3717,7 +3833,7 @@ const questoes = [
         grupo: "Fundos: tipos e carteiras",
         tema: "Classificação ANBIMA",
         nivel: "difícil",
-        contexto: "Um cliente tem dois fundos de renda fixa: um Duração Baixa e um Duração Alta. Após uma alta inesperada dos juros, ele vê perdas diferentes e pergunta ao assessor o motivo.",
+        contexto: "Um cliente tem dois fundos de renda fixa: um Duração Baixa e um Duração Alta. Após uma alta inesperada dos juros, ele vê perdas diferentes e pergunta ao assessor, certificado CPA, o motivo.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "o fundo de duração alta tende a cair mais, pois títulos longos são mais sensíveis à alta dos juros",
@@ -3767,7 +3883,7 @@ const questoes = [
         grupo: "Códigos ANBIMA e publicidade",
         tema: "Publicidade",
         nivel: "médio",
-        contexto: "Um profissional revisa a lâmina de um fundo antes da divulgação e percebe que falta um aviso obrigatório sobre garantias.",
+        contexto: "Um profissional, certificado CPA, revisa a lâmina de um fundo antes da divulgação e percebe que falta um aviso obrigatório sobre garantias.",
         enunciado: "O aviso que deve constar no material é:",
         alternativas: [
             "que o fundo conta com a garantia do FGC até R$ 250 mil por cotista e por instituição",
@@ -3783,7 +3899,7 @@ const questoes = [
         grupo: "Códigos ANBIMA e publicidade",
         tema: "Publicidade",
         nivel: "médio",
-        contexto: "Uma distribuidora prepara dois documentos: um anúncio para redes sociais e um relatório com dados detalhados da carteira para investidores. O profissional precisa classificá-los.",
+        contexto: "Uma distribuidora prepara dois documentos: um anúncio para redes sociais e um relatório com dados detalhados da carteira para investidores. O profissional, certificado CPA, precisa classificá-los.",
         enunciado: "Pelas regras da ANBIMA, os documentos são, respectivamente:",
         alternativas: [
             "material técnico, que busca atrair investidores, e material publicitário, que dá suporte à análise",
@@ -3799,7 +3915,7 @@ const questoes = [
         grupo: "Códigos ANBIMA e publicidade",
         tema: "Princípios e controles",
         nivel: "médio",
-        contexto: "Um gestor percebe que poderia comprar para o fundo ativos de uma empresa ligada ao seu grupo, a um preço acima do mercado. Ele pede orientação ao profissional de compliance.",
+        contexto: "Um gestor percebe que poderia comprar para o fundo ativos de uma empresa ligada ao seu grupo, a um preço acima do mercado. Ele pede orientação ao profissional de compliance, certificado CPA.",
         enunciado: "O profissional deve lembrar que o código exige que o gestor:",
         alternativas: [
             "atue com lealdade aos cotistas, evitando conflitos de interesse que os prejudiquem",
@@ -3815,7 +3931,7 @@ const questoes = [
         grupo: "Códigos ANBIMA e publicidade",
         tema: "Princípios e controles",
         nivel: "médio",
-        contexto: "Um funcionário da gestora comenta com um amigo quais ações o fundo vai comprar na próxima semana. O caso chega ao compliance, e um profissional analisa a conduta.",
+        contexto: "Um funcionário da gestora comenta com um amigo quais ações o fundo vai comprar na próxima semana. O caso chega ao compliance, e um profissional certificado CPA analisa a conduta.",
         enunciado: "O profissional deve concluir que:",
         alternativas: [
             "não houve irregularidade, pois a informação foi passada fora do horário de trabalho",
@@ -3831,7 +3947,7 @@ const questoes = [
         grupo: "Códigos ANBIMA e publicidade",
         tema: "Selo ANBIMA",
         nivel: "difícil",
-        contexto: "Um cliente diz ao gerente que escolheu um fundo por ter o selo ANBIMA, pois isso garante bons resultados e protege contra perdas.",
+        contexto: "Um cliente diz ao gerente, certificado CPA, que escolheu um fundo por ter o selo ANBIMA, pois isso garante bons resultados e protege contra perdas.",
         enunciado: "Para corrigir o cliente, o gerente deve explicar que o selo:",
         alternativas: [
             "garante que o fundo terá rentabilidade acima do CDI, mas não protege contra perdas de capital",
@@ -3847,7 +3963,7 @@ const questoes = [
         grupo: "Códigos ANBIMA e publicidade",
         tema: "Publicidade",
         nivel: "difícil",
-        contexto: "Uma distribuidora vai divulgar a rentabilidade de um fundo e testa quatro versões de anúncio. O profissional precisa escolher a única que segue as regras.",
+        contexto: "Uma distribuidora vai divulgar a rentabilidade de um fundo e testa quatro versões de anúncio. O profissional, certificado CPA, precisa escolher a única que segue as regras.",
         enunciado: "A versão adequada é a que:",
         alternativas: [
             "destaca apenas o melhor mês do fundo, para mostrar o potencial máximo de ganho",
@@ -3881,7 +3997,7 @@ const questoes = [
         grupo: "Previdência complementar",
         tema: "Renda na previdência",
         nivel: "fácil",
-        contexto: "Ao se aposentar, Seu Nelson quer transformar a reserva do plano em renda mensal, sem o risco de ficar sem pagamentos caso viva mais do que o previsto.",
+        contexto: "Ao se aposentar, Seu Nelson quer transformar a reserva do plano em uma renda paga todos os meses enquanto ele viver.",
         enunciado: "Essa modalidade de renda é a:",
         alternativas: [
             "Renda temporária",
@@ -3897,7 +4013,7 @@ const questoes = [
         grupo: "Previdência complementar",
         tema: "Renda na previdência",
         nivel: "médio",
-        contexto: "Uma cliente quer transformar a reserva da previdência em renda por 15 anos e pergunta ao gerente o que acontece se ela falecer antes desse prazo.",
+        contexto: "Uma cliente quer transformar a reserva da previdência em renda por 15 anos e pergunta ao gerente, certificado CPA, o que acontece se ela falecer antes desse prazo.",
         enunciado: "O gerente deve explicar que, na renda por prazo certo:",
         alternativas: [
             "o pagamento termina no falecimento, e o saldo fica com a seguradora",
@@ -3913,7 +4029,7 @@ const questoes = [
         grupo: "Previdência complementar",
         tema: "Renda na previdência",
         nivel: "médio",
-        contexto: "Seu Joaquim quer uma renda vitalícia, mas se preocupa com a esposa caso ele morra primeiro. Ele pede orientação à gerente.",
+        contexto: "Seu Joaquim quer uma renda vitalícia, mas se preocupa com a esposa caso ele morra primeiro. Ele pede orientação à gerente, certificada CPA.",
         enunciado: "A gerente deve indicar a renda:",
         alternativas: [
             "vitalícia reversível, que continua sendo paga à esposa após o falecimento dele",
@@ -3929,7 +4045,7 @@ const questoes = [
         grupo: "Previdência complementar",
         tema: "Tributação na previdência",
         nivel: "médio",
-        contexto: "Um cliente escolheu a tabela progressiva em seu plano e pergunta ao gerente como é cobrado o IR quando ele fizer um resgate.",
+        contexto: "Um cliente escolheu a tabela progressiva em seu plano e pergunta ao gerente, certificado CPA, como é cobrado o IR quando ele fizer um resgate.",
         enunciado: "O gerente deve explicar que, no resgate:",
         alternativas: [
             "há retenção de 10% na fonte, sem ajuste na declaração anual",
@@ -3945,7 +4061,7 @@ const questoes = [
         grupo: "Previdência complementar",
         tema: "Tributação na previdência",
         nivel: "médio",
-        contexto: "Uma cliente abriu um plano de previdência e ainda não sabe se prefere a tabela progressiva ou a regressiva. Ela pergunta ao gerente até quando pode decidir.",
+        contexto: "Uma cliente abriu um plano de previdência e ainda não sabe se prefere a tabela progressiva ou a regressiva. Ela pergunta ao gerente, certificado CPA, até quando pode decidir.",
         enunciado: "O gerente deve explicar que, pelas regras atuais:",
         alternativas: [
             "a escolha precisa ser feita no ato da contratação e não pode ser alterada",
@@ -3977,7 +4093,7 @@ const questoes = [
         grupo: "Previdência complementar",
         tema: "Taxas na previdência",
         nivel: "difícil",
-        contexto: "Uma cliente contribui com R$ 1.000,00 por mês para um plano com taxa de carregamento de 3% sobre cada aporte. Ela diz ao gerente que só paga a taxa de administração.",
+        contexto: "Uma cliente contribui com R$ 1.000,00 por mês para um plano com taxa de carregamento de 3% sobre cada aporte. Ela diz ao gerente, certificado CPA, que só paga a taxa de administração.",
         enunciado: "Para corrigir a cliente, o gerente deve explicar que, em um ano, o carregamento reduz a reserva em:",
         alternativas: [
             "R$ 30,00, pois o carregamento incide uma única vez ao ano, sobre um aporte",
@@ -4011,7 +4127,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "Crédito",
         nivel: "fácil",
-        contexto: "Uma aposentada do INSS quer um empréstimo com taxas mais baixas, em que a parcela seja paga pela fonte pagadora antes de o benefício cair na conta.",
+        contexto: "Uma aposentada do INSS quer um empréstimo com parcelas descontadas diretamente do benefício, com taxas mais baixas.",
         enunciado: "Essa modalidade é o:",
         alternativas: [
             "Cheque especial",
@@ -4043,7 +4159,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "Crédito",
         nivel: "médio",
-        contexto: "Um cliente reclama ao gerente dos juros do cheque especial e pergunta se existe algum limite para essa cobrança.",
+        contexto: "Um cliente reclama ao gerente, certificado CPA, dos juros do cheque especial e pergunta se existe algum limite para essa cobrança.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "os juros do cheque especial são livres, sem nenhum limite definido",
@@ -4059,7 +4175,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "Crédito",
         nivel: "médio",
-        contexto: "Uma cliente entrou no rotativo do cartão de crédito e pergunta à gerente quais regras protegem o consumidor nessa situação.",
+        contexto: "Uma cliente entrou no rotativo do cartão de crédito e pergunta à gerente, certificada CPA, quais regras protegem o consumidor nessa situação.",
         enunciado: "A gerente deve explicar que:",
         alternativas: [
             "os juros e encargos do rotativo são livres e podem crescer sem limite",
@@ -4075,7 +4191,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "Serviços bancários",
         nivel: "médio",
-        contexto: "Um cliente percebe tarifas por extratos e transferências em sua conta e questiona o gerente se essas cobranças são permitidas.",
+        contexto: "Um cliente percebe tarifas por extratos e transferências em sua conta e questiona o gerente, certificado CPA, se essas cobranças são permitidas.",
         enunciado: "O gerente deve explicar que as tarifas são devidas quando:",
         alternativas: [
             "o banco decide reajustar suas margens, podendo cobrar qualquer serviço",
@@ -4091,7 +4207,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "PIX",
         nivel: "médio",
-        contexto: "Maria caiu em um golpe e fez um Pix para um fraudador. Ela pergunta ao gerente se existe algum mecanismo para tentar reaver o valor.",
+        contexto: "Maria caiu em um golpe e fez um Pix para um fraudador. Ela pergunta ao gerente, certificado CPA, se existe algum mecanismo para tentar reaver o valor.",
         enunciado: "O gerente deve explicar que:",
         alternativas: [
             "o Pix é irreversível em qualquer situação, e não há nenhum mecanismo de devolução",
@@ -4107,7 +4223,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "Seguros",
         nivel: "médio",
-        contexto: "Roberto tem um financiamento imobiliário e quer proteger a família caso ele venha a faltar. O gerente apresenta os seguros disponíveis.",
+        contexto: "Roberto tem um financiamento imobiliário e quer proteger a família caso ele venha a faltar. O gerente, certificado CPA, apresenta os seguros disponíveis.",
         enunciado: "A recomendação mais completa é:",
         alternativas: [
             "o seguro prestamista para quitar o financiamento, somado a um seguro de vida para a família",
@@ -4123,7 +4239,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "Câmbio",
         nivel: "médio",
-        contexto: "Um cliente quer abrir uma conta de investimentos no exterior por uma plataforma digital e pergunta ao assessor se isso é permitido.",
+        contexto: "Um cliente quer abrir uma conta de investimentos no exterior por uma plataforma digital e pergunta ao assessor, certificado CPA, se isso é permitido.",
         enunciado: "O assessor deve explicar que:",
         alternativas: [
             "é proibido para residentes no Brasil, que só podem investir no exterior por BDRs",
@@ -4139,7 +4255,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "Crédito",
         nivel: "difícil",
-        contexto: "Em um aperto, Cláudio precisa de dinheiro por alguns meses e pode escolher entre cheque especial, rotativo do cartão e crédito consignado. Ele diz ao gerente que vai usar o cheque especial por ser o mais prático.",
+        contexto: "Em um aperto, Cláudio precisa de dinheiro por alguns meses e pode escolher entre cheque especial, rotativo do cartão e crédito consignado. Ele diz ao gerente, certificado CPA, que vai usar o cheque especial por ser o mais prático.",
         enunciado: "O gerente deve orientar que a opção mais barata tende a ser:",
         alternativas: [
             "o cheque especial, pois o limite de 8% ao mês o torna mais barato que o consignado",
@@ -4155,7 +4271,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "Crédito",
         nivel: "difícil",
-        contexto: "Uma cliente deixou R$ 1.000,00 no rotativo do cartão e não conseguiu pagar por vários meses. Ela teme que a dívida cresça indefinidamente e pede ajuda ao gerente.",
+        contexto: "Uma cliente deixou R$ 1.000,00 no rotativo do cartão e não conseguiu pagar por vários meses. Ela teme que a dívida cresça indefinidamente e pede ajuda ao gerente, certificado CPA.",
         enunciado: "O gerente deve explicar que o valor máximo da dívida, somando juros e encargos, é de:",
         alternativas: [
             "R$ 2.000,00, pois juros e encargos não podem passar de 100% do valor original",
@@ -4171,7 +4287,7 @@ const questoes = [
         grupo: "Crédito, serviços, câmbio e seguros",
         tema: "Seguros",
         nivel: "difícil",
-        contexto: "Um imóvel que vale R$ 300.000,00 foi segurado por R$ 500.000,00. Após um incêndio com perda total, o proprietário espera receber os R$ 500 mil e pergunta ao corretor.",
+        contexto: "Um imóvel que vale R$ 300.000,00 foi segurado por R$ 500.000,00. Após um incêndio com perda total, o proprietário espera receber os R$ 500 mil e pergunta ao corretor, certificado CPA.",
         enunciado: "O corretor deve explicar que a indenização será de até:",
         alternativas: [
             "R$ 500.000,00, pois a indenização sempre segue o valor contratado na apólice",
@@ -5740,6 +5856,6 @@ const questoes = [
             "cai na conta em segundos, funciona 24 horas por dia e costuma ter custo menor para o recebedor"
         ],
         correta: 3
-    },
+    }
 
 ];

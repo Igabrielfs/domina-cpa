@@ -14,7 +14,7 @@
 <header class="topo">
     <div class="topo-conteudo">
         <img src="img/logo.png" alt="Domina" class="logo">
-        <span class="slogan">Mais de 500 questões</span>
+        <span class="slogan">Mais de 350 questões</span>
     </div>
 </header>
 
@@ -25,9 +25,18 @@
             <div class="card card-simulado">
                 <h3>Nova CPA 2026</h3>
                 <button class="btn-principal" onclick="iniciarSimulado()">Questões</button>
-                <button disabled>Simulado</button>
+                <button onclick="iniciarProva()">Simulado</button>
             </div>
         </div>
+    </div>
+
+    <div id="escolha-modulo" class="card escolha escolha-modulo" style="display: none;">
+        <p>📚 O que deseja estudar?</p>
+        <button class="btn-principal" onclick="escolherModulo('todos')">🔀 Todos os módulos</button>
+        <button onclick="escolherModulo(1)">Módulo 1: Sistema Financeiro Nacional</button>
+        <button onclick="escolherModulo(2)">Módulo 2: Produtos e tributação</button>
+        <button onclick="escolherModulo(3)">Módulo 3: Finanças pessoais e suitability</button>
+        <button onclick="escolherModulo(4)">Módulo 4: ESG e inovação</button>
     </div>
 
     <div id="escolha-cronometro" class="card escolha" style="display: none;">
@@ -57,6 +66,39 @@
         </div>
     </div>
 
+    <div id="simulado" style="display: none;">
+        <div class="simulado-topo">
+            <span id="simulado-contador">Questão 1 de 50</span>
+            <span id="simulado-tempo">⏱ 2:30:00</span>
+        </div>
+
+        <div class="card quiz-container">
+            <div id="simulado-contexto"></div>
+            <div id="simulado-pergunta"></div>
+        </div>
+
+        <div class="simulado-navegacao">
+            <button onclick="navegarProva(-1)">← Anterior</button>
+            <button id="btnProxProva" class="btn-principal" onclick="navegarProva(1)">Próxima →</button>
+        </div>
+
+        <div class="finalizar-container">
+            <button class="secundario" onclick="entregarProva()">Finalizar prova</button>
+        </div>
+    </div>
+
+    <div id="resultado-simulado" class="card resultado" style="display: none;">
+        <p id="prova-nota"></p>
+        <p id="prova-status"></p>
+        <p id="prova-tempo"></p>
+        <div id="prova-modulos"></div>
+        <div id="prova-microtemas"></div>
+        <div class="resultado-botoes">
+            <button onclick="sairDaProva()">🏠 Página inicial</button>
+            <button class="btn-principal" onclick="iniciarProva()">🔄 Novo simulado</button>
+        </div>
+    </div>
+
     <div class="finalizar-container">
         <button id="btnFinalizar" class="secundario" onclick="finalizarSimulado()" style="display: none;">Finalizar</button>
     </div>
@@ -78,7 +120,10 @@
     const QUESTOES_PROVA = 50;
     const TEMPO_PROVA = 150 * 60; // 2h30 em segundos
     const META_POR_QUESTAO = TEMPO_PROVA / QUESTOES_PROVA; // 180s = 3:00
-    
+
+    const todasQuestoes = [...questoes];
+    let moduloEscolhido = "todos";
+
     /* ===== SORTEIO POR GRUPO ===== */
     function embaralhar(lista) {
         const copia = [...lista];
@@ -90,9 +135,13 @@
     }
 
     function sortearPorGrupo() {
+        const selecionadas = moduloEscolhido === "todos"
+            ? todasQuestoes
+            : todasQuestoes.filter((q) => q.modulo === moduloEscolhido);
+
         const grupos = {};
 
-        questoes.forEach((questao) => {
+        selecionadas.forEach((questao) => {
             if (!grupos[questao.grupo]) {
                 grupos[questao.grupo] = [];
             }
@@ -117,8 +166,24 @@
 
     /* ===== NAVEGAÇÃO ===== */
     function iniciarSimulado() {
+        document.getElementById("tela-inicial").style.display = "none";
+        document.getElementById("escolha-modulo").style.display = "block";
+    }
+
+    function escolherModulo(modulo) {
+        moduloEscolhido = modulo;
+
+        indiceAtual = 0;
+        pontuacao = 0;
+        questoesRespondidas = 0;
+        respondeuAtual = false;
+        tempoTotal = 0;
+
+        sortearPorGrupo();
+
+        document.getElementById("escolha-modulo").style.display = "none";
+
         if (usarCronometro === null) {
-            document.getElementById("tela-inicial").style.display = "none";
             document.getElementById("escolha-cronometro").style.display = "block";
             return;
         }
@@ -161,7 +226,7 @@
         abrirQuiz();
     }
 
-            function irParaInicio() {
+    function irParaInicio() {
         usarCronometro = null;
 
         indiceAtual = 0;
@@ -251,7 +316,7 @@
             contextoDiv.style.display = "none";
         }
 
-                const niveis = {
+        const niveis = {
             "fácil": { texto: "Fácil", classe: "nivel-facil" },
             "médio": { texto: "Médio", classe: "nivel-medio" },
             "difícil": { texto: "Difícil", classe: "nivel-dificil" }
@@ -307,7 +372,7 @@
         }
     }
 
-        function finalizarSimulado() {
+    function finalizarSimulado() {
         pararCronometro();
 
         document.getElementById("quiz").style.display = "none";
@@ -335,7 +400,7 @@
         document.getElementById("resultado").style.display = "block";
     }
 
-        function desenharGrafico(media) {
+    function desenharGrafico(media) {
         const maximo = META_POR_QUESTAO * 2;
         const posicao = Math.min(media / maximo, 1) * 100;
         const previsao = media * QUESTOES_PROVA;
@@ -376,6 +441,198 @@
         const h = Math.floor(segundos / 3600);
         const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, "0");
         return `${h}h${m}`;
+    }
+
+    /* ===== SIMULADO ===== */
+    const DISTRIBUICAO_PROVA = {
+        1: { "fácil": 3, "médio": 5, "difícil": 2 },
+        2: { "fácil": 5, "médio": 10, "difícil": 5 },
+        3: { "fácil": 3, "médio": 8, "difícil": 4 },
+        4: { "fácil": 1, "médio": 3, "difícil": 1 }
+    };
+    const APROVACAO = 0.7;
+
+    let prova = [];
+    let respostasProva = [];
+    let indiceProva = 0;
+    let tempoRestante = 0;
+    let intervaloProva = null;
+
+    function montarProva() {
+        const selecionadas = [];
+
+        for (const modulo in DISTRIBUICAO_PROVA) {
+            for (const nivel in DISTRIBUICAO_PROVA[modulo]) {
+                const disponiveis = todasQuestoes.filter(
+                    (q) => q.modulo === Number(modulo) && q.nivel === nivel
+                );
+                const quantidade = DISTRIBUICAO_PROVA[modulo][nivel];
+                selecionadas.push(...embaralhar(disponiveis).slice(0, quantidade));
+            }
+        }
+
+        return embaralhar(selecionadas);
+    }
+
+    function iniciarProva() {
+        prova = montarProva();
+        respostasProva = new Array(prova.length).fill(null);
+        indiceProva = 0;
+        tempoRestante = TEMPO_PROVA;
+
+        document.getElementById("tela-inicial").style.display = "none";
+        document.getElementById("resultado-simulado").style.display = "none";
+        document.getElementById("simulado").style.display = "block";
+
+        atualizarTempoProva();
+        clearInterval(intervaloProva);
+        intervaloProva = setInterval(() => {
+            tempoRestante--;
+            atualizarTempoProva();
+            if (tempoRestante <= 0) {
+                finalizarProva();
+                alert("O tempo acabou! Sua prova foi entregue.");
+            }
+        }, 1000);
+
+        mostrarQuestaoProva();
+    }
+
+    function atualizarTempoProva() {
+        const h = Math.floor(tempoRestante / 3600);
+        const m = String(Math.floor((tempoRestante % 3600) / 60)).padStart(2, "0");
+        const s = String(tempoRestante % 60).padStart(2, "0");
+        document.getElementById("simulado-tempo").textContent = `⏱ ${h}:${m}:${s}`;
+    }
+
+    function mostrarQuestaoProva() {
+        const questao = prova[indiceProva];
+
+        document.getElementById("simulado-contador").textContent =
+            `Questão ${indiceProva + 1} de ${prova.length}`;
+
+        const contextoDiv = document.getElementById("simulado-contexto");
+        if (questao.contexto) {
+            contextoDiv.innerHTML = `<strong>Contexto</strong><p>${questao.contexto}</p>`;
+            contextoDiv.style.display = "block";
+        } else {
+            contextoDiv.innerHTML = "";
+            contextoDiv.style.display = "none";
+        }
+
+        let html = `<p>${questao.enunciado}</p>`;
+        questao.alternativas.forEach((alternativa, i) => {
+            const classe = respostasProva[indiceProva] === i ? "marcada" : "";
+            html += `<button class="${classe}" onclick="marcarResposta(${i})">${alternativa}</button>`;
+        });
+        document.getElementById("simulado-pergunta").innerHTML = html;
+
+        document.getElementById("btnProxProva").textContent =
+            indiceProva === prova.length - 1 ? "Entregar prova" : "Próxima →";
+    }
+
+    function marcarResposta(i) {
+        respostasProva[indiceProva] = i;
+        mostrarQuestaoProva();
+    }
+
+    function navegarProva(passo) {
+        const novo = indiceProva + passo;
+
+        if (novo < 0) {
+            return;
+        }
+        if (novo >= prova.length) {
+            entregarProva();
+            return;
+        }
+
+        indiceProva = novo;
+        mostrarQuestaoProva();
+        window.scrollTo(0, 0);
+    }
+
+    function entregarProva() {
+        const emBranco = respostasProva.filter((r) => r === null).length;
+        const mensagem = emBranco > 0
+            ? `Você deixou ${emBranco} questão(ões) em branco. Deseja entregar mesmo assim?`
+            : "Deseja entregar a prova?";
+
+        if (!confirm(mensagem)) {
+            return;
+        }
+        finalizarProva();
+    }
+
+    function finalizarProva() {
+        clearInterval(intervaloProva);
+        intervaloProva = null;
+
+        let acertos = 0;
+        const porModulo = {};
+        const porMicrotema = [];
+
+        prova.forEach((questao, i) => {
+            const acertou = respostasProva[i] === questao.correta;
+
+            if (acertou) {
+                acertos++;
+            }
+
+            if (!porModulo[questao.modulo]) {
+                porModulo[questao.modulo] = { acertos: 0, total: 0 };
+            }
+            porModulo[questao.modulo].total++;
+            if (acertou) {
+                porModulo[questao.modulo].acertos++;
+            }
+
+            let micro = porMicrotema.find((m) => m.tema === questao.tema);
+            if (!micro) {
+                micro = { tema: questao.tema, acertos: 0, total: 0 };
+                porMicrotema.push(micro);
+            }
+            micro.total++;
+            if (acertou) {
+                micro.acertos++;
+            }
+        });
+
+        const percentual = Math.round((acertos / prova.length) * 100);
+        const aprovado = acertos / prova.length >= APROVACAO;
+
+        document.getElementById("prova-nota").textContent =
+            `Você acertou ${acertos} de ${prova.length} (${percentual}%)`;
+
+        const status = document.getElementById("prova-status");
+        status.textContent = aprovado
+            ? "✅ Aprovado! (mínimo de 70%)"
+            : "❌ Reprovado. O mínimo é 70% (35 acertos)";
+        status.className = aprovado ? "status-ok" : "status-fora";
+
+        document.getElementById("prova-tempo").textContent =
+            `Tempo usado: ${formatarHoras(TEMPO_PROVA - tempoRestante)}`;
+
+        let htmlModulos = "<h4>Por módulo</h4>";
+        for (const modulo in porModulo) {
+            const dados = porModulo[modulo];
+            htmlModulos += `<p>Módulo ${modulo}: ${dados.acertos} de ${dados.total}</p>`;
+        }
+        document.getElementById("prova-modulos").innerHTML = htmlModulos;
+
+        let htmlMicro = "<h4>Por microtema</h4>";
+        porMicrotema.forEach((m) => {
+            htmlMicro += `<p>${m.tema}: ${m.acertos} de ${m.total}</p>`;
+        });
+        document.getElementById("prova-microtemas").innerHTML = htmlMicro;
+
+        document.getElementById("simulado").style.display = "none";
+        document.getElementById("resultado-simulado").style.display = "block";
+    }
+
+    function sairDaProva() {
+        document.getElementById("resultado-simulado").style.display = "none";
+        document.getElementById("tela-inicial").style.display = "block";
     }
 
 </script>
