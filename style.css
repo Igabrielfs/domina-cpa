@@ -313,5 +313,28 @@ button:disabled {
     line-height: 1.6;
 }
 
+/* ===== NÍVEL DA QUESTÃO ===== */
+.nivel {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nivel-facil {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.nivel-medio {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.nivel-dificil {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
 
 

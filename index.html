@@ -251,7 +251,20 @@
             contextoDiv.style.display = "none";
         }
 
-        let html = `<p>${questao.enunciado}</p>`;
+                const niveis = {
+            "fácil": { texto: "Fácil", classe: "nivel-facil" },
+            "médio": { texto: "Médio", classe: "nivel-medio" },
+            "difícil": { texto: "Difícil", classe: "nivel-dificil" }
+        };
+
+        let html = "";
+
+        if (niveis[questao.nivel]) {
+            const nivel = niveis[questao.nivel];
+            html += `<span class="nivel ${nivel.classe}">${nivel.texto}</span>`;
+        }
+
+        html += `<p>${questao.enunciado}</p>`;
 
         questao.alternativas.forEach((alternativa, i) => {
             html += `<button id="btn${i}" onclick="verificarResposta(${i})">${alternativa}</button><br>`;
