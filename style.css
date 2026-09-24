@@ -35,6 +35,22 @@ header {
     font-size: 14px;
 }
 
+.resultado-cabecalho {
+    margin-bottom: 24px;
+}
+
+.resultado-cabecalho h2 {
+    margin: 0;
+    font-size: 26px;
+    color: #0f1c3f;
+}
+
+.resultado-cabecalho p {
+    margin: 8px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
 /* ===== CONTEÚDO ===== */
 .conteudo {
     max-width: 1100px;
@@ -196,9 +212,65 @@ button:disabled {
     font-size: 15px;
 }
 
+.resultado-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
 .resultado-botoes button {
-    margin: 8px 4px 0;
+    margin: 0;
+    padding: 11px 18px;
+    border-radius: 8px;
     font-weight: 600;
+    cursor: pointer;
+}
+
+.resultado-botoes .btn-principal {
+    background: #0f1c3f;
+    color: #ffffff;
+    border: none;
+}
+
+.resultado-botoes button:not(.btn-principal) {
+    background: #ffffff;
+    color: #0f1c3f;
+    border: 1px solid #cbd5e1;
+}
+
+.resultado-botoes button:hover {
+    opacity: 0.9;
+}
+
+.resultado-secao {
+    margin-top: 32px;
+    text-align: left;
+}
+
+.resultado-secao h3 {
+    font-size: 18px;
+    color: #111827;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.resultado-modulo {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #475569;
+    font-size: 14px;
+}
+
+.resultado-modulo strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+.resultado-modulo span {
+    margin-left: 8px;
+    color: #64748b;
 }
 
 /* ===== GRÁFICO DE TEMPO ===== */
@@ -271,12 +343,22 @@ button:disabled {
 
 .status-ok {
     color: #15803d;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-.status-atencao {
-    color: #b45309;
-    font-weight: 600;
+.status-fora {
+    color: #b91c1c;
+    font-weight: 700;
+}
+
+.resultado-status:has(.status-ok) {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.resultado-status:has(.status-fora) {
+    background: #fef2f2;
+    border-color: #fecaca;
 }
 
 .status-fora {
@@ -439,3 +521,136 @@ button:disabled {
     margin-bottom: 8px;
 }
 
+#resultado-simulado {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+.resultado-item {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 14px;
+}
+
+.resultado-item-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.resultado-item-topo strong {
+    color: #111827;
+    font-size: 15px;
+}
+
+.resultado-item-topo span {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f1c3f;
+}
+
+.barra-progresso {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.barra-progresso-preenchida {
+    height: 100%;
+    background: #22c55e;
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+.resultado-item-rodape {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 9px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.resultado-indicadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 28px 0 32px;
+}
+
+.indicador {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(15, 28, 63, 0.05);
+}
+
+.indicador-valor {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f1c3f;
+    margin-bottom: 6px;
+}
+
+.indicador-label {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.resultado-status {
+    margin: 20px 0;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+#resultado-simulado .resultado-analise {
+    margin: 0 0 32px;
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: left;
+}
+
+#resultado-simulado .resultado-analise h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    color: #111827;
+    text-align: left;
+}
+
+#resultado-simulado .resultado-analise p {
+    margin: 0;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+
+    .resultado-indicadores {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado-botoes {
+        flex-direction: column;
+    }
+
+    .resultado-botoes button {
+        width: 100%;
+    }
+
+}

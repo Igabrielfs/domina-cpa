@@ -88,15 +88,55 @@
     </div>
 
     <div id="resultado-simulado" class="card resultado" style="display: none;">
-        <p id="prova-nota"></p>
+
+    <div class="resultado-cabecalho">
+        <h2>Resultado</h2>
+    </div>
+
+    <div class="resultado-status">
         <p id="prova-status"></p>
-        <p id="prova-tempo"></p>
-        <div id="prova-modulos"></div>
-        <div id="prova-microtemas"></div>
-        <div class="resultado-botoes">
-            <button onclick="sairDaProva()">🏠 Página inicial</button>
-            <button class="btn-principal" onclick="iniciarProva()">🔄 Novo simulado</button>
+    </div>
+
+    <div class="resultado-indicadores">
+
+        <div class="indicador">
+            <span class="indicador-valor" id="prova-acertos">0/0</span>
+            <span class="indicador-label">Acertos</span>
         </div>
+
+        <div class="indicador">
+            <span class="indicador-valor" id="prova-percentual">0%</span>
+            <span class="indicador-label">Aproveitamento</span>
+        </div>
+
+        <div class="indicador">
+            <span class="indicador-valor" id="prova-tempo"></span>
+            <span class="indicador-label">Tempo utilizado</span>
+        </div>
+
+    </div>
+
+    <div class="resultado-analise">
+    <h3>Análise do desempenho</h3>
+    <p id="texto-analise"></p>
+</div>
+
+    <div class="resultado-secao">
+        <h3>Desempenho por módulo</h3>
+        <div id="prova-modulos"></div>
+    </div>
+
+    <div class="resultado-secao">
+        <h3>Detalhamento por tema</h3>
+        <div id="prova-microtemas"></div>
+    </div>
+
+    <div class="resultado-botoes">
+        <button onclick="sairDaProva()">🏠 Página inicial</button>
+        <button class="btn-principal" onclick="iniciarProva()">🔄 Novo simulado</button>
+    </div>
+
+</div>
     </div>
 
     <div class="finalizar-container">
@@ -438,10 +478,12 @@
     }
 
     function formatarHoras(segundos) {
-        const h = Math.floor(segundos / 3600);
-        const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, "0");
-        return `${h}h${m}`;
-    }
+    const h = Math.floor(segundos / 3600);
+    const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, "0");
+    const s = String(segundos % 60).padStart(2, "0");
+
+    return `${h}h${m}min${s}s`;
+}
 
     /* ===== SIMULADO ===== */
     const DISTRIBUICAO_PROVA = {
@@ -601,8 +643,26 @@
         const percentual = Math.round((acertos / prova.length) * 100);
         const aprovado = acertos / prova.length >= APROVACAO;
 
-        document.getElementById("prova-nota").textContent =
-            `Você acertou ${acertos} de ${prova.length} (${percentual}%)`;
+        let textoAnalise = "";
+
+    if (percentual >= 80) {
+    textoAnalise =
+        "Excelente desempenho! Você está demonstrando um bom domínio dos conteúdos.";
+    } else if (percentual >= 70) {
+    textoAnalise =
+        "Bom desempenho. Você atingiu o percentual mínimo, mas alguns temas ainda podem ser revisados.";
+    } else {
+    textoAnalise =
+        "Continue estudando. Revise principalmente os temas com menor percentual de acertos.";
+    }
+
+    document.getElementById("texto-analise").textContent = textoAnalise;
+
+        document.getElementById("prova-acertos").textContent =
+            `${acertos}/${prova.length}`;
+
+        document.getElementById("prova-percentual").textContent =
+            `${percentual}%`;
 
         const status = document.getElementById("prova-status");
         status.textContent = aprovado
@@ -611,19 +671,62 @@
         status.className = aprovado ? "status-ok" : "status-fora";
 
         document.getElementById("prova-tempo").textContent =
-            `Tempo usado: ${formatarHoras(TEMPO_PROVA - tempoRestante)}`;
+            formatarHoras(TEMPO_PROVA - tempoRestante);
 
-        let htmlModulos = "<h4>Por módulo</h4>";
-        for (const modulo in porModulo) {
-            const dados = porModulo[modulo];
-            htmlModulos += `<p>Módulo ${modulo}: ${dados.acertos} de ${dados.total}</p>`;
-        }
-        document.getElementById("prova-modulos").innerHTML = htmlModulos;
+        let htmlModulos = "";
 
-        let htmlMicro = "<h4>Por microtema</h4>";
-        porMicrotema.forEach((m) => {
-            htmlMicro += `<p>${m.tema}: ${m.acertos} de ${m.total}</p>`;
-        });
+for (const modulo in porModulo) {
+    const dados = porModulo[modulo];
+
+    const nomeModulo =
+        modulo == 1
+            ? "Sistema Financeiro Nacional"
+            : modulo == 2
+            ? "Produtos do Mercado Financeiro"
+            : modulo == 3
+            ? "Relacionamento com o Cliente - Prospecção, Atendimento e Suporte"
+            : modulo == 4
+            ? "Inovação e Desenvolvimento de Mercado"
+            : "Módulo " + modulo;
+
+    htmlModulos += `
+    <p class="resultado-modulo">
+        <strong>${nomeModulo}</strong>
+        <span>${dados.acertos} de ${dados.total} acertos</span>
+    </p>
+`;
+}
+
+document.getElementById("prova-modulos").innerHTML = htmlModulos;
+
+        let htmlMicro = "";
+
+porMicrotema.forEach((m) => {
+    const percentualMicro = Math.round(
+        (m.acertos / m.total) * 100
+    );
+
+    htmlMicro += `
+        <div class="resultado-item">
+            <div class="resultado-item-topo">
+                <strong>${m.tema}</strong>
+                <span>${m.acertos}/${m.total}</span>
+            </div>
+
+            <div class="barra-progresso">
+                <div class="barra-progresso-preenchida"
+                     style="width: ${percentualMicro}%">
+                </div>
+            </div>
+
+            <div class="resultado-item-rodape">
+                <span>${m.acertos} de ${m.total} acertos</span>
+                <span>${percentualMicro}%</span>
+            </div>
+        </div>
+    `;
+});
+
         document.getElementById("prova-microtemas").innerHTML = htmlMicro;
 
         document.getElementById("simulado").style.display = "none";
