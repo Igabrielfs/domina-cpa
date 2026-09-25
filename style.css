@@ -1,6 +1,20 @@
+/* ===== PALETA DE CORES DO DOMINA =====
+   Para mudar a identidade do site, altere só estas variáveis. */
+:root {
+    --cor-principal: #0F1C3F;        /* azul-marinho: topo, títulos, botões */
+    --cor-principal-hover: #1C2F63;
+    --cor-destaque: #D4A537;         /* dourado: só nas chamadas importantes */
+    --cor-destaque-hover: #C29328;
+    --cor-destaque-clara: #FBF3DF;   /* fundo dourado suave (menu ativo, selos) */
+    --cor-destaque-texto: #8A6412;   /* texto sobre o dourado claro */
+    --cor-apoio: #2563EB;            /* azul de apoio: links e foco */
+    --cor-fundo: #F8FAFC;
+    --cor-texto: #1E293B;
+}
+
 body {
-    background-color: #f8fafc;
-    color: #1e293b;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
     font-family: 'Inter', sans-serif;
     margin: 0;
     font-size: 17px;
@@ -9,7 +23,7 @@ body {
 /* ===== CABEÇALHO ===== */
 
 .topo {
-    background: #0f1c3f;
+    background: var(--cor-principal);
     padding: 16px 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -22,7 +36,8 @@ body {
 }
 
 .logo {
-    height: 48px;
+    display: block;
+    height: 42px;
 }
 
 .slogan {
@@ -37,7 +52,7 @@ body {
 .resultado-cabecalho h2 {
     margin: 0;
     font-size: 26px;
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .resultado-cabecalho p {
@@ -98,8 +113,8 @@ body {
 }
 
 .lateral-item.ativo {
-    background: #e0e7ff;
-    color: #1e3a8a;
+    background: var(--cor-destaque-clara);
+    color: var(--cor-principal);
     font-weight: 600;
 }
 
@@ -144,13 +159,13 @@ button:disabled {
 }
 
 .btn-principal {
-    background-color: #0f1c3f;
+    background-color: var(--cor-principal);
     color: #ffffff;
-    border: 1px solid #0f1c3f;
+    border: 1px solid var(--cor-principal);
 }
 
 .btn-principal:hover {
-    background-color: #1c2f63;
+    background-color: var(--cor-principal-hover);
 }
 
 /* ===== TELA INICIAL ===== */
@@ -171,7 +186,7 @@ button:disabled {
 .card-simulado h3 {
     font-size: 24px;
     margin: 0 0 8px;
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .card-simulado button {
@@ -192,7 +207,7 @@ button:disabled {
 .escolha p {
     font-size: 20px;
     font-weight: 600;
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .escolha button {
@@ -204,7 +219,7 @@ button:disabled {
     text-align: left;
     font-size: 18px;
     font-weight: 600;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     margin-bottom: 12px;
 }
 
@@ -258,7 +273,7 @@ button:disabled {
 #placar {
     font-size: 20px;
     font-weight: 600;
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 #media-tempo {
@@ -282,14 +297,14 @@ button:disabled {
 }
 
 .resultado-botoes .btn-principal {
-    background: #0f1c3f;
+    background: var(--cor-principal);
     color: #ffffff;
     border: none;
 }
 
 .resultado-botoes button:not(.btn-principal) {
     background: #ffffff;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     border: 1px solid #cbd5e1;
 }
 
@@ -363,7 +378,7 @@ button:disabled {
     top: -6px;
     bottom: -6px;
     width: 4px;
-    background-color: #0f1c3f;
+    background-color: var(--cor-principal);
     border-radius: 2px;
     transform: translateX(-50%);
 }
@@ -375,7 +390,7 @@ button:disabled {
     transform: translateX(-50%);
     font-size: 12px;
     font-weight: 600;
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .legenda {
@@ -435,9 +450,9 @@ button:disabled {
     width: auto;
     padding: 10px 24px;
     font-weight: 600;
-    background-color: #0f1c3f;
+    background-color: var(--cor-principal);
     color: #ffffff;
-    border: 1px solid #0f1c3f;
+    border: 1px solid var(--cor-principal);
 }
 
 #contexto-area p {
@@ -489,7 +504,7 @@ button:disabled {
     max-width: 1100px;
     margin: 0 auto 12px;
     font-weight: 600;
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 #simulado-tempo {
@@ -509,7 +524,7 @@ button:disabled {
 }
 
 #prova-modulos h4, #prova-microtemas h4 {
-    color: #0f1c3f;
+    color: var(--cor-principal);
     margin-bottom: 8px;
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 4px;
@@ -551,9 +566,9 @@ button:disabled {
 }
 
 #simulado-pergunta button.marcada {
-    background-color: #0f1c3f;
+    background-color: var(--cor-principal);
     color: #ffffff;
-    border-color: #0f1c3f;
+    border-color: var(--cor-principal);
 }
 
 #resultado-simulado {
@@ -586,7 +601,7 @@ button:disabled {
 .resultado-item-topo span {
     font-size: 15px;
     font-weight: 700;
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .barra-progresso {
@@ -632,7 +647,7 @@ button:disabled {
     display: block;
     font-size: 24px;
     font-weight: 700;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     margin-bottom: 6px;
 }
 
@@ -717,7 +732,7 @@ button:disabled {
 
 .icone-btn:hover {
     background: #f1f5f9;
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .icone-btn:focus-visible,
@@ -777,7 +792,7 @@ button:disabled {
 }
 
 .mapa-topo {
-    background: linear-gradient(135deg, #0f1c3f, #1c2f63);
+    background: linear-gradient(135deg, var(--cor-principal), var(--cor-principal-hover));
     color: #ffffff;
     padding: 20px 24px;
 }
@@ -829,7 +844,7 @@ button:disabled {
 }
 
 .leg-atual { background: #ffffff; border: 2px solid #60a5fa; }
-.leg-respondida { background: #0f1c3f; border: 2px solid #ffffff; }
+.leg-respondida { background: var(--cor-principal); border: 2px solid #ffffff; }
 .leg-pendente { background: #f1f5f9; }
 .leg-destacada { background: #f59e0b; }
 .leg-anotada { background: #60a5fa; border-radius: 50%; }
@@ -871,18 +886,18 @@ button:disabled {
 }
 
 .mapa-num:hover {
-    border-color: #0f1c3f;
+    border-color: var(--cor-principal);
 }
 
 .mapa-num.respondida {
-    background: #0f1c3f;
+    background: var(--cor-principal);
     color: #ffffff;
-    border-color: #0f1c3f;
+    border-color: var(--cor-principal);
 }
 
 .mapa-num.atual {
     background: #ffffff;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     border: 2px solid #2563eb;
 }
 
@@ -929,10 +944,202 @@ button:disabled {
     background: #f8fafc;
 }
 
+/* ===== ALTERNATIVAS COM LETRA ===== */
+#pergunta-area button.alternativa,
+#simulado-pergunta button.alternativa {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    line-height: 1.4;
+    text-align: left;
+}
+
+#simulado-pergunta button.alternativa.marcada .letra {
+    background: #ffffff;
+    color: var(--cor-principal);
+}
+
+/* resposta na hora (modo questões) */
+#pergunta-area button.alt-certa {
+    opacity: 1;
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #14532d;
+}
+
+#pergunta-area button.alt-errada {
+    opacity: 1;
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #7f1d1d;
+}
+
+.alt-certa .letra {
+    background: #22c55e;
+    color: #ffffff;
+}
+
+/* ===== DICA ===== */
+.dica-area {
+    margin: 4px 0 14px;
+}
+
+#pergunta-area .btn-dica {
+    display: inline-flex;
+    width: auto;
+    margin: 0;
+    padding: 7px 14px;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 999px;
+    color: #92400e;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#pergunta-area .btn-dica:hover {
+    background: #fef3c7;
+}
+
+.dica-texto {
+    padding: 12px 14px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    color: #78350f;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.dica-texto::before {
+    content: "💡 Dica: ";
+    font-weight: 700;
+}
+
+/* ===== EXPLICAÇÃO (questões e correção do simulado) ===== */
+.explicacao {
+    margin-top: 14px;
+    padding: 14px 16px;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.55;
+    text-align: left;
+}
+
+.explicacao p {
+    margin: 8px 0 0;
+}
+
+.explicacao .explicacao-titulo {
+    margin: 0;
+    font-weight: 700;
+}
+
+.explicacao-certa {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #14532d;
+}
+
+.explicacao-errada {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #7f1d1d;
+}
+
+.explicacao-branco {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #334155;
+}
+
+.correcao-item .explicacao {
+    font-size: 14px;
+}
+
+
+/* ===== LOGO (provisória, com bússola) ===== */
+.logo-marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo-icone {
+    width: 34px;
+    height: 34px;
+    color: #ffffff;
+}
+
+/* ===== BOTÃO DE DESTAQUE (dourado) =====
+   Use com moderação: só na ação mais importante de cada tela. */
+.btn-destaque {
+    background-color: var(--cor-destaque);
+    border: 1px solid var(--cor-destaque);
+    color: var(--cor-principal);
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-destaque:hover {
+    background-color: var(--cor-destaque-hover);
+    border-color: var(--cor-destaque-hover);
+}
+
+/* ===== BANNER DO INÍCIO ===== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+    padding: 28px 32px;
+    background: var(--cor-principal);
+    border-radius: 14px;
+    color: #ffffff;
+}
+
+.hero h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 26px;
+}
+
+.hero p {
+    margin: 8px 0 18px;
+    color: #c9d3e6;
+    font-size: 15px;
+}
+
+.hero button {
+    margin: 0;
+    padding: 11px 22px;
+    font-size: 15px;
+}
+
+.hero-bussola {
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 600px) {
+    .hero-bussola {
+        display: none;
+    }
+}
+
 /* ===== TÍTULO DAS PÁGINAS ===== */
 .pagina-topo h2 {
     margin: 0;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     font-size: 26px;
 }
 
@@ -972,7 +1179,7 @@ button:disabled {
 
 .inicio-secao {
     margin: 36px 0 14px;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     font-size: 18px;
 }
 
@@ -986,6 +1193,27 @@ button:disabled {
     display: flex;
     flex-direction: column;
     padding: 22px 24px;
+    overflow: hidden;
+}
+
+.curso-capa {
+    display: block;
+    width: calc(100% + 48px);
+    margin: -22px -24px 18px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.curso-em-breve .curso-capa {
+    filter: grayscale(0.6);
+    opacity: 0.8;
+}
+
+.ilustracao {
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto 12px;
 }
 
 .curso-card-topo {
@@ -997,7 +1225,7 @@ button:disabled {
 
 .curso-card h4 {
     margin: 0;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     font-size: 20px;
 }
 
@@ -1010,9 +1238,9 @@ button:disabled {
 .curso-selo {
     flex-shrink: 0;
     padding: 4px 10px;
-    background: #e0e7ff;
+    background: var(--cor-destaque-clara);
     border-radius: 999px;
-    color: #1e3a8a;
+    color: var(--cor-destaque-texto);
     font-size: 12px;
     font-weight: 700;
 }
@@ -1042,7 +1270,7 @@ button:disabled {
     display: inline-block;
     border: 1px solid #cbd5e1;
     border-radius: 6px;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     text-decoration: none;
 }
 
@@ -1085,7 +1313,7 @@ button:disabled {
 }
 
 .tema-info strong {
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .tema-info span {
@@ -1130,7 +1358,7 @@ button:disabled {
 .filtro-rotulo {
     display: block;
     margin-bottom: 10px;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     font-size: 14px;
     font-weight: 700;
 }
@@ -1172,12 +1400,12 @@ button:disabled {
 }
 
 .chip:hover {
-    border-color: #0f1c3f;
+    border-color: var(--cor-principal);
 }
 
 .chip.ativo {
-    background: #0f1c3f;
-    border-color: #0f1c3f;
+    background: var(--cor-principal);
+    border-color: var(--cor-principal);
     color: #ffffff;
 }
 
@@ -1206,7 +1434,7 @@ button:disabled {
 .filtro-cronometro input {
     width: 18px;
     height: 18px;
-    accent-color: #0f1c3f;
+    accent-color: var(--cor-principal);
 }
 
 .filtro-rodape {
@@ -1273,7 +1501,7 @@ button:disabled {
     border: 1px solid #e2e8f0;
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(15, 28, 63, 0.08);
-    color: #0f1c3f;
+    color: var(--cor-principal);
     text-align: center;
 }
 
@@ -1292,8 +1520,8 @@ button:disabled {
 }
 
 .ferramenta-btn.aberta {
-    background: #0f1c3f;
-    border-color: #0f1c3f;
+    background: var(--cor-principal);
+    border-color: var(--cor-principal);
     color: #ffffff;
 }
 
@@ -1337,12 +1565,12 @@ button:disabled {
 }
 
 .aba:hover {
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .aba.ativa {
-    color: #0f1c3f;
-    border-bottom-color: #0f1c3f;
+    color: var(--cor-principal);
+    border-bottom-color: var(--cor-destaque);
 }
 
 /* ===== CORREÇÃO ===== */
@@ -1365,8 +1593,8 @@ button:disabled {
 }
 
 .filtro.ativo {
-    background: #0f1c3f;
-    border-color: #0f1c3f;
+    background: var(--cor-principal);
+    border-color: var(--cor-principal);
     color: #ffffff;
 }
 
@@ -1393,7 +1621,7 @@ button:disabled {
 }
 
 .correcao-topo strong {
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .correcao-modulo {
@@ -1531,7 +1759,7 @@ button:disabled {
 
 .historico-topo h2 {
     margin: 0;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     font-size: 26px;
 }
 
@@ -1586,7 +1814,7 @@ button:disabled {
 }
 
 .historico-info strong {
-    color: #0f1c3f;
+    color: var(--cor-principal);
 }
 
 .historico-info span {
@@ -1652,7 +1880,7 @@ button:disabled {
     justify-content: space-between;
     gap: 8px;
     padding: 6px 6px 6px 14px;
-    background: #0f1c3f;
+    background: var(--cor-principal);
     color: #ffffff;
     font-size: 14px;
     font-weight: 600;
@@ -1832,7 +2060,7 @@ button:disabled {
 
 .calc-atual {
     display: block;
-    color: #0f1c3f;
+    color: var(--cor-principal);
     font-size: 30px;
     font-weight: 600;
     overflow-wrap: anywhere;
@@ -1866,8 +2094,8 @@ button:disabled {
 }
 
 .calc-teclado .calc-igual {
-    background: #0f1c3f;
-    border-color: #0f1c3f;
+    background: var(--cor-principal);
+    border-color: var(--cor-principal);
     color: #ffffff;
 }
 

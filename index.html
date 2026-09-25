@@ -7,13 +7,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ícone da aba do navegador -->
+    <link rel="icon" type="image/svg+xml" href="img/icone.svg">
+    <link rel="icon" type="image/png" sizes="512x512" href="img/icone.png">
+    <link rel="apple-touch-icon" href="img/icone.png">
+
+    <!-- Imagem e texto que aparecem ao compartilhar o link (WhatsApp, redes sociais).
+         Quando o site estiver no ar, troque "img/compartilhamento.png" pelo endereço completo,
+         por exemplo: https://seusite.com.br/img/compartilhamento.png -->
+    <meta name="description" content="Questões comentadas e simulados para a sua aprovação na CPA ANBIMA.">
+    <meta property="og:title" content="domina | Simulados CPA ANBIMA 2026">
+    <meta property="og:description" content="Questões comentadas e simulados para a sua aprovação na CPA ANBIMA.">
+    <meta property="og:image" content="img/compartilhamento.png">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="topo">
     <div class="topo-conteudo">
-        <img src="img/logo.png" alt="Domina" class="logo">
+        <img src="img/logo-escura.svg" alt="domina" class="logo">
         <span class="slogan">Mais de 350 questões</span>
     </div>
 </header>
@@ -46,9 +60,17 @@
 
     <!-- ===== INÍCIO (painel do aluno) ===== -->
     <div id="tela-inicial" class="inicio">
-        <div class="pagina-topo">
-            <h2>Seu painel</h2>
-            <p>Acompanhe sua evolução e escolha o que estudar hoje.</p>
+        <div class="hero">
+            <div>
+                <h2>Seu painel de estudos</h2>
+                <p id="hero-texto">Acompanhe sua evolução e escolha o que estudar hoje.</p>
+                <button class="btn-destaque" onclick="navegar('simulado')">Fazer simulado</button>
+            </div>
+            <svg class="hero-bussola" viewBox="0 0 32 32" aria-hidden="true">
+                <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                <polygon points="23,9 14,14 18,18" fill="#D4A537"/>
+                <polygon points="9,23 14,14 18,18" fill="currentColor"/>
+            </svg>
         </div>
 
         <div id="inicio-indicadores" class="inicio-indicadores"></div>
@@ -93,9 +115,11 @@
                 Usar cronômetro
             </label>
 
+            <img id="filtro-em-breve" class="ilustracao" src="img/em-breve.svg" alt="" style="display: none;">
+
             <div class="filtro-rodape">
                 <p id="filtro-contagem" class="filtro-contagem"></p>
-                <button id="btnComecar" class="btn-principal" onclick="comecarQuestoes()">Começar</button>
+                <button id="btnComecar" class="btn-destaque" onclick="comecarQuestoes()">Começar</button>
             </div>
         </div>
     </div>
@@ -278,7 +302,7 @@
 
         <div class="resultado-botoes">
             <button id="btnVoltarHistorico" onclick="navegar('historico')" style="display: none;">↩ Voltar ao histórico</button>
-            <button class="btn-principal" onclick="iniciarProva()">🔄 Novo simulado</button>
+            <button class="btn-destaque" onclick="iniciarProva()">🔄 Novo simulado</button>
         </div>
     </div>
 
@@ -402,6 +426,7 @@
             descricao: "Certificado Profissional ANBIMA",
             simulado: true,
             pdf: null,
+            capa: "img/capa-cpa.svg",
             modulos: {
                 1: "Sistema Financeiro Nacional",
                 2: "Produtos do Mercado Financeiro",
@@ -415,6 +440,7 @@
             descricao: "Certificado Profissional ANBIMA de Relacionamento",
             simulado: false,
             pdf: null,
+            capa: "img/capa-cpror.svg",
             modulos: {
                 1: "Prospecção e relacionamento com a pessoa investidora",
                 2: "Análise de informações do cliente",
@@ -442,6 +468,11 @@
 
     // questões sem curso definido são tratadas como CPA
     const todasQuestoes = questoes.map((q) => ({ curso: "cpa", ...q }));
+
+    // usado para buscar dica e explicação atualizadas de uma questão pelo id
+    const QUESTOES_POR_ID = Object.fromEntries(todasQuestoes.map((q) => [q.id, q]));
+
+    const LETRAS = ["A", "B", "C", "D", "E"];
 
     function nomeModulo(curso, modulo) {
         const dados = CURSOS[curso || "cpa"];
@@ -602,6 +633,7 @@
         const dataProva = lerDados(CHAVE_DATA_PROVA, "");
         let textoDias = "–";
         let legendaDias = "Informe a data da sua prova";
+        let textoHero = "Acompanhe sua evolução e escolha o que estudar hoje.";
 
         if (dataProva) {
             const hoje = new Date();
@@ -611,16 +643,21 @@
             if (dias > 1) {
                 textoDias = dias;
                 legendaDias = "dias até a prova";
+                textoHero = `Faltam ${dias} dias para a sua prova. Cada questão conta.`;
             } else if (dias === 1) {
                 textoDias = 1;
                 legendaDias = "dia até a prova";
+                textoHero = "Sua prova é amanhã. Faça uma última revisão.";
             } else if (dias === 0) {
                 textoDias = "Hoje";
                 legendaDias = "é o dia da prova. Boa sorte!";
+                textoHero = "Hoje é o dia da sua prova. Boa sorte!";
             } else {
                 legendaDias = "A data informada já passou";
             }
         }
+
+        document.getElementById("hero-texto").textContent = textoHero;
 
         document.getElementById("inicio-indicadores").innerHTML = `
             <div class="indicador">
@@ -661,9 +698,10 @@
 
             return `
                 <div class="card curso-card ${disponivel ? "" : "curso-em-breve"}">
+                    ${curso.capa ? `<img class="curso-capa" src="${curso.capa}" alt="">` : ""}
                     <div class="curso-card-topo">
                         <h4>${curso.titulo}</h4>
-                        <span class="curso-selo">${disponivel ? `${total} questões` : "Em breve"}</span>
+                        <span class="curso-selo">${disponivel ? "Disponível" : "Em breve"}</span>
                     </div>
                     <p>${curso.descricao}</p>
                     <div class="curso-botoes">${botoes}</div>
@@ -678,6 +716,7 @@
             temasParaRevisar = [];
             container.innerHTML = `
                 <div class="card inicio-vazio">
+                    <img class="ilustracao" src="img/vazio-simulado.svg" alt="">
                     <p>Faça seu primeiro simulado para descobrirmos quais temas você precisa revisar.</p>
                     <button class="btn-principal" onclick="navegar('simulado')">Fazer um simulado</button>
                 </div>
@@ -789,14 +828,13 @@
         const modulos = CURSOS[filtro.curso].modulos;
         let htmlModulos = `
             <button class="chip ${filtro.modulo === "todos" ? "ativo" : ""}" onclick="escolherModuloFiltro('todos')">
-                Todos os módulos <small>${doCurso.length}</small>
+                Todos os módulos
             </button>
         `;
         for (const numero in modulos) {
-            const total = doCurso.filter((q) => q.modulo === Number(numero)).length;
             htmlModulos += `
                 <button class="chip ${filtro.modulo === Number(numero) ? "ativo" : ""}" onclick="escolherModuloFiltro(${numero})">
-                    Módulo ${numero}: ${modulos[numero]} <small>${total}</small>
+                    Módulo ${numero}: ${modulos[numero]}
                 </button>
             `;
         }
@@ -829,12 +867,14 @@
         const contagem = document.getElementById("filtro-contagem");
         const botao = document.getElementById("btnComecar");
 
+        document.getElementById("filtro-em-breve").style.display = doCurso.length === 0 ? "block" : "none";
+
         if (doCurso.length === 0) {
             contagem.textContent = `As questões da ${CURSOS[filtro.curso].nome} chegam em breve.`;
         } else if (total === 0) {
             contagem.textContent = "Nenhuma questão com esses filtros. Tente marcar outros níveis ou módulos.";
         } else {
-            contagem.textContent = `${total} ${total === 1 ? "questão disponível" : "questões disponíveis"}`;
+            contagem.textContent = "";
         }
         botao.disabled = total === 0;
     }
@@ -1019,8 +1059,8 @@
 
         respondeuAtual = false;
 
-        document.getElementById("quiz-contador").textContent =
-            `Questão ${indice + 1} de ${listaQuiz.length}`;
+        // o aluno não vê quantas questões há nem quantas já respondeu
+        document.getElementById("quiz-contador").textContent = nomeModulo(questao.curso, questao.modulo);
 
         if (questao.contexto) {
             contextoDiv.innerHTML = `<strong>Contexto</strong><p>${questao.contexto}</p>`;
@@ -1039,8 +1079,23 @@
 
         html += `<p>${questao.enunciado}</p>`;
 
+        // a dica só aparece se o aluno pedir
+        if (questao.dica) {
+            html += `
+                <div class="dica-area">
+                    <button id="btnDica" class="btn-dica" onclick="mostrarDica()">💡 Ver dica</button>
+                    <div id="dica-texto" class="dica-texto" style="display: none;">${questao.dica}</div>
+                </div>
+            `;
+        }
+
         questao.alternativas.forEach((alternativa, i) => {
-            html += `<button id="btn${i}" onclick="verificarResposta(${i})">${alternativa}</button>`;
+            html += `
+                <button id="btn${i}" class="alternativa" onclick="verificarResposta(${i})">
+                    <span class="letra">${LETRAS[i]}</span>
+                    <span class="alt-texto">${alternativa}</span>
+                </button>
+            `;
         });
 
         perguntaDiv.innerHTML = html;
@@ -1049,28 +1104,78 @@
         mostrarAnotacao();
     }
 
+    function mostrarDica() {
+        document.getElementById("dica-texto").style.display = "block";
+        document.getElementById("btnDica").style.display = "none";
+    }
+
     function verificarResposta(indiceEscolhido) {
         const questao = listaQuiz[indiceAtual];
-        const botaoClicado = document.getElementById(`btn${indiceEscolhido}`);
-        const botaoCorreto = document.getElementById(`btn${questao.correta}`);
+        const acertou = indiceEscolhido === questao.correta;
 
         questoesRespondidas++;
         respondeuAtual = true;
+        if (acertou) pontuacao++;
 
-        if (indiceEscolhido === questao.correta) {
-            botaoClicado.style.backgroundColor = "lightgreen";
-            pontuacao++;
-        } else {
-            botaoClicado.style.backgroundColor = "salmon";
-            botaoCorreto.style.backgroundColor = "lightgreen";
+        // verde na correta, vermelho na marcada errada
+        document.getElementById(`btn${questao.correta}`).classList.add("alt-certa");
+        if (!acertou) {
+            document.getElementById(`btn${indiceEscolhido}`).classList.add("alt-errada");
         }
 
         questao.alternativas.forEach((alternativa, i) => {
             document.getElementById(`btn${i}`).disabled = true;
         });
 
-        const perguntaDiv = document.getElementById("pergunta-area");
-        perguntaDiv.innerHTML += `<div class="proxima-container"><button onclick="proximaQuestao()">Próxima</button></div>`;
+        const botaoDica = document.getElementById("btnDica");
+        if (botaoDica) botaoDica.disabled = true;
+
+        document.getElementById("pergunta-area").insertAdjacentHTML("beforeend", `
+            ${montarExplicacao(questao, indiceEscolhido)}
+            <div class="proxima-container"><button onclick="proximaQuestao()">Próxima</button></div>
+        `);
+    }
+
+    // explicação exibida no modo questões e na correção do simulado
+    function montarExplicacao(questao, resposta) {
+        const atual = QUESTOES_POR_ID[questao.id] || {};
+        const explicacao = questao.explicacao || atual.explicacao;
+        const comentarios = questao.comentarios || atual.comentarios || [];
+        const letraCorreta = LETRAS[questao.correta];
+
+        let titulo;
+        let classe;
+
+        if (resposta === null || resposta === undefined) {
+            classe = "explicacao-branco";
+            titulo = `Você deixou em branco. A resposta correta é a alternativa ${letraCorreta}.`;
+        } else if (resposta === questao.correta) {
+            classe = "explicacao-certa";
+            titulo = "✔ Você acertou!";
+        } else {
+            classe = "explicacao-errada";
+            titulo = `✘ Você errou. A resposta correta é a alternativa ${letraCorreta}.`;
+        }
+
+        let corpo = "";
+
+        if (resposta !== null && resposta !== undefined && resposta !== questao.correta && comentarios[resposta]) {
+            corpo += `<p><strong>Por que a alternativa ${LETRAS[resposta]} está errada:</strong> ${comentarios[resposta]}</p>`;
+        }
+
+        if (explicacao) {
+            const rotulo = resposta === questao.correta
+                ? "Por que está certa:"
+                : `Por que a alternativa ${letraCorreta} está certa:`;
+            corpo += `<p><strong>${rotulo}</strong> ${explicacao}</p>`;
+        }
+
+        return `
+            <div class="explicacao ${classe}">
+                <p class="explicacao-titulo">${titulo}</p>
+                ${corpo}
+            </div>
+        `;
     }
 
     function proximaQuestao() {
@@ -1090,8 +1195,13 @@
 
         document.getElementById("quiz-tela").style.display = "none";
 
-        document.getElementById("placar").textContent =
-            `Você acertou ${pontuacao} de ${questoesRespondidas} questões.`;
+        const percentualQuiz = questoesRespondidas > 0
+            ? Math.round((pontuacao / questoesRespondidas) * 100)
+            : 0;
+
+        document.getElementById("placar").textContent = questoesRespondidas > 0
+            ? `Você respondeu ${questoesRespondidas} ${questoesRespondidas === 1 ? "questão" : "questões"} e acertou ${pontuacao} (${percentualQuiz}%).`
+            : "Você ainda não respondeu nenhuma questão.";
 
         const mediaDiv = document.getElementById("media-tempo");
         const graficoDiv = document.getElementById("grafico-tempo");
@@ -1316,7 +1426,12 @@
         let html = `<p>${questao.enunciado}</p>`;
         questao.alternativas.forEach((alternativa, i) => {
             const classe = respostasProva[indiceProva] === i ? "marcada" : "";
-            html += `<button class="${classe}" onclick="marcarResposta(${i})">${alternativa}</button>`;
+            html += `
+                <button class="alternativa ${classe}" onclick="marcarResposta(${i})">
+                    <span class="letra">${LETRAS[i]}</span>
+                    <span class="alt-texto">${alternativa}</span>
+                </button>
+            `;
         });
         document.getElementById("simulado-pergunta").innerHTML = html;
 
@@ -1443,6 +1558,8 @@
                 enunciado: q.enunciado,
                 alternativas: q.alternativas,
                 correta: q.correta,
+                explicacao: q.explicacao || "",
+                comentarios: q.comentarios || null,
                 resposta: respostasProva[i],
                 destacada: destaquesProva[i],
                 anotacao: anotacoesProva[i]
@@ -1576,8 +1693,6 @@
 
     function renderizarCorrecao() {
         const lista = registroAtual.questoes;
-        const letras = ["A", "B", "C", "D", "E"];
-
         const contagem = {
             todas: lista.length,
             errada: lista.filter((q) => situacao(q) === "errada").length,
@@ -1625,7 +1740,7 @@
 
                 alternativas += `
                     <li class="${classe}">
-                        <span class="letra">${letras[a]}</span>
+                        <span class="letra">${LETRAS[a]}</span>
                         <span class="alt-texto">${texto}</span>
                         ${marcas}
                     </li>
@@ -1647,6 +1762,7 @@
                         </details>` : ""}
                     <p class="correcao-enunciado">${questao.enunciado}</p>
                     <ul class="correcao-alternativas">${alternativas}</ul>
+                    ${montarExplicacao(questao, questao.resposta)}
                     ${questao.anotacao && questao.anotacao.trim() ? `
                         <div class="correcao-anotacao"><strong>Sua anotação:</strong> ${escapar(questao.anotacao)}</div>` : ""}
                 </article>
@@ -1680,6 +1796,7 @@
             resumo.innerHTML = "";
             container.innerHTML = `
                 <div class="card historico-vazio">
+                    <img class="ilustracao" src="img/vazio-simulado.svg" alt="">
                     <p>Você ainda não finalizou nenhum simulado.</p>
                     <button class="btn-principal" onclick="navegar('simulado')">Fazer um simulado</button>
                 </div>
