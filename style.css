@@ -1200,13 +1200,8 @@ button:disabled {
     display: block;
     width: calc(100% + 48px);
     margin: -22px -24px 18px;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 7;
     object-fit: cover;
-}
-
-.curso-em-breve .curso-capa {
-    filter: grayscale(0.6);
-    opacity: 0.8;
 }
 
 .ilustracao {
