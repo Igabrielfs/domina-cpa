@@ -6,7 +6,7 @@
     <title>Domina | Simulados CPA ANBIMA 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,41 +18,138 @@
     </div>
 </header>
 
+<div class="layout">
+
+    <!-- ===== MENU LATERAL ===== -->
+    <nav class="lateral">
+        <span class="lateral-titulo">Aprendizado</span>
+
+        <button class="lateral-item ativo" data-destino="inicio" onclick="navegar('inicio')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            <span>Início</span>
+        </button>
+        <button class="lateral-item" data-destino="questoes" onclick="navegar('questoes')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+            <span>Questões</span>
+        </button>
+        <button class="lateral-item" data-destino="simulado" onclick="navegar('simulado')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+            <span>Simulados</span>
+        </button>
+        <button class="lateral-item" data-destino="historico" onclick="navegar('historico')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+            <span>Histórico</span>
+        </button>
+    </nav>
+
 <main class="conteudo">
 
-    <div id="tela-inicial">
-        <div class="grade-simulados">
-            <div class="card card-simulado">
-                <h3>Nova CPA 2026</h3>
-                <button class="btn-principal" onclick="iniciarSimulado()">Questões</button>
-                <button onclick="iniciarProva()">Simulado</button>
+    <!-- ===== INÍCIO (painel do aluno) ===== -->
+    <div id="tela-inicial" class="inicio">
+        <div class="pagina-topo">
+            <h2>Seu painel</h2>
+            <p>Acompanhe sua evolução e escolha o que estudar hoje.</p>
+        </div>
+
+        <div id="inicio-indicadores" class="inicio-indicadores"></div>
+
+        <h3 class="inicio-secao">Cursos</h3>
+        <div id="inicio-cursos" class="inicio-cursos"></div>
+
+        <h3 class="inicio-secao">Temas para revisar</h3>
+        <div id="inicio-temas" class="inicio-temas"></div>
+    </div>
+
+    <!-- ===== FILTRO DO MODO QUESTÕES ===== -->
+    <div id="filtro-questoes" class="filtro-tela" style="display: none;">
+        <div class="pagina-topo">
+            <h2>Praticar questões</h2>
+            <p>Escolha o curso, o módulo e o nível das questões.</p>
+        </div>
+
+        <div class="card filtro-card">
+            <div class="filtro-campo">
+                <span class="filtro-rotulo">Curso</span>
+                <div id="filtro-cursos" class="chips"></div>
+            </div>
+
+            <div class="filtro-campo">
+                <span class="filtro-rotulo">Módulo</span>
+                <div id="filtro-modulos" class="chips chips-coluna"></div>
+            </div>
+
+            <div class="filtro-campo">
+                <span class="filtro-rotulo">Nível</span>
+                <div id="filtro-niveis" class="chips"></div>
+            </div>
+
+            <div id="filtro-tema-campo" class="filtro-campo" style="display: none;">
+                <span class="filtro-rotulo">Tema</span>
+                <div id="filtro-tema" class="chips"></div>
+            </div>
+
+            <label class="filtro-cronometro">
+                <input type="checkbox" id="filtro-cronometro" onchange="filtro.cronometro = this.checked">
+                Usar cronômetro
+            </label>
+
+            <div class="filtro-rodape">
+                <p id="filtro-contagem" class="filtro-contagem"></p>
+                <button id="btnComecar" class="btn-principal" onclick="comecarQuestoes()">Começar</button>
             </div>
         </div>
     </div>
 
-    <div id="escolha-modulo" class="card escolha escolha-modulo" style="display: none;">
-        <p>📚 O que deseja estudar?</p>
-        <button class="btn-principal" onclick="escolherModulo('todos')">🔀 Todos os módulos</button>
-        <button onclick="escolherModulo(1)">Módulo 1: Sistema Financeiro Nacional</button>
-        <button onclick="escolherModulo(2)">Módulo 2: Produtos e tributação</button>
-        <button onclick="escolherModulo(3)">Módulo 3: Finanças pessoais e suitability</button>
-        <button onclick="escolherModulo(4)">Módulo 4: ESG e inovação</button>
-    </div>
+    <!-- ===== MODO QUESTÕES ===== -->
+    <div id="quiz-tela" style="display: none;">
+        <div class="simulado-corpo">
 
-    <div id="escolha-cronometro" class="card escolha" style="display: none;">
-        <p>⏱ Deseja usar cronômetro?</p>
-        <button class="btn-principal" onclick="escolherCronometro(true)">Sim</button>
-        <button onclick="escolherCronometro(false)">Não</button>
-    </div>
+            <!-- ferramentas na lateral esquerda -->
+            <div class="ferramentas-lateral">
+                <button class="ferramenta-btn" data-janela="janela-hp" onclick="alternarJanela('janela-hp')" title="Calculadora HP-12C" aria-label="Calculadora HP-12C">
+                    <span class="icone-texto">12C</span>
+                </button>
+                <button class="ferramenta-btn" data-janela="janela-calc" onclick="alternarJanela('janela-calc')" title="Calculadora" aria-label="Calculadora">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+                </button>
+                <button class="ferramenta-btn" data-janela="janela-rascunho" onclick="alternarJanela('janela-rascunho')" title="Rascunho" aria-label="Rascunho">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+                </button>
+                <button id="btnAnotacaoQuiz" class="ferramenta-btn" data-janela="janela-anotacao" onclick="alternarJanela('janela-anotacao')" title="Anotações da questão" aria-label="Anotações da questão">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                </button>
+            </div>
 
-    <div id="cronometro" class="cronometro" style="display: none;">
-        <span id="tempo">⏱ 00:00</span>
-        <button id="btnPausar" onclick="alternarPausa()">⏸ Pausar</button>
-    </div>
+            <div class="simulado-principal">
+                <div class="simulado-topo">
+                    <span id="quiz-contador">Questão 1</span>
 
-    <div id="quiz" class="card quiz-container" style="display: none;">
-        <div id="contexto-area"></div>
-        <div id="pergunta-area"></div>
+                    <div class="simulado-acoes">
+                        <button id="btnGosteiQuiz" class="icone-btn" onclick="avaliarQuestao('gostei')" title="Gostei da questão" aria-label="Gostei da questão">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                        </button>
+                        <button id="btnNaoGosteiQuiz" class="icone-btn" onclick="avaliarQuestao('naoGostei')" title="Não gostei da questão" aria-label="Não gostei da questão">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg>
+                        </button>
+
+                        <div id="cronometro" class="cronometro" style="display: none;">
+                            <span id="tempo">⏱ 00:00</span>
+                            <button id="btnPausar" onclick="alternarPausa()">⏸ Pausar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quiz" class="card quiz-container">
+                    <div id="contexto-area"></div>
+                    <div id="pergunta-area"></div>
+                </div>
+
+                <div class="finalizar-container">
+                    <button id="btnFinalizar" class="secundario" onclick="finalizarSimulado()">Finalizar</button>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <div id="resultado" class="card resultado" style="display: none;">
@@ -60,111 +157,393 @@
         <p id="media-tempo"></p>
         <div id="grafico-tempo"></div>
         <div class="resultado-botoes">
-            <button onclick="irParaInicio()">🏠 Página inicial</button>
             <button class="btn-principal" onclick="voltarQuestoes()">↩ Voltar às questões</button>
-            <button onclick="recomecarDoZero()">🔄 Recomeçar questões</button>
+            <button onclick="recomecarDoZero()">🔄 Recomeçar</button>
+            <button onclick="navegar('questoes')">Mudar filtros</button>
         </div>
     </div>
 
+    <!-- ===== SIMULADO ===== -->
     <div id="simulado" style="display: none;">
-        <div class="simulado-topo">
-            <span id="simulado-contador">Questão 1 de 50</span>
-            <span id="simulado-tempo">⏱ 2:30:00</span>
-        </div>
+        <div class="simulado-corpo">
 
-        <div class="card quiz-container">
-            <div id="simulado-contexto"></div>
-            <div id="simulado-pergunta"></div>
-        </div>
+            <!-- ferramentas na lateral esquerda -->
+            <div class="ferramentas-lateral">
+                <button class="ferramenta-btn" data-janela="janela-hp" onclick="alternarJanela('janela-hp')" title="Calculadora HP-12C" aria-label="Calculadora HP-12C">
+                    <span class="icone-texto">12C</span>
+                </button>
+                <button class="ferramenta-btn" data-janela="janela-calc" onclick="alternarJanela('janela-calc')" title="Calculadora" aria-label="Calculadora">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+                </button>
+                <button class="ferramenta-btn" data-janela="janela-rascunho" onclick="alternarJanela('janela-rascunho')" title="Rascunho" aria-label="Rascunho">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+                </button>
+                <button id="btnAnotacao" class="ferramenta-btn" data-janela="janela-anotacao" onclick="alternarJanela('janela-anotacao')" title="Anotações da questão" aria-label="Anotações da questão">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                </button>
+            </div>
 
-        <div class="simulado-navegacao">
-            <button onclick="navegarProva(-1)">← Anterior</button>
-            <button id="btnProxProva" class="btn-principal" onclick="navegarProva(1)">Próxima →</button>
-        </div>
+            <div class="simulado-principal">
+                <div class="simulado-topo">
+                    <span id="simulado-contador">Questão 1 de 50</span>
 
-        <div class="finalizar-container">
-            <button class="secundario" onclick="entregarProva()">Finalizar prova</button>
+                    <div class="simulado-acoes">
+                        <button id="btnGostei" class="icone-btn" onclick="avaliarQuestao('gostei')" title="Gostei da questão" aria-label="Gostei da questão">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+                        </button>
+                        <button id="btnNaoGostei" class="icone-btn" onclick="avaliarQuestao('naoGostei')" title="Não gostei da questão" aria-label="Não gostei da questão">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg>
+                        </button>
+                        <button id="btnDestacar" class="icone-btn" onclick="alternarDestaque()" title="Destacar questão" aria-label="Destacar questão">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+                        </button>
+                        <button class="icone-btn" onclick="abrirMapa()" title="Mapa de questões" aria-label="Mapa de questões">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                        </button>
+                        <span id="simulado-tempo">⏱ 2:30:00</span>
+                    </div>
+                </div>
+
+                <div class="card quiz-container">
+                    <div id="simulado-contexto"></div>
+                    <div id="simulado-pergunta"></div>
+                </div>
+
+                <div class="simulado-navegacao">
+                    <button onclick="navegarProva(-1)">← Anterior</button>
+                    <button id="btnProxProva" class="btn-principal" onclick="navegarProva(1)">Próxima →</button>
+                </div>
+
+                <div class="finalizar-container">
+                    <button class="secundario" onclick="entregarProva()">Finalizar prova</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
+    <!-- ===== RESULTADO DO SIMULADO ===== -->
     <div id="resultado-simulado" class="card resultado" style="display: none;">
 
-    <div class="resultado-cabecalho">
-        <h2>Resultado</h2>
-    </div>
-
-    <div class="resultado-status">
-        <p id="prova-status"></p>
-    </div>
-
-    <div class="resultado-indicadores">
-
-        <div class="indicador">
-            <span class="indicador-valor" id="prova-acertos">0/0</span>
-            <span class="indicador-label">Acertos</span>
+        <div class="resultado-cabecalho">
+            <h2>Resultado do simulado</h2>
+            <p id="prova-data"></p>
         </div>
 
-        <div class="indicador">
-            <span class="indicador-valor" id="prova-percentual">0%</span>
-            <span class="indicador-label">Aproveitamento</span>
+        <div class="abas">
+            <button id="aba-resumo" class="aba ativa" onclick="mostrarAba('resumo')">Resumo</button>
+            <button id="aba-correcao" class="aba" onclick="mostrarAba('correcao')">Correção</button>
         </div>
 
-        <div class="indicador">
-            <span class="indicador-valor" id="prova-tempo"></span>
-            <span class="indicador-label">Tempo utilizado</span>
+        <div id="painel-resumo">
+            <div class="resultado-status">
+                <p id="prova-status"></p>
+            </div>
+
+            <div class="resultado-indicadores">
+                <div class="indicador">
+                    <span class="indicador-valor" id="prova-acertos">0/0</span>
+                    <span class="indicador-label">Acertos</span>
+                </div>
+                <div class="indicador">
+                    <span class="indicador-valor" id="prova-percentual">0%</span>
+                    <span class="indicador-label">Aproveitamento</span>
+                </div>
+                <div class="indicador">
+                    <span class="indicador-valor" id="prova-tempo"></span>
+                    <span class="indicador-label">Tempo utilizado</span>
+                </div>
+            </div>
+
+            <div class="resultado-analise">
+                <h3>Análise do desempenho</h3>
+                <p id="texto-analise"></p>
+            </div>
+
+            <div class="resultado-secao">
+                <h3>Desempenho por módulo</h3>
+                <div id="prova-modulos"></div>
+            </div>
+
+            <div class="resultado-secao">
+                <h3>Detalhamento por tema</h3>
+                <div id="prova-microtemas"></div>
+            </div>
         </div>
 
+        <div id="painel-correcao" style="display: none;">
+            <div id="filtros-correcao" class="filtros"></div>
+            <div id="lista-correcao"></div>
+        </div>
+
+        <div class="resultado-botoes">
+            <button id="btnVoltarHistorico" onclick="navegar('historico')" style="display: none;">↩ Voltar ao histórico</button>
+            <button class="btn-principal" onclick="iniciarProva()">🔄 Novo simulado</button>
+        </div>
     </div>
 
-    <div class="resultado-analise">
-    <h3>Análise do desempenho</h3>
-    <p id="texto-analise"></p>
-</div>
-
-    <div class="resultado-secao">
-        <h3>Desempenho por módulo</h3>
-        <div id="prova-modulos"></div>
+    <!-- ===== HISTÓRICO ===== -->
+    <div id="historico" class="historico" style="display: none;">
+        <div class="historico-topo">
+            <h2>Histórico de simulados</h2>
+            <p>Revise simulados anteriores e veja o que você errou em cada um.</p>
+        </div>
+        <div id="historico-resumo" class="historico-resumo"></div>
+        <div id="historico-lista"></div>
     </div>
 
-    <div class="resultado-secao">
-        <h3>Detalhamento por tema</h3>
-        <div id="prova-microtemas"></div>
+    <!-- ===== FERRAMENTAS (janelas flutuantes) ===== -->
+    <div id="janela-hp" class="janela janela-hp" style="display: none;">
+        <div class="janela-topo">
+            <span>HP-12C</span>
+            <button onclick="fecharJanela('janela-hp')" aria-label="Fechar">✕</button>
+        </div>
+        <div class="hp-corpo">
+            <div class="hp-painel">
+                <div class="hp-lcd">
+                    <span id="hp-status" class="hp-status"></span>
+                    <span id="hp-visor">0,00</span>
+                </div>
+                <span class="hp-marca">DOMINA 12C</span>
+            </div>
+            <div id="hp-teclado" class="hp-teclado"></div>
+        </div>
     </div>
 
-    <div class="resultado-botoes">
-        <button onclick="sairDaProva()">🏠 Página inicial</button>
-        <button class="btn-principal" onclick="iniciarProva()">🔄 Novo simulado</button>
+    <div id="janela-calc" class="janela janela-calc" style="display: none;">
+        <div class="janela-topo">
+            <span>Calculadora</span>
+            <button onclick="fecharJanela('janela-calc')" aria-label="Fechar">✕</button>
+        </div>
+        <div class="calc-visor">
+            <span id="calc-expressao" class="calc-expressao"></span>
+            <span id="calc-atual" class="calc-atual">0</span>
+        </div>
+        <div class="calc-teclado">
+            <button onclick="teclaCalc('C')">C</button>
+            <button onclick="teclaCalc('⌫')">⌫</button>
+            <button onclick="teclaCalc('%')">%</button>
+            <button class="calc-op" onclick="teclaCalc('÷')">÷</button>
+            <button onclick="teclaCalc('7')">7</button>
+            <button onclick="teclaCalc('8')">8</button>
+            <button onclick="teclaCalc('9')">9</button>
+            <button class="calc-op" onclick="teclaCalc('×')">×</button>
+            <button onclick="teclaCalc('4')">4</button>
+            <button onclick="teclaCalc('5')">5</button>
+            <button onclick="teclaCalc('6')">6</button>
+            <button class="calc-op" onclick="teclaCalc('−')">−</button>
+            <button onclick="teclaCalc('1')">1</button>
+            <button onclick="teclaCalc('2')">2</button>
+            <button onclick="teclaCalc('3')">3</button>
+            <button class="calc-op" onclick="teclaCalc('+')">+</button>
+            <button onclick="teclaCalc('±')">±</button>
+            <button onclick="teclaCalc('0')">0</button>
+            <button onclick="teclaCalc(',')">,</button>
+            <button class="calc-igual" onclick="teclaCalc('=')">=</button>
+        </div>
     </div>
 
-</div>
+    <div id="janela-rascunho" class="janela janela-rascunho" style="display: none;">
+        <div class="janela-topo">
+            <span>Rascunho</span>
+            <div class="janela-topo-acoes">
+                <button id="btnBorracha" onclick="alternarBorracha()">Borracha</button>
+                <button onclick="limparRascunho()">Limpar</button>
+                <button onclick="fecharJanela('janela-rascunho')" aria-label="Fechar">✕</button>
+            </div>
+        </div>
+        <canvas id="rascunho-canvas"></canvas>
     </div>
 
-    <div class="finalizar-container">
-        <button id="btnFinalizar" class="secundario" onclick="finalizarSimulado()" style="display: none;">Finalizar</button>
+    <div id="janela-anotacao" class="janela janela-anotacao" style="display: none;">
+        <div class="janela-topo">
+            <span id="anotacao-titulo">Anotações</span>
+            <button onclick="fecharJanela('janela-anotacao')" aria-label="Fechar">✕</button>
+        </div>
+        <textarea id="anotacao-texto" placeholder="Escreva aqui suas anotações sobre esta questão." oninput="salvarAnotacao()"></textarea>
     </div>
 
+    <div id="mapa-overlay" class="mapa-overlay" style="display: none;" onclick="fecharMapa(event)">
+        <div class="mapa">
+            <div class="mapa-topo">
+                <div class="mapa-titulo-linha">
+                    <h3>Mapa de Questões</h3>
+                    <button class="mapa-fechar" onclick="fecharMapa()" aria-label="Fechar mapa">✕</button>
+                </div>
+                <div class="mapa-legenda">
+                    <span><i class="leg leg-atual"></i> Atual</span>
+                    <span><i class="leg leg-respondida"></i> Respondida</span>
+                    <span><i class="leg leg-pendente"></i> Pendente</span>
+                    <span><i class="leg leg-destacada"></i> Destacada</span>
+                    <span><i class="leg leg-anotada"></i> Com anotação</span>
+                </div>
+            </div>
+            <div id="mapa-conteudo" class="mapa-conteudo"></div>
+            <button class="mapa-rodape" onclick="fecharMapa()">Fechar mapa</button>
+        </div>
+    </div>
 </main>
+</div>
 
 <script src="questoes.js"></script>
+<script src="ferramentas.js"></script>
 <script>
 
-    let indiceAtual = 0;
-    let pontuacao = 0;
-    let questoesRespondidas = 0;
-    let respondeuAtual = false;
+    /* ===================================================== */
+    /* ===== CONFIGURAÇÕES                               ===== */
+    /* ===================================================== */
 
-    let usarCronometro = null;
-    let tempoTotal = 0;
-    let intervalo = null;
-    let pausado = false;
+    // Cursos do site. Para liberar o PDF de um curso, coloque o caminho em "pdf"
+    // (ex.: "pdf/cpa.pdf") e o botão aparece sozinho no card da página inicial.
+    const CURSOS = {
+        cpa: {
+            nome: "CPA",
+            titulo: "Nova CPA 2026",
+            descricao: "Certificado Profissional ANBIMA",
+            simulado: true,
+            pdf: null,
+            modulos: {
+                1: "Sistema Financeiro Nacional",
+                2: "Produtos do Mercado Financeiro",
+                3: "Relacionamento com o Cliente",
+                4: "Inovação e Desenvolvimento de Mercado"
+            }
+        },
+        cpror: {
+            nome: "C-PRO R",
+            titulo: "C-PRO R",
+            descricao: "Certificado Profissional ANBIMA de Relacionamento",
+            simulado: false,
+            pdf: null,
+            modulos: {
+                1: "Prospecção e relacionamento com a pessoa investidora",
+                2: "Análise de informações do cliente",
+                3: "Indicação de investimentos",
+                4: "Análise de portfólio e monitoramento da carteira"
+            }
+        }
+    };
+
+    const NIVEIS = ["fácil", "médio", "difícil"];
+    const NOMES_NIVEIS = { "fácil": "Fácil", "médio": "Médio", "difícil": "Difícil" };
+
     const QUESTOES_PROVA = 50;
     const TEMPO_PROVA = 150 * 60; // 2h30 em segundos
     const META_POR_QUESTAO = TEMPO_PROVA / QUESTOES_PROVA; // 180s = 3:00
+    const APROVACAO = 0.7;
 
-    const todasQuestoes = [...questoes];
-    let moduloEscolhido = "todos";
+    // distribuição do simulado da CPA por módulo e nível
+    const DISTRIBUICAO_PROVA = {
+        1: { "fácil": 3, "médio": 5, "difícil": 2 },
+        2: { "fácil": 5, "médio": 10, "difícil": 5 },
+        3: { "fácil": 3, "médio": 8, "difícil": 4 },
+        4: { "fácil": 1, "médio": 3, "difícil": 1 }
+    };
 
-    /* ===== SORTEIO POR GRUPO ===== */
+    // questões sem curso definido são tratadas como CPA
+    const todasQuestoes = questoes.map((q) => ({ curso: "cpa", ...q }));
+
+    function nomeModulo(curso, modulo) {
+        const dados = CURSOS[curso || "cpa"];
+        return (dados && dados.modulos[modulo]) || `Módulo ${modulo}`;
+    }
+
+    /* ===================================================== */
+    /* ===== ARMAZENAMENTO NO NAVEGADOR                  ===== */
+    /* ===================================================== */
+
+    const CHAVE_HISTORICO = "domina-historico";
+    const CHAVE_AVALIACOES = "domina-avaliacoes";
+    const CHAVE_ANOTACOES = "domina-anotacoes";
+    const CHAVE_DATA_PROVA = "domina-data-prova";
+    const LIMITE_HISTORICO = 30;
+
+    function lerDados(chave, padrao) {
+        try {
+            const valor = JSON.parse(localStorage.getItem(chave));
+            return valor === null ? padrao : valor;
+        } catch (erro) {
+            return padrao;
+        }
+    }
+
+    function gravarDados(chave, valor) {
+        try {
+            localStorage.setItem(chave, JSON.stringify(valor));
+        } catch (erro) {
+            console.error("Não foi possível salvar no navegador:", erro);
+        }
+    }
+
+    /* ===================================================== */
+    /* ===== NAVEGAÇÃO (menu lateral)                    ===== */
+    /* ===================================================== */
+
+    const TELAS = [
+        "tela-inicial", "filtro-questoes", "quiz-tela", "resultado",
+        "simulado", "resultado-simulado", "historico"
+    ];
+
+    let modoAtual = null; // "questoes" ou "simulado": define onde gostei e anotações são salvos
+
+    function esconderTelas() {
+        TELAS.forEach((id) => {
+            document.getElementById(id).style.display = "none";
+        });
+    }
+
+    function marcarMenu(destino) {
+        document.querySelectorAll(".lateral-item").forEach((item) => {
+            item.classList.toggle("ativo", item.dataset.destino === destino);
+        });
+    }
+
+    function estaVisivel(id) {
+        return document.getElementById(id).style.display !== "none";
+    }
+
+    function navegar(destino) {
+        if (estaVisivel("simulado")) {
+            if (!confirm("Deseja sair do simulado? As respostas desta prova serão perdidas.")) {
+                return;
+            }
+            clearInterval(intervaloProva);
+            intervaloProva = null;
+            document.getElementById("mapa-overlay").style.display = "none";
+        }
+
+        if (estaVisivel("quiz-tela") && questoesRespondidas > 0) {
+            if (!confirm("Deseja sair das questões? Seu placar será zerado.")) {
+                return;
+            }
+        }
+
+        fecharTodasJanelas();
+        resetarQuestoes();
+        esconderTelas();
+        marcarMenu(destino);
+        modoAtual = null;
+
+        if (destino === "inicio") {
+            renderizarInicio();
+            document.getElementById("tela-inicial").style.display = "block";
+        } else if (destino === "questoes") {
+            filtro.tema = null;
+            renderizarFiltro();
+            document.getElementById("filtro-questoes").style.display = "block";
+        } else if (destino === "simulado") {
+            iniciarProva();
+        } else if (destino === "historico") {
+            mostrarHistorico();
+        }
+
+        window.scrollTo(0, 0);
+    }
+
+    /* ===================================================== */
+    /* ===== UTILITÁRIOS                                 ===== */
+    /* ===================================================== */
+
     function embaralhar(lista) {
         const copia = [...lista];
         for (let i = copia.length - 1; i > 0; i--) {
@@ -174,11 +553,336 @@
         return copia;
     }
 
-    function sortearPorGrupo() {
-        const selecionadas = moduloEscolhido === "todos"
-            ? todasQuestoes
-            : todasQuestoes.filter((q) => q.modulo === moduloEscolhido);
+    function formatarTempo(segundos) {
+        const min = String(Math.floor(segundos / 60)).padStart(2, "0");
+        const seg = String(segundos % 60).padStart(2, "0");
+        return `${min}:${seg}`;
+    }
 
+    function formatarHoras(segundos) {
+        const h = Math.floor(segundos / 3600);
+        const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, "0");
+        const s = String(segundos % 60).padStart(2, "0");
+        return `${h}h${m}min${s}s`;
+    }
+
+    function formatarData(iso) {
+        return new Date(iso).toLocaleString("pt-BR", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+    }
+
+    // evita que o texto digitado pelo aluno vire HTML
+    function escapar(texto) {
+        const div = document.createElement("div");
+        div.textContent = texto;
+        return div.innerHTML;
+    }
+
+    /* ===================================================== */
+    /* ===== INÍCIO (painel do aluno)                    ===== */
+    /* ===================================================== */
+
+    let temasParaRevisar = [];
+
+    function renderizarInicio() {
+        const historico = lerHistorico();
+
+        // --- indicadores ---
+        const percentuais = historico.map((r) => Math.round((r.acertos / r.total) * 100));
+        const media = percentuais.length
+            ? Math.round(percentuais.reduce((a, b) => a + b, 0) / percentuais.length) + "%"
+            : "–";
+        const melhor = percentuais.length ? Math.max(...percentuais) + "%" : "–";
+
+        const dataProva = lerDados(CHAVE_DATA_PROVA, "");
+        let textoDias = "–";
+        let legendaDias = "Informe a data da sua prova";
+
+        if (dataProva) {
+            const hoje = new Date();
+            hoje.setHours(0, 0, 0, 0);
+            const dias = Math.round((new Date(dataProva + "T00:00:00") - hoje) / 86400000);
+
+            if (dias > 1) {
+                textoDias = dias;
+                legendaDias = "dias até a prova";
+            } else if (dias === 1) {
+                textoDias = 1;
+                legendaDias = "dia até a prova";
+            } else if (dias === 0) {
+                textoDias = "Hoje";
+                legendaDias = "é o dia da prova. Boa sorte!";
+            } else {
+                legendaDias = "A data informada já passou";
+            }
+        }
+
+        document.getElementById("inicio-indicadores").innerHTML = `
+            <div class="indicador">
+                <span class="indicador-valor">${historico.length}</span>
+                <span class="indicador-label">Simulados feitos</span>
+            </div>
+            <div class="indicador">
+                <span class="indicador-valor">${media}</span>
+                <span class="indicador-label">Média de acertos</span>
+            </div>
+            <div class="indicador">
+                <span class="indicador-valor">${melhor}</span>
+                <span class="indicador-label">Melhor nota</span>
+            </div>
+            <div class="indicador indicador-prova">
+                <span class="indicador-valor">${textoDias}</span>
+                <span class="indicador-label">${legendaDias}</span>
+                <input type="date" class="campo-data" value="${dataProva}"
+                       aria-label="Data da prova" onchange="salvarDataProva(this.value)">
+            </div>
+        `;
+
+        // --- cursos ---
+        document.getElementById("inicio-cursos").innerHTML = Object.entries(CURSOS).map(([chave, curso]) => {
+            const total = todasQuestoes.filter((q) => q.curso === chave).length;
+            const disponivel = total > 0;
+
+            let botoes;
+            if (disponivel) {
+                botoes = `
+                    <button class="btn-principal" onclick="abrirFiltroCurso('${chave}')">Questões</button>
+                    ${curso.simulado ? `<button onclick="navegar('simulado')">Simulado</button>` : ""}
+                    ${curso.pdf ? `<a class="btn-link" href="${curso.pdf}" target="_blank" rel="noopener">Material em PDF</a>` : ""}
+                `;
+            } else {
+                botoes = `<button disabled>Em breve</button>`;
+            }
+
+            return `
+                <div class="card curso-card ${disponivel ? "" : "curso-em-breve"}">
+                    <div class="curso-card-topo">
+                        <h4>${curso.titulo}</h4>
+                        <span class="curso-selo">${disponivel ? `${total} questões` : "Em breve"}</span>
+                    </div>
+                    <p>${curso.descricao}</p>
+                    <div class="curso-botoes">${botoes}</div>
+                </div>
+            `;
+        }).join("");
+
+        // --- temas para revisar (a partir do histórico de simulados) ---
+        const container = document.getElementById("inicio-temas");
+
+        if (historico.length === 0) {
+            temasParaRevisar = [];
+            container.innerHTML = `
+                <div class="card inicio-vazio">
+                    <p>Faça seu primeiro simulado para descobrirmos quais temas você precisa revisar.</p>
+                    <button class="btn-principal" onclick="navegar('simulado')">Fazer um simulado</button>
+                </div>
+            `;
+            return;
+        }
+
+        const porTema = {};
+        historico.forEach((registro) => {
+            registro.questoes.forEach((q) => {
+                const curso = q.curso || "cpa";
+                const chave = curso + "|" + q.tema;
+                if (!porTema[chave]) {
+                    porTema[chave] = { curso, modulo: q.modulo, tema: q.tema, acertos: 0, total: 0 };
+                }
+                porTema[chave].total++;
+                if (q.resposta === q.correta) porTema[chave].acertos++;
+            });
+        });
+
+        temasParaRevisar = Object.values(porTema)
+            .filter((t) => t.total >= 2 && t.acertos / t.total < APROVACAO)
+            .sort((a, b) => a.acertos / a.total - b.acertos / b.total || b.total - a.total)
+            .slice(0, 4);
+
+        if (temasParaRevisar.length === 0) {
+            container.innerHTML = `
+                <div class="card inicio-vazio">
+                    <p>Nenhum tema abaixo de 70% nos seus simulados. Continue assim!</p>
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = temasParaRevisar.map((t, i) => {
+            const percentual = Math.round((t.acertos / t.total) * 100);
+            return `
+                <div class="tema-item">
+                    <div class="tema-info">
+                        <strong>${t.tema}</strong>
+                        <span>${nomeModulo(t.curso, t.modulo)}</span>
+                        <div class="barra-progresso">
+                            <div class="barra-progresso-preenchida barra-fraca" style="width: ${percentual}%"></div>
+                        </div>
+                    </div>
+                    <span class="tema-percentual">${t.acertos}/${t.total} (${percentual}%)</span>
+                    <button class="btn-principal" onclick="praticarTema(${i})">Praticar</button>
+                </div>
+            `;
+        }).join("");
+    }
+
+    function salvarDataProva(valor) {
+        gravarDados(CHAVE_DATA_PROVA, valor);
+        renderizarInicio();
+    }
+
+    function abrirFiltroCurso(curso) {
+        navegar("questoes");
+        filtro.curso = curso;
+        filtro.modulo = "todos";
+        renderizarFiltro();
+    }
+
+    function praticarTema(indice) {
+        const tema = temasParaRevisar[indice];
+        navegar("questoes");
+        filtro.curso = tema.curso;
+        filtro.modulo = "todos";
+        filtro.tema = tema.tema;
+        renderizarFiltro();
+    }
+
+    /* ===================================================== */
+    /* ===== FILTRO DO MODO QUESTÕES                     ===== */
+    /* ===================================================== */
+
+    const filtro = {
+        curso: "cpa",
+        modulo: "todos",
+        niveis: [...NIVEIS],
+        tema: null,
+        cronometro: false
+    };
+
+    function questoesFiltradas() {
+        return todasQuestoes.filter((q) =>
+            q.curso === filtro.curso &&
+            (filtro.modulo === "todos" || q.modulo === filtro.modulo) &&
+            filtro.niveis.includes(q.nivel) &&
+            (!filtro.tema || q.tema === filtro.tema)
+        );
+    }
+
+    function renderizarFiltro() {
+        const doCurso = todasQuestoes.filter((q) => q.curso === filtro.curso);
+
+        // cursos
+        document.getElementById("filtro-cursos").innerHTML = Object.entries(CURSOS).map(([chave, curso]) => {
+            const total = todasQuestoes.filter((q) => q.curso === chave).length;
+            return `
+                <button class="chip ${filtro.curso === chave ? "ativo" : ""}" onclick="escolherCurso('${chave}')">
+                    ${curso.nome}${total === 0 ? ` <small>em breve</small>` : ""}
+                </button>
+            `;
+        }).join("");
+
+        // módulos do curso escolhido
+        const modulos = CURSOS[filtro.curso].modulos;
+        let htmlModulos = `
+            <button class="chip ${filtro.modulo === "todos" ? "ativo" : ""}" onclick="escolherModuloFiltro('todos')">
+                Todos os módulos <small>${doCurso.length}</small>
+            </button>
+        `;
+        for (const numero in modulos) {
+            const total = doCurso.filter((q) => q.modulo === Number(numero)).length;
+            htmlModulos += `
+                <button class="chip ${filtro.modulo === Number(numero) ? "ativo" : ""}" onclick="escolherModuloFiltro(${numero})">
+                    Módulo ${numero}: ${modulos[numero]} <small>${total}</small>
+                </button>
+            `;
+        }
+        document.getElementById("filtro-modulos").innerHTML = htmlModulos;
+
+        // níveis (pode marcar mais de um)
+        document.getElementById("filtro-niveis").innerHTML = NIVEIS.map((nivel) => `
+            <button class="chip ${filtro.niveis.includes(nivel) ? "ativo" : ""}" onclick="alternarNivel('${nivel}')">
+                ${NOMES_NIVEIS[nivel]}
+            </button>
+        `).join("");
+
+        // tema (só aparece quando vem de "Praticar" no Início)
+        const campoTema = document.getElementById("filtro-tema-campo");
+        if (filtro.tema) {
+            campoTema.style.display = "block";
+            document.getElementById("filtro-tema").innerHTML = `
+                <span class="chip ativo">${filtro.tema}
+                    <button class="chip-remover" onclick="removerTema()" aria-label="Remover tema">✕</button>
+                </span>
+            `;
+        } else {
+            campoTema.style.display = "none";
+        }
+
+        document.getElementById("filtro-cronometro").checked = filtro.cronometro;
+
+        // contagem
+        const total = questoesFiltradas().length;
+        const contagem = document.getElementById("filtro-contagem");
+        const botao = document.getElementById("btnComecar");
+
+        if (doCurso.length === 0) {
+            contagem.textContent = `As questões da ${CURSOS[filtro.curso].nome} chegam em breve.`;
+        } else if (total === 0) {
+            contagem.textContent = "Nenhuma questão com esses filtros. Tente marcar outros níveis ou módulos.";
+        } else {
+            contagem.textContent = `${total} ${total === 1 ? "questão disponível" : "questões disponíveis"}`;
+        }
+        botao.disabled = total === 0;
+    }
+
+    function escolherCurso(curso) {
+        filtro.curso = curso;
+        filtro.modulo = "todos";
+        filtro.tema = null;
+        renderizarFiltro();
+    }
+
+    function escolherModuloFiltro(modulo) {
+        filtro.modulo = modulo;
+        renderizarFiltro();
+    }
+
+    function alternarNivel(nivel) {
+        if (filtro.niveis.includes(nivel)) {
+            if (filtro.niveis.length === 1) return; // pelo menos um nível marcado
+            filtro.niveis = filtro.niveis.filter((n) => n !== nivel);
+        } else {
+            filtro.niveis.push(nivel);
+        }
+        renderizarFiltro();
+    }
+
+    function removerTema() {
+        filtro.tema = null;
+        renderizarFiltro();
+    }
+
+    /* ===================================================== */
+    /* ===== MODO QUESTÕES                               ===== */
+    /* ===================================================== */
+
+    let listaQuiz = [];
+    let indiceAtual = 0;
+    let pontuacao = 0;
+    let questoesRespondidas = 0;
+    let respondeuAtual = false;
+
+    let usarCronometro = false;
+    let tempoTotal = 0;
+    let intervalo = null;
+    let pausado = false;
+
+    // intercala os grupos de conteúdo para não repetir o mesmo assunto em sequência
+    function sortearPorGrupo(selecionadas) {
         const grupos = {};
 
         selecionadas.forEach((questao) => {
@@ -199,64 +903,58 @@
             });
         }
 
-        questoes.splice(0, questoes.length, ...resultado);
+        return resultado;
     }
 
-    sortearPorGrupo();
-
-    /* ===== NAVEGAÇÃO ===== */
-    function iniciarSimulado() {
-        document.getElementById("tela-inicial").style.display = "none";
-        document.getElementById("escolha-modulo").style.display = "block";
-    }
-
-    function escolherModulo(modulo) {
-        moduloEscolhido = modulo;
-
+    function resetarQuestoes() {
+        pararCronometro();
         indiceAtual = 0;
         pontuacao = 0;
         questoesRespondidas = 0;
         respondeuAtual = false;
         tempoTotal = 0;
-
-        sortearPorGrupo();
-
-        document.getElementById("escolha-modulo").style.display = "none";
-
-        if (usarCronometro === null) {
-            document.getElementById("escolha-cronometro").style.display = "block";
-            return;
-        }
-        abrirQuiz();
     }
 
-    function escolherCronometro(opcao) {
-        usarCronometro = opcao;
-        document.getElementById("escolha-cronometro").style.display = "none";
+    function comecarQuestoes() {
+        const selecionadas = questoesFiltradas();
+        if (selecionadas.length === 0) {
+            return;
+        }
+
+        resetarQuestoes();
+        listaQuiz = sortearPorGrupo(selecionadas);
+        usarCronometro = filtro.cronometro;
+
+        fecharTodasJanelas();
+        limparRascunho();
         abrirQuiz();
     }
 
     function abrirQuiz() {
-        document.getElementById("tela-inicial").style.display = "none";
-        document.getElementById("resultado").style.display = "none";
+        esconderTelas();
+        marcarMenu("questoes");
+        modoAtual = "questoes";
+
+        document.getElementById("quiz-tela").style.display = "block";
         document.getElementById("quiz").style.display = "flex";
         document.getElementById("btnFinalizar").style.display = "inline-block";
 
+        pausado = false;
+        document.getElementById("btnPausar").textContent = "⏸ Pausar";
+        document.getElementById("cronometro").style.display = usarCronometro ? "flex" : "none";
         if (usarCronometro) {
-            pausado = false;
-            document.getElementById("btnPausar").textContent = "⏸ Pausar";
-            document.getElementById("cronometro").style.display = "block";
             iniciarCronometro();
         }
 
         continuarDeOndeParou();
+        window.scrollTo(0, 0);
     }
 
     function continuarDeOndeParou() {
         if (respondeuAtual) {
             indiceAtual++;
         }
-        if (indiceAtual >= questoes.length) {
+        if (indiceAtual >= listaQuiz.length) {
             indiceAtual = 0;
         }
         mostrarQuestao(indiceAtual);
@@ -266,37 +964,14 @@
         abrirQuiz();
     }
 
-    function irParaInicio() {
-        usarCronometro = null;
-
-        indiceAtual = 0;
-        pontuacao = 0;
-        questoesRespondidas = 0;
-        respondeuAtual = false;
-        tempoTotal = 0;
-
-        sortearPorGrupo();
-
-        document.getElementById("resultado").style.display = "none";
-        document.getElementById("tela-inicial").style.display = "block";
-    }
-
     function recomecarDoZero() {
         if (!confirm("Isso vai zerar seu placar. Deseja recomeçar?")) {
             return;
         }
-
-        indiceAtual = 0;
-        pontuacao = 0;
-        questoesRespondidas = 0;
-        respondeuAtual = false;
-        tempoTotal = 0;
-
-        sortearPorGrupo();
-        abrirQuiz();
+        comecarQuestoes();
     }
 
-    /* ===== CRONÔMETRO ===== */
+    /* --- cronômetro do modo questões --- */
     function iniciarCronometro() {
         if (intervalo) {
             return;
@@ -325,28 +1000,27 @@
             pausado = false;
             iniciarCronometro();
             quiz.style.display = "flex";
+            document.getElementById("btnFinalizar").style.display = "inline-block";
             botao.textContent = "⏸ Pausar";
         } else {
             pausado = true;
             pararCronometro();
             quiz.style.display = "none";
+            document.getElementById("btnFinalizar").style.display = "none";
             botao.textContent = "▶ Continuar";
         }
     }
 
-    function formatarTempo(segundos) {
-        const min = String(Math.floor(segundos / 60)).padStart(2, "0");
-        const seg = String(segundos % 60).padStart(2, "0");
-        return `${min}:${seg}`;
-    }
-
-    /* ===== QUESTÕES ===== */
+    /* --- exibição e correção --- */
     function mostrarQuestao(indice) {
-        const questao = questoes[indice];
+        const questao = listaQuiz[indice];
         const contextoDiv = document.getElementById("contexto-area");
         const perguntaDiv = document.getElementById("pergunta-area");
 
         respondeuAtual = false;
+
+        document.getElementById("quiz-contador").textContent =
+            `Questão ${indice + 1} de ${listaQuiz.length}`;
 
         if (questao.contexto) {
             contextoDiv.innerHTML = `<strong>Contexto</strong><p>${questao.contexto}</p>`;
@@ -356,30 +1030,27 @@
             contextoDiv.style.display = "none";
         }
 
-        const niveis = {
-            "fácil": { texto: "Fácil", classe: "nivel-facil" },
-            "médio": { texto: "Médio", classe: "nivel-medio" },
-            "difícil": { texto: "Difícil", classe: "nivel-dificil" }
-        };
+        const classes = { "fácil": "nivel-facil", "médio": "nivel-medio", "difícil": "nivel-dificil" };
 
         let html = "";
-
-        if (niveis[questao.nivel]) {
-            const nivel = niveis[questao.nivel];
-            html += `<span class="nivel ${nivel.classe}">${nivel.texto}</span>`;
+        if (classes[questao.nivel]) {
+            html += `<span class="nivel ${classes[questao.nivel]}">${NOMES_NIVEIS[questao.nivel]}</span>`;
         }
 
         html += `<p>${questao.enunciado}</p>`;
 
         questao.alternativas.forEach((alternativa, i) => {
-            html += `<button id="btn${i}" onclick="verificarResposta(${i})">${alternativa}</button><br>`;
+            html += `<button id="btn${i}" onclick="verificarResposta(${i})">${alternativa}</button>`;
         });
 
         perguntaDiv.innerHTML = html;
+
+        atualizarIcones();
+        mostrarAnotacao();
     }
 
     function verificarResposta(indiceEscolhido) {
-        const questao = questoes[indiceAtual];
+        const questao = listaQuiz[indiceAtual];
         const botaoClicado = document.getElementById(`btn${indiceEscolhido}`);
         const botaoCorreto = document.getElementById(`btn${questao.correta}`);
 
@@ -405,8 +1076,9 @@
     function proximaQuestao() {
         indiceAtual++;
 
-        if (indiceAtual < questoes.length) {
+        if (indiceAtual < listaQuiz.length) {
             mostrarQuestao(indiceAtual);
+            window.scrollTo(0, 0);
         } else {
             finalizarSimulado();
         }
@@ -414,10 +1086,9 @@
 
     function finalizarSimulado() {
         pararCronometro();
+        fecharTodasJanelas();
 
-        document.getElementById("quiz").style.display = "none";
-        document.getElementById("cronometro").style.display = "none";
-        document.getElementById("btnFinalizar").style.display = "none";
+        document.getElementById("quiz-tela").style.display = "none";
 
         document.getElementById("placar").textContent =
             `Você acertou ${pontuacao} de ${questoesRespondidas} questões.`;
@@ -477,25 +1148,93 @@
         `;
     }
 
-    function formatarHoras(segundos) {
-    const h = Math.floor(segundos / 3600);
-    const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, "0");
-    const s = String(segundos % 60).padStart(2, "0");
+    /* ===================================================== */
+    /* ===== GOSTEI E ANOTAÇÕES (questões e simulado)    ===== */
+    /* ===================================================== */
 
-    return `${h}h${m}min${s}s`;
-}
+    function questaoAtual() {
+        if (modoAtual === "simulado") return prova[indiceProva];
+        if (modoAtual === "questoes") return listaQuiz[indiceAtual];
+        return null;
+    }
 
-    /* ===== SIMULADO ===== */
-    const DISTRIBUICAO_PROVA = {
-        1: { "fácil": 3, "médio": 5, "difícil": 2 },
-        2: { "fácil": 5, "médio": 10, "difícil": 5 },
-        3: { "fácil": 3, "médio": 8, "difícil": 4 },
-        4: { "fácil": 1, "médio": 3, "difícil": 1 }
-    };
-    const APROVACAO = 0.7;
+    function numeroQuestaoAtual() {
+        return (modoAtual === "simulado" ? indiceProva : indiceAtual) + 1;
+    }
+
+    // avaliações ficam salvas por questão (valem para os dois modos)
+    function avaliarQuestao(tipo) {
+        const questao = questaoAtual();
+        if (!questao) return;
+
+        const avaliacoes = lerDados(CHAVE_AVALIACOES, {});
+        if (avaliacoes[questao.id] === tipo) {
+            delete avaliacoes[questao.id]; // clicar de novo desmarca
+        } else {
+            avaliacoes[questao.id] = tipo;
+        }
+        gravarDados(CHAVE_AVALIACOES, avaliacoes);
+        atualizarIcones();
+    }
+
+    // anotações: no simulado ficam na prova (vão para o histórico);
+    // no modo questões ficam salvas por questão
+    function textoAnotacao() {
+        if (modoAtual === "simulado") {
+            return anotacoesProva[indiceProva];
+        }
+        const questao = questaoAtual();
+        return questao ? lerDados(CHAVE_ANOTACOES, {})[questao.id] || "" : "";
+    }
+
+    function mostrarAnotacao() {
+        document.getElementById("anotacao-titulo").textContent = `Anotações da questão ${numeroQuestaoAtual()}`;
+        document.getElementById("anotacao-texto").value = textoAnotacao();
+    }
+
+    function salvarAnotacao() {
+        const texto = document.getElementById("anotacao-texto").value;
+
+        if (modoAtual === "simulado") {
+            anotacoesProva[indiceProva] = texto;
+        } else if (modoAtual === "questoes") {
+            const questao = questaoAtual();
+            const anotacoes = lerDados(CHAVE_ANOTACOES, {});
+            if (texto.trim()) {
+                anotacoes[questao.id] = texto;
+            } else {
+                delete anotacoes[questao.id];
+            }
+            gravarDados(CHAVE_ANOTACOES, anotacoes);
+        }
+        atualizarIcones();
+    }
+
+    function atualizarIcones() {
+        const questao = questaoAtual();
+        if (!questao) return;
+
+        const avaliacao = lerDados(CHAVE_AVALIACOES, {})[questao.id] || null;
+        const temAnotacao = textoAnotacao().trim() !== "";
+        const sufixo = modoAtual === "simulado" ? "" : "Quiz";
+
+        document.getElementById("btnGostei" + sufixo).classList.toggle("ativo", avaliacao === "gostei");
+        document.getElementById("btnNaoGostei" + sufixo).classList.toggle("ativo", avaliacao === "naoGostei");
+        document.getElementById("btnAnotacao" + sufixo).classList.toggle("ativo", temAnotacao);
+
+        if (modoAtual === "simulado") {
+            document.getElementById("btnDestacar").classList.toggle("ativo", destaquesProva[indiceProva]);
+        }
+    }
+
+    /* ===================================================== */
+    /* ===== SIMULADO (CPA)                              ===== */
+    /* ===================================================== */
 
     let prova = [];
     let respostasProva = [];
+    let destaquesProva = [];
+    let anotacoesProva = [];
     let indiceProva = 0;
     let tempoRestante = 0;
     let intervaloProva = null;
@@ -503,27 +1242,38 @@
     function montarProva() {
         const selecionadas = [];
 
+        // questões agrupadas por módulo (1, 2, 3, 4), embaralhadas dentro de cada módulo
         for (const modulo in DISTRIBUICAO_PROVA) {
+            const doModulo = [];
+
             for (const nivel in DISTRIBUICAO_PROVA[modulo]) {
                 const disponiveis = todasQuestoes.filter(
-                    (q) => q.modulo === Number(modulo) && q.nivel === nivel
+                    (q) => q.curso === "cpa" && q.modulo === Number(modulo) && q.nivel === nivel
                 );
                 const quantidade = DISTRIBUICAO_PROVA[modulo][nivel];
-                selecionadas.push(...embaralhar(disponiveis).slice(0, quantidade));
+                doModulo.push(...embaralhar(disponiveis).slice(0, quantidade));
             }
+
+            selecionadas.push(...embaralhar(doModulo));
         }
 
-        return embaralhar(selecionadas);
+        return selecionadas;
     }
 
     function iniciarProva() {
         prova = montarProva();
         respostasProva = new Array(prova.length).fill(null);
+        destaquesProva = new Array(prova.length).fill(false);
+        anotacoesProva = new Array(prova.length).fill("");
         indiceProva = 0;
         tempoRestante = TEMPO_PROVA;
 
-        document.getElementById("tela-inicial").style.display = "none";
-        document.getElementById("resultado-simulado").style.display = "none";
+        fecharTodasJanelas();
+        limparRascunho();
+
+        esconderTelas();
+        marcarMenu("simulado");
+        modoAtual = "simulado";
         document.getElementById("simulado").style.display = "block";
 
         atualizarTempoProva();
@@ -538,6 +1288,7 @@
         }, 1000);
 
         mostrarQuestaoProva();
+        window.scrollTo(0, 0);
     }
 
     function atualizarTempoProva() {
@@ -571,6 +1322,9 @@
 
         document.getElementById("btnProxProva").textContent =
             indiceProva === prova.length - 1 ? "Entregar prova" : "Próxima →";
+
+        atualizarIcones();
+        mostrarAnotacao();
     }
 
     function marcarResposta(i) {
@@ -594,6 +1348,66 @@
         window.scrollTo(0, 0);
     }
 
+    function alternarDestaque() {
+        destaquesProva[indiceProva] = !destaquesProva[indiceProva];
+        atualizarIcones();
+    }
+
+    /* --- mapa de questões --- */
+    function abrirMapa() {
+        const grupos = {};
+
+        prova.forEach((questao, i) => {
+            if (!grupos[questao.modulo]) {
+                grupos[questao.modulo] = [];
+            }
+            grupos[questao.modulo].push(i);
+        });
+
+        let html = "";
+
+        for (const modulo in grupos) {
+            html += `<div class="mapa-grupo"><h4>${nomeModulo("cpa", modulo)}</h4><div class="mapa-numeros">`;
+
+            grupos[modulo].forEach((i) => {
+                let classes = "mapa-num";
+                if (respostasProva[i] !== null) classes += " respondida";
+                if (i === indiceProva) classes += " atual";
+                if (destaquesProva[i]) classes += " destacada";
+                if (anotacoesProva[i].trim() !== "") classes += " anotada";
+
+                html += `<button class="${classes}" onclick="irParaQuestao(${i})">${i + 1}</button>`;
+            });
+
+            html += `</div></div>`;
+        }
+
+        document.getElementById("mapa-conteudo").innerHTML = html;
+        document.getElementById("mapa-overlay").style.display = "flex";
+    }
+
+    function fecharMapa(evento) {
+        // clique no fundo escuro fecha; clique dentro do mapa não
+        if (evento && evento.target.id !== "mapa-overlay") {
+            return;
+        }
+        document.getElementById("mapa-overlay").style.display = "none";
+    }
+
+    function irParaQuestao(i) {
+        indiceProva = i;
+        mostrarQuestaoProva();
+        fecharMapa();
+        window.scrollTo(0, 0);
+    }
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            fecharMapa();
+        }
+    });
+
+    /* --- entrega --- */
     function entregarProva() {
         const emBranco = respostasProva.filter((r) => r === null).length;
         const mensagem = emBranco > 0
@@ -607,27 +1421,68 @@
     }
 
     function finalizarProva() {
+        document.getElementById("mapa-overlay").style.display = "none";
+        fecharTodasJanelas();
         clearInterval(intervaloProva);
         intervaloProva = null;
+        modoAtual = null;
 
-        let acertos = 0;
+        // tudo o que é preciso para rever a prova depois fica guardado no registro
+        const registro = {
+            id: Date.now(),
+            curso: "cpa",
+            data: new Date().toISOString(),
+            tempoUsado: TEMPO_PROVA - tempoRestante,
+            questoes: prova.map((q, i) => ({
+                id: q.id,
+                curso: q.curso,
+                modulo: q.modulo,
+                tema: q.tema,
+                nivel: q.nivel,
+                contexto: q.contexto || "",
+                enunciado: q.enunciado,
+                alternativas: q.alternativas,
+                correta: q.correta,
+                resposta: respostasProva[i],
+                destacada: destaquesProva[i],
+                anotacao: anotacoesProva[i]
+            }))
+        };
+        registro.total = registro.questoes.length;
+        registro.acertos = registro.questoes.filter((q) => q.resposta === q.correta).length;
+
+        salvarNoHistorico(registro);
+        esconderTelas();
+        mostrarResultadoProva(registro, false);
+    }
+
+    /* ===================================================== */
+    /* ===== RESULTADO E CORREÇÃO                        ===== */
+    /* ===================================================== */
+
+    let registroAtual = null;
+    let filtroCorrecao = "todas";
+
+    function situacao(questao) {
+        if (questao.resposta === null) return "branco";
+        return questao.resposta === questao.correta ? "certa" : "errada";
+    }
+
+    function mostrarResultadoProva(registro, vindoDoHistorico) {
+        registroAtual = registro;
+        filtroCorrecao = "todas";
+
         const porModulo = {};
         const porMicrotema = [];
 
-        prova.forEach((questao, i) => {
-            const acertou = respostasProva[i] === questao.correta;
-
-            if (acertou) {
-                acertos++;
-            }
+        registro.questoes.forEach((questao) => {
+            const acertou = situacao(questao) === "certa";
 
             if (!porModulo[questao.modulo]) {
                 porModulo[questao.modulo] = { acertos: 0, total: 0 };
             }
             porModulo[questao.modulo].total++;
-            if (acertou) {
-                porModulo[questao.modulo].acertos++;
-            }
+            if (acertou) porModulo[questao.modulo].acertos++;
 
             let micro = porMicrotema.find((m) => m.tema === questao.tema);
             if (!micro) {
@@ -635,108 +1490,266 @@
                 porMicrotema.push(micro);
             }
             micro.total++;
-            if (acertou) {
-                micro.acertos++;
-            }
+            if (acertou) micro.acertos++;
         });
 
-        const percentual = Math.round((acertos / prova.length) * 100);
-        const aprovado = acertos / prova.length >= APROVACAO;
+        const percentual = Math.round((registro.acertos / registro.total) * 100);
+        const aprovado = registro.acertos / registro.total >= APROVACAO;
 
-        let textoAnalise = "";
+        let textoAnalise;
+        if (percentual >= 80) {
+            textoAnalise = "Excelente desempenho! Você está demonstrando um bom domínio dos conteúdos.";
+        } else if (percentual >= 70) {
+            textoAnalise = "Bom desempenho. Você atingiu o percentual mínimo, mas alguns temas ainda podem ser revisados.";
+        } else {
+            textoAnalise = "Continue estudando. Revise principalmente os temas com menor percentual de acertos.";
+        }
 
-    if (percentual >= 80) {
-    textoAnalise =
-        "Excelente desempenho! Você está demonstrando um bom domínio dos conteúdos.";
-    } else if (percentual >= 70) {
-    textoAnalise =
-        "Bom desempenho. Você atingiu o percentual mínimo, mas alguns temas ainda podem ser revisados.";
-    } else {
-    textoAnalise =
-        "Continue estudando. Revise principalmente os temas com menor percentual de acertos.";
-    }
-
-    document.getElementById("texto-analise").textContent = textoAnalise;
-
-        document.getElementById("prova-acertos").textContent =
-            `${acertos}/${prova.length}`;
-
-        document.getElementById("prova-percentual").textContent =
-            `${percentual}%`;
+        document.getElementById("prova-data").textContent = `Realizado em ${formatarData(registro.data)}`;
+        document.getElementById("texto-analise").textContent = textoAnalise;
+        document.getElementById("prova-acertos").textContent = `${registro.acertos}/${registro.total}`;
+        document.getElementById("prova-percentual").textContent = `${percentual}%`;
+        document.getElementById("prova-tempo").textContent = formatarHoras(registro.tempoUsado);
 
         const status = document.getElementById("prova-status");
         status.textContent = aprovado
             ? "✅ Aprovado! (mínimo de 70%)"
-            : "❌ Reprovado. O mínimo é 70% (35 acertos)";
+            : `❌ Reprovado. O mínimo é 70% (${Math.ceil(registro.total * APROVACAO)} acertos)`;
         status.className = aprovado ? "status-ok" : "status-fora";
 
-        document.getElementById("prova-tempo").textContent =
-            formatarHoras(TEMPO_PROVA - tempoRestante);
+        const curso = registro.curso || "cpa";
 
         let htmlModulos = "";
-
-for (const modulo in porModulo) {
-    const dados = porModulo[modulo];
-
-    const nomeModulo =
-        modulo == 1
-            ? "Sistema Financeiro Nacional"
-            : modulo == 2
-            ? "Produtos do Mercado Financeiro"
-            : modulo == 3
-            ? "Relacionamento com o Cliente - Prospecção, Atendimento e Suporte"
-            : modulo == 4
-            ? "Inovação e Desenvolvimento de Mercado"
-            : "Módulo " + modulo;
-
-    htmlModulos += `
-    <p class="resultado-modulo">
-        <strong>${nomeModulo}</strong>
-        <span>${dados.acertos} de ${dados.total} acertos</span>
-    </p>
-`;
-}
-
-document.getElementById("prova-modulos").innerHTML = htmlModulos;
+        for (const modulo in porModulo) {
+            const dados = porModulo[modulo];
+            htmlModulos += `
+                <p class="resultado-modulo">
+                    <strong>${nomeModulo(curso, modulo)}</strong>
+                    <span>${dados.acertos} de ${dados.total} acertos</span>
+                </p>
+            `;
+        }
+        document.getElementById("prova-modulos").innerHTML = htmlModulos;
 
         let htmlMicro = "";
-
-porMicrotema.forEach((m) => {
-    const percentualMicro = Math.round(
-        (m.acertos / m.total) * 100
-    );
-
-    htmlMicro += `
-        <div class="resultado-item">
-            <div class="resultado-item-topo">
-                <strong>${m.tema}</strong>
-                <span>${m.acertos}/${m.total}</span>
-            </div>
-
-            <div class="barra-progresso">
-                <div class="barra-progresso-preenchida"
-                     style="width: ${percentualMicro}%">
+        porMicrotema.forEach((m) => {
+            const percentualMicro = Math.round((m.acertos / m.total) * 100);
+            htmlMicro += `
+                <div class="resultado-item">
+                    <div class="resultado-item-topo">
+                        <strong>${m.tema}</strong>
+                        <span>${m.acertos}/${m.total}</span>
+                    </div>
+                    <div class="barra-progresso">
+                        <div class="barra-progresso-preenchida" style="width: ${percentualMicro}%"></div>
+                    </div>
+                    <div class="resultado-item-rodape">
+                        <span>${m.acertos} de ${m.total} acertos</span>
+                        <span>${percentualMicro}%</span>
+                    </div>
                 </div>
-            </div>
-
-            <div class="resultado-item-rodape">
-                <span>${m.acertos} de ${m.total} acertos</span>
-                <span>${percentualMicro}%</span>
-            </div>
-        </div>
-    `;
-});
-
+            `;
+        });
         document.getElementById("prova-microtemas").innerHTML = htmlMicro;
 
-        document.getElementById("simulado").style.display = "none";
+        document.getElementById("btnVoltarHistorico").style.display = vindoDoHistorico ? "inline-block" : "none";
+
+        mostrarAba("resumo");
+        renderizarCorrecao();
+
+        marcarMenu(vindoDoHistorico ? "historico" : "simulado");
         document.getElementById("resultado-simulado").style.display = "block";
+        window.scrollTo(0, 0);
     }
 
-    function sairDaProva() {
-        document.getElementById("resultado-simulado").style.display = "none";
-        document.getElementById("tela-inicial").style.display = "block";
+    function mostrarAba(aba) {
+        document.getElementById("aba-resumo").classList.toggle("ativa", aba === "resumo");
+        document.getElementById("aba-correcao").classList.toggle("ativa", aba === "correcao");
+        document.getElementById("painel-resumo").style.display = aba === "resumo" ? "block" : "none";
+        document.getElementById("painel-correcao").style.display = aba === "correcao" ? "block" : "none";
     }
+
+    function filtrarCorrecao(filtroEscolhido) {
+        filtroCorrecao = filtroEscolhido;
+        renderizarCorrecao();
+    }
+
+    function renderizarCorrecao() {
+        const lista = registroAtual.questoes;
+        const letras = ["A", "B", "C", "D", "E"];
+
+        const contagem = {
+            todas: lista.length,
+            errada: lista.filter((q) => situacao(q) === "errada").length,
+            certa: lista.filter((q) => situacao(q) === "certa").length,
+            branco: lista.filter((q) => situacao(q) === "branco").length,
+            destacada: lista.filter((q) => q.destacada).length
+        };
+
+        const filtros = [
+            ["todas", "Todas"],
+            ["errada", "Erradas"],
+            ["certa", "Certas"],
+            ["branco", "Em branco"],
+            ["destacada", "Destacadas"]
+        ];
+
+        document.getElementById("filtros-correcao").innerHTML = filtros.map(([chave, rotulo]) => `
+            <button class="filtro ${filtroCorrecao === chave ? "ativo" : ""}" onclick="filtrarCorrecao('${chave}')">
+                ${rotulo} (${contagem[chave]})
+            </button>
+        `).join("");
+
+        const rotulos = { certa: "Acertou", errada: "Errou", branco: "Em branco" };
+        let html = "";
+
+        lista.forEach((questao, i) => {
+            const sit = situacao(questao);
+
+            if (filtroCorrecao === "destacada" && !questao.destacada) return;
+            if (!["todas", "destacada"].includes(filtroCorrecao) && sit !== filtroCorrecao) return;
+
+            let alternativas = "";
+            questao.alternativas.forEach((texto, a) => {
+                let classe = "";
+                let marcas = "";
+
+                if (a === questao.correta) {
+                    classe = "alt-correta";
+                    marcas += `<em class="tag tag-gabarito">Gabarito</em>`;
+                }
+                if (a === questao.resposta) {
+                    if (a !== questao.correta) classe = "alt-errada";
+                    marcas += `<em class="tag tag-resposta">Sua resposta</em>`;
+                }
+
+                alternativas += `
+                    <li class="${classe}">
+                        <span class="letra">${letras[a]}</span>
+                        <span class="alt-texto">${texto}</span>
+                        ${marcas}
+                    </li>
+                `;
+            });
+
+            html += `
+                <article class="correcao-item correcao-${sit}">
+                    <div class="correcao-topo">
+                        <strong>Questão ${i + 1}</strong>
+                        <span class="correcao-modulo">${nomeModulo(questao.curso, questao.modulo)} | ${questao.tema}</span>
+                        ${questao.destacada ? `<span class="correcao-destaque">Destacada</span>` : ""}
+                        <span class="correcao-selo selo-${sit}">${rotulos[sit]}</span>
+                    </div>
+                    ${questao.contexto ? `
+                        <details class="correcao-contexto">
+                            <summary>Ver contexto</summary>
+                            <p>${questao.contexto}</p>
+                        </details>` : ""}
+                    <p class="correcao-enunciado">${questao.enunciado}</p>
+                    <ul class="correcao-alternativas">${alternativas}</ul>
+                    ${questao.anotacao && questao.anotacao.trim() ? `
+                        <div class="correcao-anotacao"><strong>Sua anotação:</strong> ${escapar(questao.anotacao)}</div>` : ""}
+                </article>
+            `;
+        });
+
+        document.getElementById("lista-correcao").innerHTML =
+            html || `<p class="correcao-vazio">Nenhuma questão nesta categoria.</p>`;
+    }
+
+    /* ===================================================== */
+    /* ===== HISTÓRICO (salvo no navegador do aluno)     ===== */
+    /* ===================================================== */
+
+    function lerHistorico() {
+        return lerDados(CHAVE_HISTORICO, []);
+    }
+
+    function salvarNoHistorico(registro) {
+        const lista = lerHistorico();
+        lista.unshift(registro);
+        gravarDados(CHAVE_HISTORICO, lista.slice(0, LIMITE_HISTORICO));
+    }
+
+    function mostrarHistorico() {
+        const lista = lerHistorico();
+        const resumo = document.getElementById("historico-resumo");
+        const container = document.getElementById("historico-lista");
+
+        if (lista.length === 0) {
+            resumo.innerHTML = "";
+            container.innerHTML = `
+                <div class="card historico-vazio">
+                    <p>Você ainda não finalizou nenhum simulado.</p>
+                    <button class="btn-principal" onclick="navegar('simulado')">Fazer um simulado</button>
+                </div>
+            `;
+        } else {
+            const percentuais = lista.map((r) => Math.round((r.acertos / r.total) * 100));
+            const media = Math.round(percentuais.reduce((a, b) => a + b, 0) / percentuais.length);
+            const aprovacoes = lista.filter((r) => r.acertos / r.total >= APROVACAO).length;
+
+            resumo.innerHTML = `
+                <div class="indicador">
+                    <span class="indicador-valor">${lista.length}</span>
+                    <span class="indicador-label">Simulados feitos</span>
+                </div>
+                <div class="indicador">
+                    <span class="indicador-valor">${media}%</span>
+                    <span class="indicador-label">Média de acertos</span>
+                </div>
+                <div class="indicador">
+                    <span class="indicador-valor">${aprovacoes}</span>
+                    <span class="indicador-label">Aprovações</span>
+                </div>
+            `;
+
+            container.innerHTML = lista.map((r, i) => {
+                const percentual = percentuais[i];
+                const aprovado = r.acertos / r.total >= APROVACAO;
+                const erros = r.questoes.filter((q) => situacao(q) === "errada").length;
+                const curso = CURSOS[r.curso || "cpa"];
+
+                return `
+                    <div class="historico-item">
+                        <span class="historico-nota ${aprovado ? "ok" : "fora"}">${percentual}%</span>
+                        <div class="historico-info">
+                            <strong>${curso ? curso.nome : ""}, ${formatarData(r.data)}</strong>
+                            <span>${r.acertos} de ${r.total} acertos, ${erros} erros, em ${formatarHoras(r.tempoUsado)}</span>
+                            <span class="${aprovado ? "status-ok" : "status-fora"}">${aprovado ? "Aprovado" : "Reprovado"}</span>
+                        </div>
+                        <div class="historico-acoes">
+                            <button class="btn-principal" onclick="abrirDoHistorico(${r.id})">Rever simulado</button>
+                            <button class="btn-excluir" onclick="excluirDoHistorico(${r.id})">Excluir</button>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        document.getElementById("historico").style.display = "block";
+    }
+
+    function abrirDoHistorico(id) {
+        const registro = lerHistorico().find((r) => r.id === id);
+        if (!registro) {
+            return;
+        }
+        esconderTelas();
+        mostrarResultadoProva(registro, true);
+        mostrarAba("correcao");
+    }
+
+    function excluirDoHistorico(id) {
+        if (!confirm("Excluir este simulado do histórico?")) {
+            return;
+        }
+        gravarDados(CHAVE_HISTORICO, lerHistorico().filter((r) => r.id !== id));
+        mostrarHistorico();
+    }
+
+    /* ===== AO ABRIR O SITE ===== */
+    renderizarInicio();
 
 </script>
 </body>
